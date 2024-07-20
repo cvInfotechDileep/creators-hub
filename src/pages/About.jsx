@@ -1,9 +1,9 @@
-import Navbar from "../components/Navbar";
+import HeaderNavbar from "../components/HeaderNavbar";
 
 const About = () => {
     return (
       <div>
-        <Navbar />
+        <HeaderNavbar />
         <h1>About Us</h1>
       </div>
     );

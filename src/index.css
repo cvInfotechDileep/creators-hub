@@ -1,4 +1,19 @@
-:root {
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
+
+
+ /* <uniquifier>: Use a unique and descriptive class name */
+ /* <weight>: Use a value from 100 to 900 */
+ /* <slant>: Use a value from -10 to 0 */
+
+.inter-font {
+  font-family: "ubantu sans";
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:"slnt" 0;
+}
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -65,4 +80,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */

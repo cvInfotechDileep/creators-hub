@@ -1,9 +1,9 @@
-import Navbar from '../components/Navbar';
+import HeaderNavbar from '../components/HeaderNavbar';
 
 const Contact = () => {
     return (
       <div>
-        <Navbar />
+        <HeaderNavbar />
         <h1>Contact Us</h1>
       </div>
     );

@@ -1,12 +1,14 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
+import HeaderNavbar from '../components/HeaderNavbar';
+import { Button } from 'react-bootstrap';
+
 
 const Home = () => {
   return (
-    <div>
-      <Navbar />
+    <>
+      <HeaderNavbar />
       <h1>Welcome to the Home Page</h1>
-    </div>
+    </>
   );
 };
 

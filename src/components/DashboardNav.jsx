@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const Sidebar = () => {
+const DashboardNav = () => {
   return (
     <aside>
       <ul>
@@ -11,4 +11,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default DashboardNav;
