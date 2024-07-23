@@ -1,0 +1,45 @@
+// .carousel {
+//     position: relative; 
+//     height: 100vh;
+//     align-items: center;
+//     justify-content: center;
+//   }
+  
+//   .cardCustom {
+//     position: absolute;
+//     transition: transform 0.5s ease-in-out, bottom 0.5s ease-in-out, top 0.5s ease-in-out;
+//     width: 80%; /* Adjust as needed */
+//     max-width: 600px; /* Adjust as needed */
+//     padding: 20px;
+//     background: white;
+//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//     border-radius: 8px;
+//     text-align: center;
+//   }
+  
+//   .cardCustom img {
+//     width: 100%;
+//     height: auto;
+//   }
+  
+//   .active {
+//     transform: translateY(0);
+//     z-index: 2;
+//   }
+  
+//   .active-behind {
+//     transform: translateY(0);
+//     z-index: 1;
+//   }
+  
+//   .upcoming {
+//     transform: translateY(100%);
+//     z-index: 0;
+//     bottom:0
+//   }
+  
+//   .completed {
+//     transform: translateY(-100%);
+//     z-index: -1;
+//     top:0
+//   }

@@ -81,3 +81,11 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
+
+.form-control:focus{
+  border-color: #E5E7EB !important;
+  box-shadow:none !important
+}
+
+
+

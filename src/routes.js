@@ -1,11 +1,12 @@
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import SignInForm from './components/SignIn';
+import SignInForm from './components/AuthComponents/SignIn';
 import Dashboard from './pages/Dashboard';
 import Section1 from './pages/Dashboard/Section1';
 import Section2 from './pages/Dashboard/Section2';
-import SignUpForm from './components/SignUp';
+import SignUpForm from './components/AuthComponents/SignUp';
+import ForgotPassWord from './components/AuthComponents/ForgotPassword';
 
 const routesConfig = [
   {
@@ -23,6 +24,10 @@ const routesConfig = [
   {
     path: "/signin",
     component: SignInForm
+  },
+  {
+    path: "/forgot-password",
+    component: ForgotPassWord
   },
   {
     path: "/signup",
