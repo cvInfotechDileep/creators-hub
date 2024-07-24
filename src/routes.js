@@ -1,12 +1,16 @@
-import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import SignInForm from './components/AuthComponents/SignIn';
-import Dashboard from './pages/Dashboard';
-import Section1 from './pages/Dashboard/Section1';
-import Section2 from './pages/Dashboard/Section2';
-import SignUpForm from './components/AuthComponents/SignUp';
-import ForgotPassWord from './components/AuthComponents/ForgotPassword';
+// src/routes.js
+import React from 'react';
+
+const Home = React.lazy(() => import('./pages/Home'));
+const About = React.lazy(() => import('./pages/About'));
+const Contact = React.lazy(() => import('./pages/Contact'));
+const SignInForm = React.lazy(() => import('./components/AuthComponents/SignIn'));
+const Dashboard = React.lazy(() => import('./pages/Dashboard'));
+const Section1 = React.lazy(() => import('./pages/Dashboard/Section1'));
+const Section2 = React.lazy(() => import('./pages/Dashboard/Section2'));
+const SignUpForm = React.lazy(() => import('./components/AuthComponents/SignUp'));
+const ForgotPassword = React.lazy(() => import('./components/AuthComponents/ForgotPassword'));
+const NotFound = React.lazy(() => import('./pages/NotFound'));
 
 const routesConfig = [
   {
@@ -27,7 +31,7 @@ const routesConfig = [
   },
   {
     path: "/forgot-password",
-    component: ForgotPassWord
+    component: ForgotPassword
   },
   {
     path: "/signup",

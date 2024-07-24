@@ -13,5 +13,5 @@ export const signUpApi = (credentials) => {
 
 export const checkUsernameApi = ( user, accountType ) => {
    console.log({ "ooooooo": user, "ppppppppp": accountType })
-   return axios.post(`${baseURL}/getusername_with_type/?username=${user}&user_type=${accountType}`)
+   return axios.get(`${baseURL}/getusername_with_type?username=${user}&user_type=${accountType}`);
 }

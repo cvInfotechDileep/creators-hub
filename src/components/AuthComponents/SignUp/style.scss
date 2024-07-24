@@ -338,7 +338,7 @@
 
 .auth-card-container {
     border-radius: 20px;
-    // border: 1px solid #0000001a;
+    border: 1px solid #0000001a;
     position: relative;
     height: 100%;
     width: 100%;
@@ -356,6 +356,20 @@
     min-height: 350px;
     transform: translate(0%, 0%) scale(1);
     transition: transform 0.3s ease-out 00.5s;
+}
+.userNameColor{
+    background: linear-gradient(
+    95deg,
+    #1f3daa 5%,
+    #e7029f 31.89%,
+    #e7029f 44.17%,
+    #e86a43 68.74%,
+    #f6a29f 76.67%,
+    #a58e49 100%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
 }
 
 .auth-main-card h3 .rest-highlight {
@@ -537,10 +551,10 @@
   }
   
   .slider-card {
-    // border: 1px solid #ddd;
+    border: 1px solid #ddd;
     border:none !important;
     padding: 1rem;
-    // border-radius: 0.5rem;
+    border-radius: 0.5rem;
   }
 
 .lightBorder{

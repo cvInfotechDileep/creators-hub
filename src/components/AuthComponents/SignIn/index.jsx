@@ -1,13 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import {
-  faArrowLeft,
-  faKey,
-  faEyeSlash,
-  faEye,
-  faEnvelope,
-} from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faKey, faEyeSlash, faEye, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { signInStart, signInSuccess, signInFailure } from '../../../redux/authSlice';
 import { signinApi } from '../../../Apis/api';
 import { Button, Col, Container, FormControl, InputGroup, Row } from 'react-bootstrap';
@@ -219,7 +213,7 @@ const SignInForm = () => {
                         Forgot Password? Reset it by <span>
                           <Link
                             className='text-black fw-bold underlineposition'
-                            to='/forgot'
+                            to='/forgot-password'
                           >
                             Clicking here
                           </Link>
@@ -233,7 +227,7 @@ const SignInForm = () => {
                       className='d-flex text-white fw-semibold gap-2'
                       size='lg'
                       disabled={loading}
-                      style={{fontSize:"18px"}}
+                      style={{ fontSize: "18px" }}
                     >
                       {loading ? 'Signing in...' : 'Sign In'}
                       <span>

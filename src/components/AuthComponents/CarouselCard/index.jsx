@@ -73,66 +73,47 @@
 
 // export default CarouselCard;
 
-import React, { useEffect, useState } from 'react'
-import { Row, Card, Col } from 'react-bootstrap'
-import card2 from "../../../assets/Images/card2.png"
+import React, { useEffect, useState } from 'react';
+import { Row, Card, Col } from 'react-bootstrap';
+import card2 from "../../../assets/Images/card2.png";
 
 const CarouselCard = () => {
     const [isVisible, setIsVisible] = useState(true);
     const [activeSlide, setActiveSlide] = useState(0); // State to track active slide index
-    const [activeSlide1, setActiveSlide1] = useState(0); // State to track active slide index
 
     const cardHeight = `${window.innerWidth * 0.2}px`;
 
-    const deg = [6, -3, 3, -6];
     useEffect(() => {
-        // Function to trigger slideIn and slideOut animations
         const slideInOut = () => {
             if (isVisible) {
                 setTimeout(() => {
-                    setIsVisible(false); // Trigger slideOut animation after 1 second
-                }, 12000); // 1000ms = 1s delay
+                    setIsVisible(false); // Trigger slideOut animation after 12 seconds
+                }, 12000);
             } else {
                 setTimeout(() => {
-                    setIsVisible(true); // Trigger slideOut animation after 1 second
-                }, 12000); // 1000ms = 1s delay
+                    setIsVisible(true); // Trigger slideIn animation after 12 seconds
+                }, 12000);
             }
-
         };
 
         slideInOut(); // Initial trigger of animations
 
-        // Clean up function (optional)
-    }, [isVisible]); // Empty dependency array means this effect runs only once
-    const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
-    const [rotationDeg, setRotationDeg] = useState(0);
+        // Clean up function
+        return () => clearTimeout(slideInOut);
+    }, [isVisible]);
+
     useEffect(() => {
         const interval = setInterval(() => {
-            let currentIndex = (currentSlideIndex + 1) % 4;
-
-            setCurrentSlideIndex((prevIndex) => (prevIndex + 1) % 4);
-
-            const rotation = (currentIndex - slide.id + totalSlides) % totalSlides * (360 / totalSlides);
-            setRotationDeg(rotation);
-        }, 5000); // Change slide every 5 seconds
+            setActiveSlide((prevIndex) => (prevIndex + 1) % 4); // Change slide every 5 seconds
+        }, 5000);
 
         return () => clearInterval(interval);
     }, []);
 
-
-    useEffect(() => {
-        // Calculate the rotation degree based on slide position
-        const rotation = currentSlideIndex + 2;
-        console.log(rotation, "asdadasd", currentSlideIndex);
-        setRotationDeg(rotation);
-    }, [currentSlideIndex]);
-
     const handleAnimationEnd = (index) => {
         setActiveSlide(index);
     };
-    const handleAnimationEnd1 = (index) => {
-        setActiveSlide1(index);
-    };
+
     return (
         <>
             <Col
@@ -145,17 +126,17 @@ const CarouselCard = () => {
                     }`}
                 style={{ minHeight: "100vh", overflow: "hidden" }}
             >
-                <Row className={`auth-second-slide m-auto d-flex justify-content-center align-content-center ${isVisible ? (activeSlide >= 1 ? "rotate-5deg" : "") : (activeSlide1 <= 1 ? "" : "")} `} onAnimationEnd={() => handleAnimationEnd(0)}>
-                    <div className={`auth-card-container `}>
+                <Row className={`auth-second-slide m-auto d-flex justify-content-center align-content-center ${isVisible ? (activeSlide >= 1 ? "rotate-5deg" : "") : ""} `} onAnimationEnd={() => handleAnimationEnd(0)}>
+                    <div className="auth-card-container">
                         <Card className="auth-main-card">
-                            <Card.Body className="marginTop ">
+                            <Card.Body className="marginTop">
                                 <Card.Title className="text-center">
                                     <h3>
                                         <span className="highlight-italic">Cash </span>{" "}
                                         <strong className="rest-highlight">Gifts</strong>
                                     </h3>
                                 </Card.Title>
-                                <Card.Text >
+                                <Card.Text>
                                     <p className="pb-2 text-center">
                                         Add cash gifts and receive them as payouts.
                                     </p>
@@ -171,17 +152,16 @@ const CarouselCard = () => {
                         <div className="auth-card-gradient-footer"></div>
                     </div>
                 </Row>
-                <Row className={`auth-second-slide m-auto d-flex justify-content-center align-content-center ${isVisible ? (activeSlide >= 2 ? "rotate5deg" : "") : (activeSlide1 <= 2 ? "" : "")}  `} onAnimationEnd={() => handleAnimationEnd(1)} onAnimationStart={() => handleAnimationEnd1(1)} >
+                <Row className={`auth-second-slide m-auto d-flex justify-content-center align-content-center ${isVisible ? (activeSlide >= 2 ? "rotate5deg" : "") : ""}  `} onAnimationEnd={() => handleAnimationEnd(1)} >
                     <div className="auth-card-container">
                         <Card className="auth-main-card">
                             <Card.Body className="marginTop">
                                 <Card.Title className="text-center">
                                     <h3>
-                                        {/* <span className="highlight-italic"> </span>{" "} */}
                                         <strong className="rest-highlight">A Suite of Integrations</strong>
                                     </h3>
                                 </Card.Title>
-                                <Card.Text >
+                                <Card.Text>
                                     <p className="pb-2 text-center">
                                         Automatic custom Tweets, Discord messages, stream overlays and more!
                                     </p>
@@ -197,17 +177,16 @@ const CarouselCard = () => {
                         <div className="auth-card-gradient-footer"></div>
                     </div>
                 </Row>
-                <Row className={`auth-second-slide m-auto  d-flex justify-content-center align-content-center  ${isVisible ? (activeSlide >= 3 ? "rotate8deg" : "") : (activeSlide1 <= 3 ? "" : "")} `} onAnimationEnd={() => handleAnimationEnd(2)}>
+                <Row className={`auth-second-slide m-auto  d-flex justify-content-center align-content-center  ${isVisible ? (activeSlide >= 3 ? "rotate8deg" : "") : ""} `} onAnimationEnd={() => handleAnimationEnd(2)}>
                     <div className="auth-card-container ">
                         <Card className="main-card">
                             <Card.Body className="marginTop">
                                 <Card.Title className="text-center">
                                     <h3>
-                                        {/* <span className="highlight-italic">Cash </span>{" "} */}
                                         <strong className="rest-highlight">Crowdfunding</strong>
                                     </h3>
                                 </Card.Title>
-                                <Card.Text >
+                                <Card.Text>
                                     <p className="pb-2 text-center">
                                         Let fans team up and contribute to a crowd funding gift.
                                     </p>
@@ -229,7 +208,6 @@ const CarouselCard = () => {
                             <Card.Body className="marginTop">
                                 <Card.Title className="text-center">
                                     <h3>
-                                        {/* <span className="highlight-italic">Cash </span>{" "} */}
                                         <strong className="rest-highlight">Gift & Thank Messages</strong>
                                     </h3>
                                 </Card.Title>
@@ -244,15 +222,13 @@ const CarouselCard = () => {
                                 src={card2}
                                 className="auth-bottom-image mt-4"
                             />
-
                         </Card>
-
                         <div className="auth-card-gradient-footer"></div>
                     </div>
                 </Row>
             </Col>
         </>
-    )
-}
+    );
+};
 
-export default CarouselCard
+export default CarouselCard;
