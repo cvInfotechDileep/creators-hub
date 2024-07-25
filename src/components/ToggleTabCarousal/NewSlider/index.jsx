@@ -57,7 +57,7 @@ function NewSlider({ typeValue }) {
                         {" "}
                         <strong>Sign Up</strong>
                     </span>{" "}
-                    <strong className="rest-highlight"> & Verify Your Identity</strong>
+                    <strong className="rest-highlight"> & Verify Your Profile</strong>
                 </h5>
             ),
             expand: false,
@@ -105,7 +105,7 @@ function NewSlider({ typeValue }) {
             expand: false,
 
             subtitle: (
-                <p>
+                <p>{`
                     Unlock endless possibilities with our diverse wishlist options: <br />
                     <br />
                     <strong className="heading">Small Cash Tips:</strong> Receive instant
@@ -120,7 +120,7 @@ function NewSlider({ typeValue }) {
                     <br />
                     <strong className="heading"> Small Gift Items:</strong> Allow fans to
                     express their appreciation with thoughtful gifts directly from your
-                    profile, up to a value of $100.
+                    profile, up to a value of $100.`}
                 </p>
             ),
             video: 'https://dev.creatorshub.online/homePage_videos/creatorslidethree.mp4',

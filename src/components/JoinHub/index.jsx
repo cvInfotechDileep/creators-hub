@@ -27,10 +27,7 @@ function JoinHub() {
               support you deserve!{" "}
             </span>{" "}
           </h1>
-          <p className="mt-3">
-            Create your wishlist and start receiving gifts from your fans right
-            away!
-          </p>
+          <p className="mt-3">Create your wishlist and start receiving gifts from your fans right away!</p>
           <Row className="d-flex justify-content-center m-0">
             <Col xs={10} sm={10} md={6}  lg={5} xl={5} xxl={4}>
               <InputGroup className="mb-5 mt-4 join-now-input">

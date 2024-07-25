@@ -336,28 +336,50 @@
     }
 }
 
+.auth-second-slide{
+    box-shadow: inset 0px 0px 20px -10px rgb(124, 122, 124);
+    background:none;
+}
+
 .auth-card-container {
     border-radius: 20px;
-    border: 1px solid #0000001a;
-    position: relative;
-    height: 100%;
-    width: 100%;
-    z-index: 1;
-    overflow: hidden;
-    // background-color: none !important;
-    box-shadow: inset 0px 0px 20px -10px rgb(124, 122, 124);
+  border: 1px solid #0000001a;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  overflow: hidden;
+  padding: 0;
+
+  
+    // border-radius: 20px;
+    // border: 1px solid #0000001a;
+    // position: relative;
+    // height: 100%;
+    // width: 100%;
+    // z-index: 1;
+    // overflow: hidden;
+    // // background-color: none !important;
+    // box-shadow: inset 0px 0px 20px -10px rgb(124, 122, 124);
 }
 
 .auth-main-card {
-    aspect-ratio: auto !important;
-    z-index: 1;
-    position: relative;
-    overflow: hidden;
-    border:none;
-    background: none;
-    min-height: 350px;
-    transform: translate(0%, 0%) scale(1);
-    transition: transform 0.3s ease-out 00.5s;
+    // aspect-ratio: auto !important;
+    // z-index: 1;
+    // position: relative;
+    // overflow: hidden;
+    // border:none;
+    // background: none;
+    // min-height: 350px;
+    // transform: translate(0%, 0%) scale(1);
+    // transition: transform 0.3s ease-out 00.5s;
+     aspect-ratio: auto !important;
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+  min-height: 350px;
+  transform: translate(0%, 0%) scale(1);
+  transition: transform 0.3s ease-out 00.5s;
 }
 .userNameColor{
     background: linear-gradient(
@@ -535,6 +557,10 @@
 
 }
 
+.border-lightBorder{
+    box-shadow: 0px 3px 4px 0px #0000000D;
+    border:none
+}
 .btn:disabled{
     pointer-events:all !important;
     cursor: not-allowed;

@@ -40,14 +40,13 @@ const ToggleTabCarousal = () => {
                         </div>
 
                         <p className="slider-card-para">
-                            {!switcherEnable ? `  Explore the user-centric functionalities of Creatorshub, where
+                            {!switcherEnable ? `  Explore the user-centric functionalities of CreatorsHub, where
             members can easily browse, discover, and support their favorite
             creators. CreatorsHub offers a secure platform where you can send
             gifts and contributions without worrying about your personal
-            information being compromised.From interactive profiles to secure
+            information being compromised. From interactive profiles to secure
             one-click payments, our platform ensures a personalized experience
-            tailored to user preferences.`: `Empower your creative journey on Creatorshub with intuitive tools designed for creators.
-Why Join CreatorsHub? As a creator,  showcase your talents through live streaming, upload features, and wishlist. Engage with your fans effortlessly, with streamlined payment processing and real-time alerts for gifts and contributions. Our platform ensures that your personal information is protected.`}
+            tailored to user preferences.`: `Empower your creative journey on CreatorsHub with intuitive tools designed for creators. Why Join CreatorsHub? As a creator, showcase your talents through live streaming, upload features, and wishlists. Engage with your fans effortlessly, with streamlined payment processing and real-time alerts for gifts and contributions. Our platform ensures that your personal information is protected.`}
                         </p>
                     </Col>
                 </Row>
@@ -67,7 +66,7 @@ Why Join CreatorsHub? As a creator,  showcase your talents through live streamin
                                         <Card.Text>
                                             <p>
                                                 Connect with creators in real-time with live chat and
-                                                interactive features on Creatorshub. Send tips, crowdfund,
+                                                interactive features on CreatorsHub. Send tips, crowdfund,
                                                 and share wishlist items directly.
                                             </p>
                                         </Card.Text>
@@ -196,13 +195,7 @@ Why Join CreatorsHub? As a creator,  showcase your talents through live streamin
                                                     <strong className="rest-highlight">Streaming</strong>
                                                 </h3>
                                             </Card.Title>
-                                            <Card.Text>
-
-                                                Dive into dynamic live streaming on Creatorshub with
-                                                seamless Twitch integration. Engage fans in real-time,
-                                                receive gift alerts, and enhance your streaming profile.
-
-                                            </Card.Text>
+                                            <Card.Text>Dive into dynamic live streaming on CreatorsHub with seamless Twitch integration. Engage fans in real-time, receive gift alerts, and enhance your streaming profile.</Card.Text>
                                         </Card.Body>
                                     </Card>
                                     <div className="creator-bottom-image ">
@@ -267,17 +260,12 @@ Why Join CreatorsHub? As a creator,  showcase your talents through live streamin
                                                         Access to real-time{" "}
                                                     </span>{" "}
                                                     <strong className="rest-highlight">
-                                                        notification{" "}
+                                                        notifications{" "}
                                                     </strong>
                                                 </h3>
                                             </Card.Title>
                                             <Card.Text>
-                                                <p>
-                                                    Get real-time gift alerts from your favorite
-                                                    creators—crowdfunding, cash gifts, tips, and wishlist
-                                                    items included. Stay connected and appreciated with
-                                                    instant notifications.
-                                                </p>
+                                                <p>Get real-time gift alerts from your fans—crowdfunding, cash gifts, tips, and wishlist items included. Stay connected and appreciated with instant notifications.</p>
                                             </Card.Text>
                                         </Card.Body>
                                     </Card>

@@ -143,15 +143,7 @@ const Home = () => {
                                                 Made Safe and Easy
                                             </strong>
                                         </h6>
-                                        <p>
-                                            Fans support their favourite creators by sending them
-                                            gifts, subscribing to their exclusive content or by
-                                            tipping them for their hard work. All the while keeping
-                                            both fans and creators safe by ensuring their personal
-                                            information is kept private. We provide creators with all
-                                            the important tools to create, share and then monetize
-                                            their content.
-                                        </p>
+                                        <p>Fans support their favorite creators by sending them gifts, subscribing to their exclusive content or by tipping them for their hard work. All the while keeping both fans and creators safe by ensuring their personal information is kept private. We provide creators with all the important tools to create, share and then monetize their content.</p>
                                         <InputGroup className="mb-3 mt-5 hero-text-field">
                                             <InputGroup.Text
                                                 id="basic-addon1"

@@ -29,10 +29,7 @@ const ConnectionPeople = () => {
                 </span>
                 <strong className="rest-highlight">?</strong>
               </h1>
-              <p>
-                At CreatorsHub your safety and privacy is our number one goal.
-                It will always be protected and fully secured.
-              </p>
+              <p>At CreatorsHub your safety and privacy is our number one goal. It will always be protected and fully secured.</p>
 
               <div className="btn-with-text ">
                 <Button variant="dark" className="join-now-btn">
