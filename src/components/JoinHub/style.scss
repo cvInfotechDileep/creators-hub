@@ -1,0 +1,153 @@
+
+  .join-creator-hub h1{
+    font-size: 56px;
+    font-family: "Ubuntu Sans";
+    line-height: 80px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    text-transform: capitalize;
+  }
+  .join-creator-hub h1 .highlight-italic {
+    font-style: italic;
+    font-weight: 400;
+  }
+  .join-creator-hub h1 .highlight {
+    background: linear-gradient(
+      95deg,
+      #1f3daa 5%,
+      #e7029f 31.89%,
+      #e7029f 44.17%,
+      #e86a43 68.74%,
+      #f6a29f 76.67%,
+      #a58e49 100%
+    );
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+  }
+  .join-creator-hub h1 .rest-highlight {
+    font-weight: 800;
+  }
+  /* .join-creator-hub span {
+    font-family: "Ubuntu Sans";
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 80px;
+    letter-spacing: -0.02em;
+    text-align: center;
+  } */
+  .join-creator-hub h1 .strong {
+    font-family: "Ubuntu Sans";
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 80px;
+    letter-spacing: -0.02em;
+    text-align: center;
+  }
+  .join-creator-hub h1 .last-heading {
+    font-family: "Ubuntu Sans";
+    font-size: 56px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 80px;
+    letter-spacing: -0.02em;
+    text-align: center;
+  }
+  
+  .join-creator-hub p {
+    /* styleName: 'body/20-32-500'; */
+    font-family: "Inter";
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 32px;
+    text-align: center;
+    padding: 0 16px !important;
+  
+    color: #606e80;
+  }
+  .join-creator-hub .hero-text-field {
+    margin: 20px;
+    font-family: "Inter";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.78px;
+    letter-spacing: 0.005em;
+    text-align: center;
+    color: #6b7280;
+  }
+  .join-creator-hub  .rounded-right{
+      font-family: 'Inter';
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 21.78px;
+  letter-spacing: 0.005em;
+  text-align: center;
+  color: #D1D5DB;
+  background-color: #4B5563;
+  
+  }
+  
+  .join-creator-hub .rounded-right-responsive {
+    display: none;
+    font-family: 'Inter';
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21.78px;
+    letter-spacing: 0.005em;
+    text-align: center;
+    color: #D1D5DB;
+    background-color: #4B5563;
+    }
+  .join-creator-hub .input-group-text{
+  font-family: 'Inter';
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32px;
+  text-align: left;
+  color: #606E80;
+  }
+  
+  @media (max-width: 451px) { 
+    .join-creator-hub h1{ 
+      font-size: 48px !important;
+      line-height: 57.6px;
+      letter-spacing: -0.02em;
+      text-align: center;
+    }
+    .join-creator-hub p {
+  font-size: 20px;
+  
+    }
+    .join-creator-hub  .rounded-right{
+      display: none;
+    }
+    .join-creator-hub-row {
+      padding: 40px 0 !important;
+  }
+    .join-creator-hub .join-now-input {
+      margin: 0 !important; 
+    }
+    .join-creator-hub .join-now-input input {
+      height: 50px;
+     
+      border-top-right-radius: 0.7rem !important;
+      border-bottom-right-radius: 0.7rem !important;
+    }
+    .join-creator-hub .rounded-right-responsive {
+      margin-top: 9px;
+           display: block;
+          width: 100% !important;
+          border-radius: 0.7rem !important;
+          height: 50px;
+      
+    }
+    
+  }
+  
+  
+  @media (min-width: 452px) and (max-width: 1230px) {  
+    .join-creator-hub-row {
+      padding: 40px  0  20px 0 !important;
+  }
+  }
+  

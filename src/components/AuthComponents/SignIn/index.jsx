@@ -12,6 +12,8 @@ import AppleLogo from './../../../assets/svg/apple.svg';
 import YoutubeLogo from './../../../assets/svg/youtube.svg';
 import TwitterLogo from './../../../assets/svg/twitter.svg';
 import Right from "./../../../assets/svg/chevronRight1.svg";
+import mail from './../../../assets/svg/mail.svg';
+import key from './../../../assets/svg/key.svg';
 // import Right1 from "./../../..//assets/svg/chevronRight.svg";
 import './style.scss';
 import './../style.scss';
@@ -54,7 +56,7 @@ const SignInForm = () => {
                   <div className='d-flex justify-content-between align-items-center'>
                     <Button
                       variant='dark'
-                      className='bg-white text-black fw-semibold backBtn'
+                      className='bg-white text-black fw-semibold backBtn common-button'
                       onClick={() => navigate('/')}
                     >
                       <FontAwesomeIcon
@@ -65,7 +67,7 @@ const SignInForm = () => {
                       Go Home
                     </Button>
                     <div>
-                      <p className='fs-6 m-0 textWithClick'>
+                      <p className='fs-6 m-0 textWithClick common-paragraph'>
                         Don’t have an account? <span className='linkBtn'>
                           <Link
                             className='text-black fw-bold underlineposition'
@@ -81,9 +83,9 @@ const SignInForm = () => {
                 <Row className='' style={{ flex: "1 0 auto", justifyContent: "center" }}>
                   <Row className='sec-type-row'>
                     <Col className='text-center'>
-                      <h6 className='mt-3 mb-2'>
-                        <span className='highlight-italic'> Welcome to </span>
-                        <strong className='rest-highlight'>
+                      <h6 className='mt-3 mb-2 common-heading'>
+                        <span className='highlight-italic common-font-style'> Welcome to </span>
+                        <strong className='rest-highlight common-font-style'>
                           CreatorsHub!
                         </strong>
                       </h6>
@@ -91,14 +93,14 @@ const SignInForm = () => {
                   </Row>
                   <Row className='justify-content-center text-center mt-2'>
                     <Col md={8}>
-                      <p className='textColor'>Let’s sign in back into your account.</p>
+                      <p className='textColor common-paragraph'>Let’s sign in back into your account.</p>
                     </Col>
                   </Row>
                   <Row className='justify-content-center social-signup-btn text-center mt-2 w-75'>
                     <Col sm={12} className='position-relative my-2'>
                       <Button
                         variant='light'
-                        className='bg-white signup-btn-auth '
+                        className='bg-white signup-btn-auth common-button'
                         onClick={() => { }}
                       >
                         <img className='mx-2' src={GoogleLogo} />
@@ -110,7 +112,7 @@ const SignInForm = () => {
                     <Col sm={12} className='position-relative my-2'>
                       <Button
                         variant='light'
-                        className='border border-1 bg-white signup-btn-auth '
+                        className='border border-1 bg-white signup-btn-auth common-button'
                       >
                         <img className='mx-2' src={TwitchLogo} />
                         Sign in with Twitch
@@ -120,7 +122,7 @@ const SignInForm = () => {
                     <Col sm={12} className='position-relative my-2'>
                       <Button
                         variant='light'
-                        className='border border-1 bg-white signup-btn-auth  '
+                        className='border border-1 bg-white signup-btn-auth common-button'
                       >
                         <img className='mx-2' src={AppleLogo} />
                         Sign in with Apple
@@ -136,7 +138,7 @@ const SignInForm = () => {
                       <div className='position-relative d-flex justify-content-center align-items-center'>
                         <Button
                           variant='light'
-                          className='border border-1 bg-white signup-btn-auth  '
+                          className='border border-1 bg-white signup-btn-auth common-button'
                         >
                           <img src={YoutubeLogo} />
                         </Button>
@@ -146,7 +148,7 @@ const SignInForm = () => {
                       <div className='d-flex justify-content-center align-items-center'>
                         <Button
                           variant='light'
-                          className='border border-1 bg-white signup-btn-auth  '
+                          className='border border-1 bg-white signup-btn-auth common-button'
                           size='50px'
                         >
                           <img src={TwitterLogo} />
@@ -154,15 +156,17 @@ const SignInForm = () => {
                       </div>
                     </Col>
                   </Row>
-                  <Row className='justify-content-center text-center mt-3 w-75'>
-                    <div class="separator my-2">OR</div>
+                  <Row className='justify-content-center text-center w-75'>
+                    <div className="separator my-2">OR</div>
                     <Col>
                       <form>
                         <InputGroup className='mb-3'>
-                          <InputGroup.Text>
-                            <FontAwesomeIcon icon={faEnvelope} />
+                          <InputGroup.Text
+                          className='customInput'>
+                            <img className='mx-2' src={mail} />
                           </InputGroup.Text>
                           <FormControl
+                          className='customInput'
                             placeholder='you@email.com'
                             aria-label='Email'
                             value={email}
@@ -171,10 +175,12 @@ const SignInForm = () => {
                           />
                         </InputGroup>
                         <InputGroup className='mb-3'>
-                          <InputGroup.Text>
-                            <FontAwesomeIcon icon={faKey} />
+                          <InputGroup.Text
+                          className='customInput'>
+                            <img className='mx-2' src={key} />
                           </InputGroup.Text>
                           <FormControl
+                          className='customInput'
                             type={showPassword ? 'text' : 'password'}
                             placeholder='Password'
                             aria-label='Password'
@@ -183,6 +189,7 @@ const SignInForm = () => {
                             required
                           />
                           <InputGroup.Text
+                          className='customInput'
                             style={{
                               cursor: 'pointer',
                               backgroundColor: 'white',
@@ -200,6 +207,35 @@ const SignInForm = () => {
                           </InputGroup.Text>
                         </InputGroup>
 
+                        {/* <InputGroup className='mb-3'>
+                    <InputGroup.Text className='cutomInput'>
+                      <img className='mx-2' src={mail} />
+                    </InputGroup.Text>
+                    <FormControl
+                      className='cutomInput'
+                      placeholder='you@email.com'
+                      aria-label='Email'
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                    />
+                  </InputGroup>
+                  <InputGroup className='mb-3'>
+                    <InputGroup.Text className='cutomInput'>
+                      <img className='mx-2' src={key} />
+                    </InputGroup.Text>
+                    <FormControl
+                      className='cutomInput'
+                      type={showPassword ? 'text' : 'password'}
+                      placeholder="Password"
+                      value={password}
+                      onChange={handlePasswordChange}
+                    />
+                    <InputGroup.Text className='cutomInput' onClick={togglePasswordVisibility} style={{ cursor: 'pointer' }}>
+                      <img src={showPassword ? hidePasswordIcon : passwordIcon} alt="toggle password visibility" />
+                    </InputGroup.Text>
+                  </InputGroup> */}
+
                       </form>
                       {error && <div className="text-danger mt-2">{error.message}</div>}
                     </Col>
@@ -209,7 +245,7 @@ const SignInForm = () => {
                   <hr className='hr-without-text' />
                   <div className='d-flex justify-content-between align-items-center'>
                     <div>
-                      <p className='fs-6 m-0 textWithClick'>
+                      <p className='fs-6 m-0 textWithClick common-paragraph'>
                         Forgot Password? Reset it by <span>
                           <Link
                             className='text-black fw-bold underlineposition'
@@ -224,7 +260,7 @@ const SignInForm = () => {
                       type='submit'
                       onClick={handleSubmit}
                       variant='dark'
-                      className='d-flex text-white fw-semibold gap-2'
+                      className='d-flex text-white fw-semibold gap-2 common-button'
                       size='lg'
                       disabled={loading}
                       style={{ fontSize: "18px" }}
@@ -241,9 +277,7 @@ const SignInForm = () => {
               </Col>
             </Row>
           </Col>
-          {/* <Col md={6}> */}
           <CarouselCard />
-          {/* </Col> */}
         </Row>
       </Container>
     </>

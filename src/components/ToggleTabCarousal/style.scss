@@ -1,0 +1,1189 @@
+.creator-content {
+    margin: 80px 0;
+  }
+  .padding4 {
+    padding-bottom: 4px;
+  }
+  .marginTop {
+    margin-top: 20px !important;
+    flex: 1 1;
+  }
+  .card-container-row {
+    gap: 15px 0;
+    
+  }
+  .card-container-wrapper {
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex;
+    align-items: center;
+    /* max-height: 420px; */
+    /* max-width: 730px !important; */
+    justify-content: center;
+    /* gap: 20px; */
+  }
+  
+  .card-container {
+    /* box-shadow: rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; */
+    border-radius: 20px;
+    border: 1px solid #0000001a;
+    position: relative;
+    width: 98%;
+    height: 100%;
+    overflow: hidden;
+  
+    z-index: 1;
+  
+    /* background-color:#FCFCFC ; */
+  
+    box-shadow: inset 0px 0px 20px -10px rgb(124, 122, 124);
+  }
+  .card-container .row {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .image-container {
+    margin-bottom: 20px !important;
+  }
+  .creator-content h1 {
+    font-family: "Ubuntu Sans";
+    font-size: 56px;
+    line-height: 80px;
+    letter-spacing: -0.02em;
+  }
+  .creator-content h1 .highlight-italic {
+    font-style: italic;
+    font-weight: 400;
+  }
+  .creator-content h1 .highlight {
+    background: linear-gradient(
+      95deg,
+      #1f3daa 5%,
+      #e7029f 31.89%,
+      #e7029f 44.17%,
+      #e86a43 68.74%,
+      #f6a29f 76.67%,
+      #a58e49 100%
+    );
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+  }
+  .creator-content h1 .rest-highlight {
+    font-weight: 800;
+  }
+  .creator-content p {
+    /* font-family: "Inter";
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 32px;
+    text-align: center;
+  
+    margin-bottom: 2%; */
+  
+    margin: 24px auto 0px auto;
+    max-width: 1000px;
+    font-family: "Inter";
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 32px;
+    text-align: center;
+    color: #606e80;
+  }
+  
+  .card-container-wrapper h3 {
+    font-family: "Ubuntu Sans";
+    font-size: 32px;
+    line-height: 32px;
+    text-align: center;
+    margin-top: 40px;
+  }
+  .card-container-wrapper h3 .highlight-italic {
+    font-style: italic;
+    font-weight: 400;
+  }
+  .card-container-wrapper h3 .highlight {
+    background: linear-gradient(
+      95deg,
+      #1f3daa 5%,
+      #e7029f 31.89%,
+      #e7029f 44.17%,
+      #e86a43 68.74%,
+      #f6a29f 76.67%,
+      #a58e49 100%
+    );
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+  }
+  .card-container-wrapper h3 .rest-highlight {
+    font-family: "Ubuntu Sans";
+    font-weight: 800;
+  }
+  .card-container-wrapper p {
+    font-family: "Inter";
+    font-size: 20px;
+    font-weight: 500;
+    text-wrap: wrap;
+    margin: 12px auto 14px auto;
+    line-height: 32px;
+    text-align: center;
+    color: #606e80;
+    max-width: 650px;
+  }
+  
+  .main-card {
+    aspect-ratio: 0 !important;
+    z-index: 1;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border:none;
+    background-color: none;
+    /* min-height: 350px; */
+    transition: transform 0.3s ease-out 00.5s;
+  }
+  
+  .bottom-image {
+    width: 90% !important;
+    margin: auto;
+    padding: 0;
+    position: relative;
+    height: 288px !important;
+    /* z-index: 3; */
+    left: 0%;
+    bottom: -5%;
+  }
+  
+  .bottom-image .new-card1 {
+    position: relative;
+    top: 0;
+    left: 0;
+    background-image: url("./../../assets/Images/newCard1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    transition:  opacity 0.8s ease-in-out ;
+  }
+  .bottom-image .new-hover-card1 {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    right: 0;
+    background-image: url("./../../assets/gifs/newCardhover1.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.8s ease-in-out;
+    z-index: 9999;
+  }
+  .card-container:hover .bottom-image .new-hover-card1 {
+    -webkit-transform: scale(1);
+    top: 0%;
+    -ms-transform: scale(1);
+    transform: scale(1);
+    background-image: url("./../../assets/gifs/newCardhover1.gif");
+  }
+  
+  .card-container:hover .bottom-image .new-card1 {
+  opacity: 0;
+  }
+  .bottom-image .new-card2 {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url("./../../assets/Images/newCard2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    height: 202px;
+    max-width: 320px;
+    z-index: 999;
+    transition: 0.8s ease-in-out all;
+    -webkit-transition: 0.8s ease-in-out;
+    transition: 0.8s ease-in-out;
+  }
+  .bottom-image .new-hover-card2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(0%, -50%);
+    background-image: url("./../../assets/Images/newCardhover2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    overflow: hidden;
+    height: 222px;
+    width: 340px;
+    opacity: 0;
+    -webkit-transition: 0.8s ease-in-out;
+    transition: 0.8s ease-in-out;
+    z-index: 9999;
+  }
+  .card-container:hover .bottom-image .new-hover-card2 {
+    opacity: 1;
+    transform: translate(-25%, -50%);
+  }
+  .card-container:hover .bottom-image .new-card2 {
+    height: 164px;
+    max-width: 260px;
+  
+    transform: translate(-95%, -50%);
+  }
+  .bottom-image3 {
+    width: 90% !important;
+    margin: auto;
+    padding: 0;
+    position: relative;
+    height: 288px !important;
+    /* background-color: #a58e49; */
+    left: 0%;
+    bottom: -3%;
+    /* transform: translate(-0%,0%); */
+  }
+  .bottom-image3 .new-card3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("./../../assets/Images/newCard3.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    object-fit: contain;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    transition: 0.8s ease-in-out all;
+  }
+  .bottom-image3 .new-hover-card3 {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    right: 0;
+    /* background-image: url("./../assets/Images/newCardhover3-1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    object-fit: cover; */
+    /* background-color: grey; */
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: translateY(30px);
+    -ms-transform: translateY(30px);
+    transform: translateY(30px);
+    -webkit-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    transform: scale(0.5);
+    opacity: 0;
+    -webkit-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
+    z-index: 9999;
+  }
+  .bottom-image3 .new-hover-card3 .img1 {
+    position: absolute;
+    background-image: url("./../../assets/Images/newCardhover3-1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    width: 255px;
+    height: 256px;
+    top: 30%;
+    left: 5%;
+    gap: 0px;
+  }
+  .bottom-image3 .new-hover-card3 .img2 {
+    position: absolute;
+    background-image: url("./../../assets/Images/newCardhover3-2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    width: 255px;
+    height: 256px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    gap: 0px;
+  }
+  .bottom-image3 .new-hover-card3 .img3 {
+    position: absolute;
+    background-image: url("./../../assets/Images/newCardhover3-3.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    width: 255px;
+    height: 256px;
+    top: 30%;
+    right: 5%;
+    gap: 0px;
+  }
+  .card-container:hover .bottom-image3 .new-hover-card3 {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  .card-container:hover .bottom-image3 .new-card3 {
+    -webkit-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  
+  .bottom-image3 .new-card4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+  }
+  .bottom-image3 .new-card4 .img1 {
+    position: absolute;
+    background-image: url("./../../assets/Images/newCard4-1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    width: 240px;
+    height: 234px;
+    top: 16%;
+    left: 5%;
+    gap: 0px;
+    transition: 0.8s ease-in-out;
+  }
+  .bottom-image3 .new-card4 .img2 {
+    position: absolute;
+    background-image: url("./../../assets/Images/newCard4-2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    width: 260px;
+    height: 253.4px;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    gap: 0px;
+    transition: 0.8s ease-in-out;
+  }
+  .bottom-image3 .new-card4 .img3 {
+    position: absolute;
+    background-image: url("./../../assets/Images/newCard4-3.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    width: 240px;
+    height: 234px;
+    top: 16%;
+    right: 5%;
+    gap: 0px;
+    transition: 0.8s ease-in-out;
+  }
+  .bottom-image3 .new-cardhover4 {
+    position: absolute;
+    background-image: url("./../../assets/Images/newCardhover4.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    width: 463px;
+    height: 48px;
+    bottom: -20%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    gap: 0px;
+    opacity: 1px;
+    transition: 0.8s ease-in-out;
+  }
+  .card-container:hover .bottom-image3 .new-card4 .img1 {
+    transform: translateX(35%);
+  
+    opacity: 0.09;
+  }
+  
+  .card-container:hover .bottom-image3 .new-card4 .img3 {
+    transform: translateX(-35%);
+    opacity: 0.09;
+  }
+  .card-container:hover .bottom-image3 .new-card4 .img2 {
+    transform: translate(-50%, -8%);
+  }
+  .card-container:hover .bottom-image3 .new-cardhover4 {
+    /* transform: translateY(-100px); */
+    z-index: 999;
+    bottom: 10%;
+    transform: translate(-50%, 0%);
+  }
+  
+  .creator-bottom-image {
+    width: 90% !important;
+    margin: auto;
+    padding: 0;
+    position: relative;
+    height: 288px !important;
+    /* background-color: #a58e49; */
+    /* height: 100%; */
+    z-index: 3;
+    left: 0%;
+    bottom: -5%;
+  }
+  
+  .creator-bottom-image .new-card1 {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    right: 0;
+    background-image: url("./../../assets/gifs/newCreatorCard1.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.5s ease-in-out;
+    z-index: 9;
+  }
+  .creator-bottom-image .new-hover-card1 {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    /* background-color: grey; */
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+  }
+  .creator-bottom-image .new-hover-card1 .img1 {
+    background-image: url("./../../assets/gifs/newCreatorCardhover1-2.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    width: 78px;
+    height: 78px;
+    -webkit-transform: translateY(70px);
+    -ms-transform: translateY(70px);
+    transform: translateY(70px);
+    opacity: 0;
+    gap: 0px;
+    opacity: 1px;
+    transition: 0.8s ease-in-out;
+  }
+  
+  .creator-bottom-image .new-hover-card1 .img-wrapper {
+    height: 78px;
+    width: 420px;
+    padding: 5px;
+    -webkit-transform: translateY(70px);
+    -ms-transform: translateY(70px);
+    transform: translateY(70px);
+    opacity: 0;
+    transition: 0.8s ease-in-out;
+  }
+  .creator-bottom-image .new-hover-card1 .img2 {
+    position: relative;
+    background-image: url("./../../assets/Images/newCreatorCardhover1-1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+  
+    opacity: 1px;
+    transition: 0.8s ease-in-out;
+  }
+  
+  .card-container:hover .creator-bottom-image .new-hover-card1 .img-wrapper {
+    -webkit-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  .card-container:hover .creator-bottom-image .new-hover-card1 .img1 {
+    -webkit-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  .card-container:hover .creator-bottom-image .new-card1 {
+    /* filter: blur(2px); */
+    opacity: 0.5;
+  }
+  
+  .creator-bottom-image .new-card2 {
+    position: relative;
+    margin: auto;
+    background-image: url("./../../assets/Images/newCreatorCard2.png");
+    background-size: contain;
+    aspect-ratio: 1;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    object-fit: fill;
+    overflow: hidden;
+    width: 441px;
+    height: 100%;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.5s ease-in-out;
+    z-index: 9;
+    transition: 0.8s ease-in-out;
+  }
+  .creator-bottom-image .new-card2-sec {
+    background-image: url("./../../assets/Images/newCreatorCard2-1.png");
+    position: absolute;
+    bottom: 25%;
+    left: 10%;
+    width: 107px;
+    height: 38px;
+  
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: contain;
+    z-index: 9999;
+    transition: 0.8s ease-in-out;
+  }
+  .creator-bottom-image .new-hover-card2 {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    /* background-color: grey; */
+    opacity: 0;
+  
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+  }
+  .creator-bottom-image .new-hover-card2 .img1 {
+    position: absolute;
+    background-image: url("./../../assets/Images/newCreatorCardhover2-1.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: contain;
+    height: 32px;
+    width: 32px;
+    bottom: 25%;
+    left: 10%;
+    transform: rotate(30deg);
+    transition: 0.8s ease-in-out;
+  }
+  .creator-bottom-image .new-hover-card2 .img2 {
+    position: absolute;
+    background-image: url("./../../assets/Images/newCreatorCardhover2-2.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: contain;
+    height: 32px;
+    width: 32px;
+    bottom: 25%;
+    left: 15%;
+    transform: rotate(-30deg);
+    transition: 0.8s ease-in-out;
+  }
+  .creator-bottom-image .new-hover-card2 .img3 {
+    position: absolute;
+    background-image: url("./../../assets/Images/newCreatorCardhover2-3.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: contain;
+    height: 32px;
+    width: 32px;
+    bottom: 25%;
+    left: 20%;
+    transform: rotate(30deg);
+    transition: 0.8s ease-in-out;
+  }
+  .creator-bottom-image .new-hover-card2 .img4 {
+    position: absolute;
+    background-image: url("./../../assets/Images/newCreatorCardhover2-4.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: contain;
+    height: 213px;
+    width: 120px;
+    opacity: 0;
+    transform: translateY(20%);
+    top: 0%;
+    right: 0%;
+    transition: 0.8s ease-in-out;
+  }
+  
+  .card-container:hover .creator-bottom-image .new-hover-card2{
+    opacity: 1;
+  }
+  .card-container:hover .creator-bottom-image .new-hover-card2 .img3 {
+    transform: rotate(30deg) translate(-90px, -21px);
+  }
+  .card-container:hover .creator-bottom-image .new-hover-card2 .img2 {
+    transform: rotate(-30deg) translate(-54px, -80px);
+  }
+  .card-container:hover .creator-bottom-image .new-hover-card2 .img1 {
+    transform: rotate(30deg) translate(0px, 50px);
+  }
+  .card-container:hover .creator-bottom-image .new-hover-card2 .img4 {
+    transform: translateY(15%);
+    opacity: 1;
+  }
+  .card-container:hover .creator-bottom-image .new-card2-sec {
+    transform: translateX(-20px);
+  }
+  
+  .card-container:hover .creator-bottom-image .new-card2 {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+  
+  .creator-bottom-image .new-card3 {
+    position: relative;
+    margin: auto;
+    background-image: url("./../../assets/Images/newCreatorCard3.png");
+    background-size: contain;
+    aspect-ratio: 1;
+    background-repeat: no-repeat;
+    background-position: bottom 15px right 0px;
+    object-fit: cover;
+    overflow: hidden;
+    width: 437px;
+    height: 315px;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.5s ease-in-out;
+    z-index: 9;
+    transition: 0.8s ease-in-out;
+  }
+  .creator-bottom-image .new-card3-icon {
+    position: absolute;
+    padding: 10px;
+    top: 20%;
+    padding: 20px;
+    right: 3%;
+    background-image: url("./../../assets/Images/newCreatorCard3-2.png");
+    background-size: contain;
+    aspect-ratio: 1;
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+    width: 38px;
+    height: 38px;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.5s ease-in-out;
+    z-index: 10;
+    transition: background-image 0.8s ease-in-out;
+  }
+  
+  .card-container:hover .creator-bottom-image .new-card3-icon {
+    background-image: url("./../../assets/Images/newCreatorCardhover3.png");
+    transition: z-index 0.8s ease-in-out;
+    /* width: 58px;
+    height: 58px; */
+  }
+  .card-container:hover .creator-bottom-image .new-card3-icon::after {
+    content: "2";
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    top: 0%;
+    right: -40%;
+    transform: translate(-50%, -50%);
+    background-color: blue;
+    color: white;
+    font-size: 10px;
+    text-align: center;
+    z-index: 11;
+    border-radius: 50%;
+  }
+  .creator-bottom-image .new-hover-card3-img1 {
+    position: absolute;
+    top: 35%;
+    padding: 20px;
+    right: -10%;
+    background-image: url("./../../assets/Images/newCreatorCardhover3-3.png");
+    background-size: contain;
+    aspect-ratio: 1;
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+    width: 306px;
+    height: 52px;
+    opacity: 0;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.5s ease-in-out;
+    z-index: 11;
+    transition: right 0.8s ease-in-out;
+  }
+  .creator-bottom-image .new-hover-card3-img2 {
+    position: absolute;
+    top: 50%;
+    padding: 20px;
+    right: -12%;
+    background-image: url("./../../assets/Images/newCreatorCardhover3-4.png");
+    background-size: contain;
+    aspect-ratio: 1;
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+    width: 355px;
+    height: 52px;
+    opacity: 0;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.5s ease-in-out;
+    z-index: 11;
+    transition: right 0.8s ease-in-out;
+  }
+  .card-container:hover .creator-bottom-image .new-hover-card3-img1 {
+    opacity: 1;
+    right: -3%;
+  }
+  .card-container:hover .creator-bottom-image .new-hover-card3-img2 {
+    opacity: 1;
+    right: -4%;
+  }
+  .card-container:hover .creator-bottom-image .new-card3 {
+    -webkit-transform: scale(1.005);
+    -ms-transform: scale(1.005);
+    transform: scale(1.005) translateY(-20px);
+  }
+  
+  
+  /* .footer-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    background-image: url("./../../assets/Images//headergradient.png");
+    background-size: cover; 
+  
+    z-index: -1;
+  } */
+  .card-gradient-footer {
+    position: absolute;
+    bottom: 0%;
+  }
+  .card-container:hover .card-gradient-footer {
+    background-image: url("./../../assets/Images//headergradient.png");
+    background-size: cover;
+    position: absolute;
+    background-position: center;
+    bottom: 0%;
+    width: 100%;
+    height: 100%;
+    /* z-index: ; */
+    z-index: -1;
+  }
+  
+  
+  
+  /* switcher */
+  
+  .toggle-switch-wrapper {
+    position: relative;
+    margin: 24px auto 0 auto;
+    display: flex;
+    width: 322px;
+    height: 58px;
+    padding: 12px;
+    border-radius: 99px;
+    box-shadow: rgba(204, 219, 232, 0.5) 0 3px 0px 0 inset,
+      rgba(204, 219, 232, 0.5) 0 3px 0px 0;
+  }
+  .toggle-switch {
+    list-style-type: none;
+    padding: 0;
+    margin: auto;
+    display: flex;
+    gap: 10px;
+  
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  .option {
+    cursor: pointer;
+    text-align: center;
+    font-family: "Ubuntu Sans";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 18px;
+    color: #606E80;
+    z-index: 5;
+    width: 146px;
+    padding: 10px 24px 10px 24px;
+    height: 36px;
+    border-radius: 36px;
+  }
+  
+  .option.active {
+    color:#181D25; /* Active option text color */
+  }
+  
+  .toggle-effect {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .toggle-effect:before {
+    content: "";
+    position: absolute;
+    top: 12.5px;
+    left: 10px;
+    width: 146px;
+    height: 36px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 18px;
+    box-shadow: rgb(204, 219, 232) 1px 3px 6px 0px,
+      inset rgb(204, 219, 232) 1px -3px 6px 1px;
+    /* background-color: grey; */
+    border-radius: 36px;
+    transition: 0.5s ease all, left 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
+  }
+  
+  .toggle-switch li.active + .toggle-effect:before {
+    width: 176px;
+    border-radius: 100px;
+  }
+  
+  .toggle-switch li.checked.active + .toggle-effect:before {
+    left: 60px;
+  }
+  
+  .toggle-switch li.checked.active + .toggle-effect:before {
+    content: "";
+    left: 166px;
+    width: 146px;
+    /* box-shadow: rgb(204, 219, 232) 1px 3px 6px 0px ,inset rgb(204, 219, 232) 1px -3px 6px 1px ; */
+    /* background-color: green; */
+  }
+  
+  @media (max-width: 451px) {
+    .creator-content {
+      margin: 40px 0;
+    }
+    .creator-content h1 {
+      font-size: 40px;
+      line-height: 50px;
+    }
+    .creator-content p {
+     margin: 18px 16px 0 16px !important;
+     /* max-height: 288px; 
+      overflow-y: auto; 
+      padding: 10px; */
+    }
+    .card-container-wrapper h3 {
+      font-size: 20px;
+      margin-top: 20px;
+    }
+    .card-container-wrapper p {
+      font-size: 12px;
+      line-height: 15.54px;
+    }
+    .bottom-image  , .bottom-image3{
+      height: 100px !important;
+    }
+    .bottom-image .new-card1 {
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .bottom-image .new-hover-card1 {
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .card-container:hover .bottom-image .new-card1 {
+      opacity: 0;
+    }
+    .bottom-image .new-card2 { 
+      width: 100px !important;
+      height: 100px !important;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      transform:translate(-50%, -50%) !important;
+    }
+    .bottom-image .new-hover-card2 {
+      height: 100px !important;
+      width: 150px;
+      background-size: contain;
+      opacity: 0 !important;
+      transform: translate(4%, -60%) !important;
+  
+    }
+    .card-container:hover .bottom-image .new-hover-card2 {
+      opacity: 1 !important;
+      transform: translate(-30%, -55%) !important;
+    }
+    .card-container:hover .bottom-image .new-card2 {
+    
+      transform:translate(-100%, -50%) !important;
+    }
+  
+    .bottom-image3 .new-card3 {
+      width: 100px !important;
+      height: 100px !important;
+      position: relative !important;
+      background-size: contain;
+      margin: auto;
+      background-position: center;
+    }
+    .bottom-image3 .new-hover-card3 {
+      opacity: 0;
+      height: 100%;
+      width: 100%;
+      /* position: relative; */
+      top:0;
+  
+    }
+    .bottom-image3 .new-hover-card3 .img1 {
+      width: 100px !important;
+      height: 80px !important;
+      background-size: contain;
+      background-position: center;
+      top: 12% !important;
+      left: 12%;
+    } 
+    .bottom-image3 .new-hover-card3 .img2{
+      width: 100px !important;
+      height: 80px !important;
+      background-size: contain;
+      background-position: center;
+    }
+    .bottom-image3 .new-hover-card3 .img3{
+      width: 100px !important;
+      height: 80px !important;
+      background-size: contain;
+      background-position: center;
+      top: 12% !important;
+      right: 12%;
+    }
+    .bottom-image3 .new-card4{
+      opacity: 1;
+      height: 100%;
+      width: 100%;
+      /* position: relative; */
+      top:0;
+    }
+    .bottom-image3 .new-card4 .img1 {
+      width: 100px !important;
+      height: 80px !important;
+      background-size: contain;
+      background-position: center;
+      top: 13% !important;
+      left: 12%;
+    } 
+    .bottom-image3 .new-card4 .img2 {
+      width: 100px !important;
+      height: 80px !important;
+      background-size: contain;
+      background-position: center;
+    }
+    .bottom-image3 .new-card4 .img3 {
+      width: 100px !important;
+      height: 80px !important;
+      background-size: contain;
+      background-position: center;
+      top: 13% !important;
+      right: 12%;
+    }
+    .bottom-image3 .new-cardhover4{
+      opacity: 0;
+      height: 30px;
+      width: 100px;
+      bottom:0;
+    }
+    .card-container:hover .bottom-image3 .new-cardhover4 {
+      opacity: 1;
+      height: 30px;
+      width: 200px;
+      bottom:20%;
+    }
+    .creator-bottom-image {
+      height: 100px !important;
+    }
+    .creator-bottom-image .new-card1 {
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-position: top;
+    }
+    .creator-bottom-image .new-hover-card1 {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    /* background-color: grey; */
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+  }
+  .creator-bottom-image .new-hover-card1 .img1 {
+    background-image: url("./../../assets/gifs/newCreatorCardhover1-2.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    width: 38px;
+    height: 38px;
+    -webkit-transform: translateY(70px);
+    -ms-transform: translateY(70px);
+    transform: translateY(70px);
+    opacity: 0;
+    gap: 0px;
+    opacity: 1px;
+    transition: 0.8s ease-in-out;
+  }
+  
+  .creator-bottom-image .new-hover-card1 .img-wrapper {
+    height: 38px;
+    width: 150px;
+  
+  }
+  .card-container:hover .creator-bottom-image .new-hover-card1 .img-wrapper {
+    -webkit-transform: translateY(5px);
+    -ms-transform: translateY(5px);
+    transform: translateY(5px);
+    opacity: 1;
+  }
+  .creator-bottom-image .new-card2 {
+   background-position: center;
+    width: 100%;
+    height: 100%;
+   
+  }
+  .creator-bottom-image .new-card2-sec {
+    width: 70px;
+    height: 20px;
+  }
+  .creator-bottom-image .new-hover-card2 .img1{
+    height:  16px;
+    width: 16px;
+    left: 11%;
+  }
+  .creator-bottom-image .new-hover-card2 .img3{
+    height:  16px;
+    width: 16px;
+    left: 12%;
+  }
+  .creator-bottom-image .new-hover-card2 .img2{
+    height:  16px;
+    width: 16px;
+    left: 13%;
+  }
+  .creator-bottom-image .new-hover-card2 .img4 {
+    background-size: contain;
+    background-position: top;
+    height: 113px;
+    width: 100px;
+  }
+  .card-container:hover .creator-bottom-image .new-hover-card2  {
+    opacity: 1;
+  }
+  .card-container:hover .creator-bottom-image .new-hover-card2 .img3 {
+    transform: rotate(30deg) translate(-40px, -15px);
+  }
+  .card-container:hover .creator-bottom-image .new-hover-card2 .img2 {
+    transform: rotate(-20deg) translate(-44px, -30px);
+  }
+  .card-container:hover .creator-bottom-image .new-hover-card2 .img1 {
+    transform: rotate(30deg) translate(-20px, 30px);
+  }
+  .card-container:hover .creator-bottom-image .new-hover-card2 .img4 {
+    transform: translateY(-5%);
+    opacity: 1;
+  }
+  .creator-bottom-image .new-card3 {
+    background-position: center;
+    width: 150px;
+    height: 100px;
+  }
+  .creator-bottom-image .new-card3-icon {
+    padding: 0px;
+    top: -10%;
+    right: 10%;
+    background-position: top;
+    width: 28px;
+    height: 28px;
+   
+  }
+  
+  .card-container:hover .creator-bottom-image .new-card3-icon {
+    background-image: url("./../../assets/Images/newCreatorCardhover3.png");
+    transition: z-index 0.8s ease-in-out;
+   
+  }
+  
+  .creator-bottom-image .new-hover-card3-img1 {
+    top: 15%;
+    width: 156px;
+    height: 22px;
+  
+  }
+  .creator-bottom-image .new-hover-card3-img2 {
+    top: 40%;
+    width: 156px;
+    height: 22px;
+  
+  }
+  .card-container:hover .creator-bottom-image .new-hover-card3-img1 {
+    opacity: 1;
+    right: 10%;
+  }
+  .card-container:hover .creator-bottom-image .new-hover-card3-img2 {
+    opacity: 1;
+    right: 10%;
+  }
+  .card-container:hover .creator-bottom-image .new-card3 {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2) translateY(-1%);
+  }
+  }
+  
+  @media (min-width: 452px) and (max-width: 1230px) {  
+    
+  }

@@ -122,8 +122,7 @@ const CarouselCard = () => {
                 lg={5}
                 xl={5}
                 xxl={5}
-                className={`margin-padding auth-gallery  ${isVisible ? "slide-in" : "slide-out"
-                    }`}
+                className={`margin-padding auth-gallery  ${isVisible ? "slide-in" : "slide-out"}`}
                 style={{ minHeight: "100vh", overflow: "hidden" }}
             >
                 <Row className={`auth-second-slide m-auto d-flex justify-content-center align-content-center ${isVisible ? (activeSlide >= 1 ? "rotate-5deg" : "") : ""} `} onAnimationEnd={() => handleAnimationEnd(0)}>
@@ -179,7 +178,7 @@ const CarouselCard = () => {
                 </Row>
                 <Row className={`auth-second-slide m-auto  d-flex justify-content-center align-content-center  ${isVisible ? (activeSlide >= 3 ? "rotate8deg" : "") : ""} `} onAnimationEnd={() => handleAnimationEnd(2)}>
                     <div className="auth-card-container ">
-                        <Card className="main-card">
+                        <Card className="auth-main-card">
                             <Card.Body className="marginTop">
                                 <Card.Title className="text-center">
                                     <h3>
@@ -204,7 +203,7 @@ const CarouselCard = () => {
                 </Row>
                 <Row className="auth-second-slide m-auto  d-flex justify-content-center align-content-center" onAnimationEnd={() => handleAnimationEnd(3)}>
                     <div className="auth-card-container ">
-                        <Card className="main-card">
+                        <Card className="auth-main-card">
                             <Card.Body className="marginTop">
                                 <Card.Title className="text-center">
                                     <h3>

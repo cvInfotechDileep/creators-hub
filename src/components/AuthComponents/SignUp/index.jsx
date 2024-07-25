@@ -4,7 +4,7 @@ import { Col, Container, Row, Card, Button, FormControl, InputGroup, Form } from
 import { LoadingOutlined } from '@ant-design/icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './style.scss';
 import GoogleLogo from './../../../assets/svg/GoogleLogo.svg';
 import TwitchLogo from './../../../assets/svg/twitch.svg';
@@ -151,6 +151,9 @@ const SignUpForm = () => {
   // }, []);
 
   const handleSignUp = async () => {
+
+
+
     setLoading(true);
     try {
       // Replace with your actual API call
@@ -270,10 +273,10 @@ const SignUpForm = () => {
               {cards.map((card) => (
                 <Col md={6} className="mb-4" key={card.id}>
                   <Card
-                  className='align-items-center p-2'
+                    className='align-items-center p-2 bg-white'
                     onClick={() => handleSelect(card.title.toLowerCase())}
                     border={selectedCard === card.title.toLowerCase() ? 'primary' : 'lightBorder'}
-                    style={{ cursor: 'pointer', borderWidth: selectedCard === card.title ? '2px' : '1px' }}
+                    style={{ cursor: 'pointer' }}
                   >
                     <div
                       ref={card.container}
@@ -420,15 +423,15 @@ const SignUpForm = () => {
               </Col>
             </Row>
             <Row className='justify-content-center text-center mt-3 w-75'>
-              <hr className='hr-text mt-3' data-content='OR' />
+            <div className="separator my-2">OR</div>
               <Col>
                 <Form>
                   <InputGroup className='mb-3'>
-                    <InputGroup.Text className='cutomInput'>
+                    <InputGroup.Text className='customInput'>
                       <img className='mx-2' src={mail} />
                     </InputGroup.Text>
                     <FormControl
-                      className='cutomInput'
+                      className='customInput'
                       placeholder='you@email.com'
                       aria-label='Email'
                       value={email}
@@ -437,17 +440,17 @@ const SignUpForm = () => {
                     />
                   </InputGroup>
                   <InputGroup className='mb-3'>
-                    <InputGroup.Text className='cutomInput'>
+                    <InputGroup.Text className='customInput'>
                       <img className='mx-2' src={key} />
                     </InputGroup.Text>
                     <FormControl
-                      className='cutomInput'
+                      className='customInput'
                       type={showPassword ? 'text' : 'password'}
                       placeholder="Password"
                       value={password}
                       onChange={handlePasswordChange}
                     />
-                    <InputGroup.Text className='cutomInput' onClick={togglePasswordVisibility} style={{ cursor: 'pointer' }}>
+                    <InputGroup.Text className='customInput' onClick={togglePasswordVisibility} style={{ cursor: 'pointer' }}>
                       <img src={showPassword ? hidePasswordIcon : passwordIcon} alt="toggle password visibility" />
                     </InputGroup.Text>
                   </InputGroup>
@@ -523,7 +526,7 @@ const SignUpForm = () => {
           <Col md={6}>
             <Row style={{ height: "100vh", display: "flex", flexDirection: "column" }}>
               <Col className='auth-left-main my-5' style={{ flex: 1, display: "flex", flexDirection: "column", width: "90%", alignSelf: "center" }}>
-                <Row className='my-4 px-3' style={{ flex: "0 1 auto" }}>
+                <Row className='my-4 px-3 top-row'>
                   <div className='d-flex justify-content-between align-items-center'>
                     <Button
                       variant='dark'
@@ -535,7 +538,7 @@ const SignUpForm = () => {
                         fill='blue'
                         className='fw-lighter fs-7 me-2'
                       />
-                      Back
+                      Go Home
                     </Button>
                     <div>
                       <p className='fs-6 m-0 textWithClick'>
@@ -551,11 +554,12 @@ const SignUpForm = () => {
                     </div>
                   </div>
                 </Row>
-                <Row className='' style={{ flex: "1 0 auto", justifyContent: "center" }}>
+
+                <Row className='flex-grow-1 d-flex align-items-center justify-content-center middle-row'>
                   {steps[current].content}
                 </Row>
-                <Row className='my-5 px-3' style={{ flex: "0 1 auto" }}>
 
+                <Row className='my-5 px-3 bottom-row'>
                   <hr className='hr-without-text' />
                   <div className='d-flex'>
                     <div className='flex-grow-1'>
@@ -570,14 +574,19 @@ const SignUpForm = () => {
                         </span>
                       </p>
                     </div>
-                    {current > 0 && (
-                      <Button variant='dark' className=' d-flex mx-2 gap-2' onClick={() => prev()} style={{ fontSize: "18px", alignItems: "center", display: "flex" }}>
+                    {/* {current > 0 && (
+                      <Button
+                        variant='dark'
+                        className=' d-flex mx-2 gap-2'
+                        onClick={() => prev()}
+                        style={{ fontSize: "18px", alignItems: "center", display: "flex" }}
+                      >
                         <span>
                           <img src={arrowprev} />
                         </span>
                         Previous
                       </Button>
-                    )}
+                    )} */}
                     {current < steps.length - 1 && (
                       <Button
                         onClick={() => next()}
@@ -606,9 +615,9 @@ const SignUpForm = () => {
                         {loading ? 'Signing Up...' : 'Sign Up'}
                       </Button>
                     )}
-
                   </div>
                 </Row>
+
               </Col>
             </Row>
           </Col>

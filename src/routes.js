@@ -7,7 +7,7 @@ const Contact = React.lazy(() => import('./pages/Contact'));
 const SignInForm = React.lazy(() => import('./components/AuthComponents/SignIn'));
 const Dashboard = React.lazy(() => import('./pages/Dashboard'));
 const Section1 = React.lazy(() => import('./pages/Dashboard/Section1'));
-const Section2 = React.lazy(() => import('./pages/Dashboard/Section2'));
+const Section2 = React.lazy(() => import('./pages/Dashboard'));
 const SignUpForm = React.lazy(() => import('./components/AuthComponents/SignUp'));
 const ForgotPassword = React.lazy(() => import('./components/AuthComponents/ForgotPassword'));
 const NotFound = React.lazy(() => import('./pages/NotFound'));

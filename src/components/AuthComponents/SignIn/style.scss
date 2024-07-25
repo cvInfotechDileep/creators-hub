@@ -304,6 +304,11 @@
     }
   }
   
+  .customInput{
+    background-color: #F3F4F6 !important;
+    box-shadow: 0px 1px 2px 0px #0000000D;
+    border: none !important;
+}
   .auth-card-container {
     border-radius: 20px;
     border: 1px solid #0000001a;
@@ -320,6 +325,8 @@
     z-index: 1;
     position: relative;
     overflow: hidden;
+    border:none;
+    background: none;
     min-height: 350px;
     transform: translate(0%, 0%) scale(1);
     transition: transform 0.3s ease-out 00.5s;
@@ -355,7 +362,7 @@
   }
   
   .auth-card-container:hover .auth-card-gradient-footer {
-    background-image: url("./../../assets/Images/headergradient.png");;
+    background-image: url("./../../../assets/Images/headergradient.png");;
     background-size: cover;
     position: absolute;
     background-position: center;

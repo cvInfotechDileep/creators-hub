@@ -1,0 +1,193 @@
+.coneecting-people-wrapper {
+    position: relative;
+    width: 100%; /* Responsive width */
+    height: 100%; /* Responsive height (100% of viewport height) */
+    /* background-image:  url("./../assets/Images/connectingPeople.png"); */
+    /* background-size: 100% auto; 
+    background-repeat: no-repeat;
+    background-position: center; */
+    display: flex;
+    align-items: end;
+    margin: 0 0 80px 0;
+  }
+  .connecting-people-video {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .connecting-people-video video {
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(180deg, #b22020 7.2%, rgba(255, 255, 255, 0.2) 22%, rgba(255, 255, 255, 0.4) 58.67%, #b50a0a 94.67%); */
+  
+  }
+  .connecting-people-video::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #FFFFFF 5.2%, rgba(255, 255, 255, 0.2) 22%, rgba(255, 255, 255, 0.4) 75.67%, #FFFFFF 100%);
+    pointer-events: none; /* Ensure clicks and hover events pass through */
+    z-index: 1; /* Ensure the gradient is behind the video */
+  }
+  
+  .content-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    padding: 10px;
+    box-sizing: border-box; /* Ensure padding is included in width */
+    text-align: center;
+  }
+  
+  .coneecting-people-content {
+    position: relative;
+    width: 100%;
+    height: 70%;
+    bottom: 0%;
+    margin: 0;
+    padding: 0;
+    margin: auto;
+  }
+  .coneecting-people-content h1 {
+    font-family: "Ubuntu Sans";
+    font-size: 56px;
+    line-height: 80px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    font-weight: 800;
+  }
+  .coneecting-people-content h1 .highlight {
+    background: linear-gradient(
+      95deg,
+      #1f3daa 5%,
+      #e7029f 31.89%,
+      #e7029f 44.17%,
+      #e86a43 68.74%,
+      #f6a29f 76.67%,
+      #a58e49 100%
+    );
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .coneecting-people-content p {
+    font-family: "Inter";
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 32px;
+    text-align: center;
+    color: #606e80;
+    z-index: 1;
+    margin: 24px 0 24px 0;
+  }
+  .btn-with-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 5px 0;
+    background-color: transparent;
+  }
+  .btn-with-text p {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .join-now-btn {
+    position: relative;
+    border-radius: 10px !important;
+    z-index: 1;
+  }
+  .join-now-btn:before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 5px);
+    height: calc(100% + 5px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+  }
+  .join-now-btn:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+  .join-now-btn:hover:before {
+    opacity: 1;
+  }
+  @keyframes glowing {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  
+  @media (max-width: 451px) {
+    .coneecting-people-content{
+      margin: auto !important;
+    }
+    .coneecting-people-content h1 {
+      font-size: 40px;
+      line-height: 48px;
+    }
+    .coneecting-people-content p {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 32px;
+    }
+    .coneecting-people-wrapper {
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: top;
+      margin: 0 0 40px 0;
+    }
+  
+    .content-overlay {
+      position: relative;
+    }
+  }
+  
+  @media (min-width: 452px) and (max-width: 1230px) {  
+    .join-creator-hub-row {
+      padding: 40px  0  20px 0 !important;
+  }
+  .content-overlay {
+    position: relative;
+  }
+  }
+  
