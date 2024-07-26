@@ -9,6 +9,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import GoogleLogo from './../../../assets/svg/GoogleLogo.svg';
 import TwitchLogo from './../../../assets/svg/twitch.svg';
 import AppleLogo from './../../../assets/svg/apple.svg';
+import hidePasswordIcon from '../../../assets/svg/hidePasswordIcon.svg'
+import passwordIcon from '../../../assets/svg/passwordIcon.svg'
 import YoutubeLogo from './../../../assets/svg/youtube.svg';
 import TwitterLogo from './../../../assets/svg/twitter.svg';
 import Right from "./../../../assets/svg/chevronRight1.svg";
@@ -188,7 +190,10 @@ const SignInForm = () => {
                             onChange={(e) => setPassword(e.target.value)}
                             required
                           />
-                          <InputGroup.Text
+                          <InputGroup.Text className='customInput' onClick={togglePasswordVisibility} style={{ cursor: 'pointer' }}>
+                      <img src={showPassword ? hidePasswordIcon : passwordIcon} alt="toggle password visibility" />
+                    </InputGroup.Text>
+                          {/* <InputGroup.Text
                           className='customInput'
                             style={{
                               cursor: 'pointer',
@@ -204,7 +209,7 @@ const SignInForm = () => {
                             <FontAwesomeIcon
                               icon={showPassword ? faEyeSlash : faEye}
                             />
-                          </InputGroup.Text>
+                          </InputGroup.Text> */}
                         </InputGroup>
 
                         {/* <InputGroup className='mb-3'>

@@ -8,7 +8,7 @@ const ConnectionPeople = () => {
     <div className="coneecting-people-wrapper">
       <Container fluid>
         <Row className="text-center text-bottom coneecting-people-content align-items-end">
-          <Col>
+          
             <div className="connecting-people-video">
               <video autoPlay loop muted playsInline>
                 <source
@@ -39,7 +39,7 @@ const ConnectionPeople = () => {
                 <p>It’s Free! 🎉</p>
               </div>
             </div>
-          </Col>
+          
         </Row>
       </Container>
     </div>

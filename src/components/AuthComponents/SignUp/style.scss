@@ -233,11 +233,11 @@
 }
 
 .rotate5deg {
-    transform: rotate(5deg) !important;
+    transform: rotate(3deg) !important;
 }
 
 .rotate8deg {
-    transform: rotate(8deg) !important;
+    transform: rotate(6deg) !important;
 }
 
 .rotate0deg {
@@ -245,7 +245,7 @@
 }
 
 .rotate-5deg {
-    transform: rotate(-5deg);
+    transform: rotate(-3deg);
 }
 
 .slide-in>div:nth-child(1) {
@@ -368,8 +368,8 @@
     // z-index: 1;
     // position: relative;
     // overflow: hidden;
-    // border:none;
-    // background: none;
+    border:none;
+    background: none;
     // min-height: 350px;
     // transform: translate(0%, 0%) scale(1);
     // transition: transform 0.3s ease-out 00.5s;
@@ -560,6 +560,10 @@
 .border-lightBorder{
     box-shadow: 0px 3px 4px 0px #0000000D;
     border:none
+}
+.border-lightBorder:hover{
+    box-shadow: 0px 3px 12px 0px #0000001F;
+
 }
 .btn:disabled{
     pointer-events:all !important;

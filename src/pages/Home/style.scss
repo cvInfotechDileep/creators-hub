@@ -9,56 +9,6 @@
   align-self: center;
 }
 
-.globalGrediantBtn {
-  font-family: "Inter" !important;
-  font-size: 18px !important;
-  padding: 0 !important;
-  width: 78px;
-  height: 42px;
-  border-radius: 12px !important;
-  font-weight: 600 !important;
-  position: relative;
-  line-height: 21.78px !important;
-  letter-spacing: 0.005em;
-  text-align: center !important;
-  background-color: #1e1e1e;
-  margin-left: 40px;
-}
-
-.globalGrediantBtn:before {
-  content: "";
-  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  background-size: 400%;
-  z-index: -1;
-  filter: blur(5px);
-  width: calc(100% + 5px);
-  height: calc(100% + 5px);
-  animation: glowing 20s linear infinite;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  border-radius: 10px;
-  /* border: 10px solid; */
-}
-
-.globalGrediantBtn:after {
-  z-index: -1;
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #111;
-  left: 0;
-  top: 0;
-  border-radius: 10px;
-}
-
-.globalGrediantBtn:hover:before {
-  opacity: 1;
-}
-
 /*  Authentication page start */
 :root {
   --body_background: white;

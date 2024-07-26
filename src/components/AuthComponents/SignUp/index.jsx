@@ -484,7 +484,6 @@ const SignUpForm = () => {
                     </Flex>
                   )
                 }
-
               </Col>
             </Row>
           </Row>
@@ -577,7 +576,7 @@ const SignUpForm = () => {
                     {/* {current > 0 && (
                       <Button
                         variant='dark'
-                        className=' d-flex mx-2 gap-2'
+                        className=' d-flex mx-2 gap-2 globalGrediantBtn'
                         onClick={() => prev()}
                         style={{ fontSize: "18px", alignItems: "center", display: "flex" }}
                       >
@@ -595,7 +594,7 @@ const SignUpForm = () => {
                           (current === 0 && !selectedCard) ||
                           (current === 1 && (!username || usernameValid !== false))
                         }
-                        className={current === 1 && (!username || usernameValid !== true) ? 'cursor-not-allowed' : ''}
+                        className={`globalGrediantBtn ${current === 1 && (!username || usernameValid !== true) ? 'cursor-not-allowed' : ''}`}
                         style={{ fontSize: "18px", alignItems: "center", display: "flex" }}
                       >
                         Next
@@ -617,7 +616,6 @@ const SignUpForm = () => {
                     )}
                   </div>
                 </Row>
-
               </Col>
             </Row>
           </Col>

@@ -65,11 +65,11 @@ const ForgotPassWord = () => {
                                     <Col md={8}>
                                         <form>
                                             <InputGroup className='mb-3'>
-                                                <InputGroup.Text className='cutomInput'>
+                                                <InputGroup.Text className='customInput'>
                                                     <img className='mx-2' src={mail} />
                                                 </InputGroup.Text>
                                                 <FormControl
-                                                    className='cutomInput'
+                                                    className='customInput'
                                                     placeholder='you@email.com'
                                                     aria-label='Email'
                                                     value={email}
