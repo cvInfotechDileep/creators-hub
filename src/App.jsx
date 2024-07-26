@@ -6,7 +6,6 @@ import routesConfig from './routes';
 import NotFound from './pages/NotFound';
 import Loading from './components/Loading';
 
-const baseUrl = 'https://creatorshub.online/newdemo/';
 
 const App = () => {
   const isAuthenticated = useSelector((state) => state.auth.token);
@@ -36,7 +35,7 @@ const App = () => {
           <Route
             path="*"
             element={
-              isAuthenticated ? <Navigate to="/dashboard" /> : <Navigate to={`${baseUrl}/signin`} />
+              isAuthenticated ? <Navigate to="/dashboard" /> : <Navigate to="/newdemo" />
             }
           />
           <Route path="*" element={<NotFound />} />

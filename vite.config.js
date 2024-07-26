@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: 'https://creatorshub.online/newdemo/',
+  base: 'http://dev.creatorshub.online/',
   plugins: [react()],
   resolve: {
     alias: [{ find:"@", replacement: "/src"}],
