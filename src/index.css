@@ -100,4 +100,7 @@ body.dark {
   background-color: #121212;
   color: #E0E0E0;
 }
+:where(.css-p8b6i).ant-steps{
+  display: none !important;
+}
 

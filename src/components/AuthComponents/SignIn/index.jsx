@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { faArrowLeft, faKey, faEyeSlash, faEye, faEnvelope } from '@fortawesome/free-solid-svg-icons';
@@ -16,13 +16,14 @@ import TwitterLogo from './../../../assets/svg/twitter.svg';
 import Right from "./../../../assets/svg/chevronRight1.svg";
 import mail from './../../../assets/svg/mail.svg';
 import key from './../../../assets/svg/key.svg';
-// import Right1 from "./../../..//assets/svg/chevronRight.svg";
+import arrownext from "./../../../assets/svg/arrownext.svg";
 import './style.scss';
 import './../style.scss';
 import CarouselCard from '../CarouselCard';
 
 const SignInForm = () => {
   const [email, setEmail] = useState('');
+  const [loginUrl, setLoginUrl] = useState(null);
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const dispatch = useDispatch();
@@ -33,7 +34,8 @@ const SignInForm = () => {
     e.preventDefault();
     dispatch(signInStart());
     try {
-      const response = await signinApi({ email, password });
+      const { data } = await signinApi({ email, password });
+      console.log({ data })
       const { token } = response.data;
       localStorage.setItem('token', token);
       dispatch(signInSuccess(token));
@@ -46,6 +48,29 @@ const SignInForm = () => {
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+
+  useEffect(() => {
+    fetch('https://creatorshub.online/apibackend/auth/google', {
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error('Something went wrong!');
+      })
+      .then((data) =>{
+        console.Log(data,"kkkkkkkkkkk")
+         setLoginUrl(data.url)
+      }
+    )
+      .catch((error) => console.error(error));
+  }, []);
+
+
 
   return (
     <>
@@ -71,6 +96,7 @@ const SignInForm = () => {
                     <div>
                       <p className='fs-6 m-0 textWithClick common-paragraph'>
                         Don’t have an account? <span className='linkBtn'>
+                          { }
                           <Link
                             className='text-black fw-bold underlineposition'
                             to='/signup'
@@ -100,15 +126,31 @@ const SignInForm = () => {
                   </Row>
                   <Row className='justify-content-center social-signup-btn text-center mt-2 w-75'>
                     <Col sm={12} className='position-relative my-2'>
+                      {/* <div>
+                        {loginUrl != null && (
+                          <a href={loginUrl}>Google Sign In</a>
+                        )}
+                      </div> */}
+                      {console.log(loginUrl,"öooo")}
                       <Button
-                        variant='light'
-                        className='bg-white signup-btn-auth common-button'
-                        onClick={() => { }}
-                      >
-                        <img className='mx-2' src={GoogleLogo} />
-                        Sign in with Google
-                        <img className='mx-2' src={Right} />
-                      </Button>
+                          variant='light'
+                          className='bg-white signup-btn-auth common-button'
+                          onClick={() => navigate(loginUrl)}
+                        >
+                          <img className='mx-2' src={GoogleLogo} alt="Google Logo" />
+                          Sign in with Google
+                          <img className='mx-2' src={Right} alt="Arrow Right" />
+                        </Button>
+                      {/* <Button
+                      variant='light'
+                      className='bg-white signup-btn-auth common-button'
+                      onClick={() => { }}
+                    >
+                      <img className='mx-2' src={GoogleLogo} />
+                      
+                      Sign in with Google
+                      <img className='mx-2' src={Right} />
+                    </Button> */}
                     </Col>
 
                     <Col sm={12} className='position-relative my-2'>
@@ -164,11 +206,11 @@ const SignInForm = () => {
                       <form>
                         <InputGroup className='mb-3'>
                           <InputGroup.Text
-                          className='customInput'>
+                            className='customInput'>
                             <img className='mx-2' src={mail} />
                           </InputGroup.Text>
                           <FormControl
-                          className='customInput'
+                            className='customInput'
                             placeholder='you@email.com'
                             aria-label='Email'
                             value={email}
@@ -178,11 +220,11 @@ const SignInForm = () => {
                         </InputGroup>
                         <InputGroup className='mb-3'>
                           <InputGroup.Text
-                          className='customInput'>
+                            className='customInput'>
                             <img className='mx-2' src={key} />
                           </InputGroup.Text>
                           <FormControl
-                          className='customInput'
+                            className='customInput'
                             type={showPassword ? 'text' : 'password'}
                             placeholder='Password'
                             aria-label='Password'
@@ -191,56 +233,9 @@ const SignInForm = () => {
                             required
                           />
                           <InputGroup.Text className='customInput' onClick={togglePasswordVisibility} style={{ cursor: 'pointer' }}>
-                      <img src={showPassword ? hidePasswordIcon : passwordIcon} alt="toggle password visibility" />
-                    </InputGroup.Text>
-                          {/* <InputGroup.Text
-                          className='customInput'
-                            style={{
-                              cursor: 'pointer',
-                              backgroundColor: 'white',
-                              border: 'none',
-                              position: 'absolute',
-                              right: '1px',
-                              top: '4px',
-                              zIndex: '999',
-                            }}
-                            onClick={togglePasswordVisibility}
-                          >
-                            <FontAwesomeIcon
-                              icon={showPassword ? faEyeSlash : faEye}
-                            />
-                          </InputGroup.Text> */}
+                            <img src={showPassword ? hidePasswordIcon : passwordIcon} alt="toggle password visibility" />
+                          </InputGroup.Text>
                         </InputGroup>
-
-                        {/* <InputGroup className='mb-3'>
-                    <InputGroup.Text className='cutomInput'>
-                      <img className='mx-2' src={mail} />
-                    </InputGroup.Text>
-                    <FormControl
-                      className='cutomInput'
-                      placeholder='you@email.com'
-                      aria-label='Email'
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      required
-                    />
-                  </InputGroup>
-                  <InputGroup className='mb-3'>
-                    <InputGroup.Text className='cutomInput'>
-                      <img className='mx-2' src={key} />
-                    </InputGroup.Text>
-                    <FormControl
-                      className='cutomInput'
-                      type={showPassword ? 'text' : 'password'}
-                      placeholder="Password"
-                      value={password}
-                      onChange={handlePasswordChange}
-                    />
-                    <InputGroup.Text className='cutomInput' onClick={togglePasswordVisibility} style={{ cursor: 'pointer' }}>
-                      <img src={showPassword ? hidePasswordIcon : passwordIcon} alt="toggle password visibility" />
-                    </InputGroup.Text>
-                  </InputGroup> */}
-
                       </form>
                       {error && <div className="text-danger mt-2">{error.message}</div>}
                     </Col>
@@ -265,16 +260,14 @@ const SignInForm = () => {
                       type='submit'
                       onClick={handleSubmit}
                       variant='dark'
-                      className='d-flex text-white fw-semibold gap-2 common-button'
+                      className='d-flex text-white fw-semibold gap-2 common-button globalGrediantBtn'
                       size='lg'
                       disabled={loading}
                       style={{ fontSize: "18px" }}
                     >
                       {loading ? 'Signing in...' : 'Sign In'}
                       <span>
-                        <svg width='6' height='8' viewBox='0 0 6 8' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                          <path d='M1.25 7.5L4.75 4L1.25 0.5' stroke='white' strokeLinecap='round' strokeLinejoin='round' />
-                        </svg>
+                        <img src={arrownext} alt="arrow" />
                       </span>
                     </Button>
                   </div>

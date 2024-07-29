@@ -120,10 +120,6 @@ const CarouselCard = () => {
         return () => clearInterval(interval);
     }, []);
 
-    const handleAnimationEnd = (index) => {
-        setActiveSlide(index);
-    };
-
     return (
         <>
             <Col
@@ -135,8 +131,8 @@ const CarouselCard = () => {
                 className={`margin-padding auth-gallery  ${isVisible ? "slide-in" : "slide-out"}`}
                 style={{ minHeight: "100vh", overflow: "hidden" }}
             >
-                <Row className={`auth-second-slide m-auto d-flex justify-content-center align-content-center ${isVisible ? (activeSlide >= 1 ? "rotate-5deg" : "") : ""} `} onAnimationEnd={() => handleAnimationEnd(0)}>
-                    <div className="card-container " style={{ display: "flex", justifyContent: "space-between", flexDirection: "column" }}>
+                <Row className={`auth-second-slide m-auto d-flex justify-content-center align-content-center ${isVisible ? (activeSlide >= 1 ? "rotate-5deg" : "") : ""} `} >
+                    <div className="card-container " style={{ display: "flex", justifyContent: "center", flexDirection: "column" }}>
                         <Card className="main-card text-center">
                             <Card.Body className="py-0 my-4">
                                 <Card.Title>
@@ -145,12 +141,8 @@ const CarouselCard = () => {
                                         <strong className="rest-highlight">Streaming</strong>
                                     </h3>
                                 </Card.Title>
-                                <Card.Text>
-                                    <p>
-                                        Connect with creators in real-time with live chat and
-                                        interactive features on CreatorsHub. Send tips, crowdfund,
-                                        and share wishlist items directly.
-                                    </p>
+                                <Card.Text style={{fontSize:"16px", lineHeight:"1.2"}}>
+                                Connect with creators via live chat, tips, crowdfunding, and wishlist sharing.
                                 </Card.Text>
                             </Card.Body>
                         </Card>
@@ -162,8 +154,8 @@ const CarouselCard = () => {
                         <div className="card-gradient-footer"></div>
                     </div>
                 </Row>
-                <Row className={`auth-second-slide m-auto d-flex justify-content-center align-content-center ${isVisible ? (activeSlide >= 2 ? "rotate5deg" : "") : ""}  `} onAnimationEnd={() => handleAnimationEnd(1)} >
-                    <div className="card-container" style={{ display: "flex", justifyContent: "space-between", flexDirection: "column" }}>
+                <Row className={`auth-second-slide m-auto d-flex justify-content-center align-content-center ${isVisible ? (activeSlide >= 2 ? "rotate5deg" : "") : ""}  `}  >
+                    <div className="card-container" style={{ display: "flex", justifyContent: "center", flexDirection: "column" }}>
                         <Card className="main-card text-center">
                             <Card.Body className="py-0 my-4">
                                 {" "}
@@ -177,12 +169,9 @@ const CarouselCard = () => {
                                         <strong className="rest-highlight"> Payment Magic</strong>
                                     </h3>
                                 </Card.Title>
-                                <Card.Text>
-                                    <p>
-                                        Enjoy seamless one-tap payments on CreatorsHub. Support
-                                        creators instantly with tips and crowdfunding
-                                        contributions, hassle-free.
-                                    </p>
+                                <Card.Text style={{fontSize:"16px", lineHeight:"1.2"}}>
+                                Seamless one-tap payments: support creators with tips and crowdfunding.
+                                    
                                 </Card.Text>
                             </Card.Body>
                         </Card>
@@ -193,8 +182,8 @@ const CarouselCard = () => {
                         <div className="card-gradient-footer"></div>
                     </div>
                 </Row>
-                <Row className={`auth-second-slide m-auto  d-flex justify-content-center align-content-center  ${isVisible ? (activeSlide >= 3 ? "rotate8deg" : "") : ""} `} onAnimationEnd={() => handleAnimationEnd(2)}>
-                    <div className="card-container" style={{ display: "flex", justifyContent: "space-between", flexDirection: "column" }}>
+                <Row className={`auth-second-slide m-auto  d-flex justify-content-center align-content-center  ${isVisible ? (activeSlide >= 3 ? "rotate8deg" : "") : ""} `} >
+                    <div className="card-container" style={{ display: "flex", justifyContent: "center", flexDirection: "column" }}>
                         <Card className="main-card text-center">
                             <Card.Body className="py-0 my-4">
                                 <Card.Title>
@@ -207,13 +196,8 @@ const CarouselCard = () => {
                                         </span>{" "}
                                     </h3>
                                 </Card.Title>
-                                <Card.Text>
-                                    <p>
-                                        Discover and follow your favorite creators for the content
-                                        you love. Stay updated with their posts, streams, and
-                                        engage directly to support them. Join their community with
-                                        a simple click.
-                                    </p>
+                                <Card.Text style={{fontSize:"16px", lineHeight:"1.2"}}>                             
+                                Follow favorite creators for updates, streams, and direct engagement. Join easily.                  
                                 </Card.Text>
                             </Card.Body>
                         </Card>
@@ -229,8 +213,8 @@ const CarouselCard = () => {
                         <div className="card-gradient-footer"></div>
                     </div>
                 </Row>
-                <Row className="auth-second-slide m-auto  d-flex justify-content-center align-content-center" onAnimationEnd={() => handleAnimationEnd(3)}>
-                    <div className="card-container" style={{ display: "flex", justifyContent: "space-between", flexDirection: "column" }}>
+                <Row className="auth-second-slide m-auto  d-flex justify-content-center align-content-center" >
+                    <div className="card-container" style={{ display: "flex", justifyContent: "center", flexDirection: "column" }}>
                         <Card className="main-card text-center">
                             <Card.Body className="py-0 my-4">
                                 <Card.Title>
@@ -240,12 +224,9 @@ const CarouselCard = () => {
                                         <span className="highlight-italic"> Per View </span>{" "}
                                     </h3>
                                 </Card.Title>
-                                <Card.Text>
-                                    <p>
-                                        Monetize your best work with exclusive pay-per-video and
-                                        premium content options. Engage your audience with unique
-                                        features and insights, enhancing viewer satisfaction.
-                                    </p>
+                                <Card.Text style={{fontSize:"16px", lineHeight:"1.2"}}>
+                                Monetize top content with pay-per-video, premium options, and unique features.
+                                    
                                 </Card.Text>
                             </Card.Body>
                         </Card>
@@ -364,7 +345,7 @@ export default CarouselCard;
 //                                             )}
 //                                         </h3>
 //                                     </Card.Title>
-//                                     <Card.Text>
+//                                     <Card.Text style={{fontSize:"16px"}}>
 //                                         <p className="pb-2 text-center">{card.text}</p>
 //                                     </Card.Text>
 //                                 </Card.Body>

@@ -54,7 +54,7 @@ const ToggleTabCarousal = () => {
                 {!switcherEnable ? (
                     <Row className="p-3 card-container-row justify-content-center">
                         <Col md={12} lg={6} className="card-container-wrapper">
-                            <div className="card-container " style={{ display: "flex", justifyContent: "space-between", flexDirection: "column" }}>
+                            <div className="card-container " style={{ display: "flex", justifyContent: "space-between", flexDirection: "column", width:"98%" }}>
                                 <Card className="main-card">
                                     <Card.Body className="pt-0 pb-0">
                                         <Card.Title>
@@ -81,7 +81,7 @@ const ToggleTabCarousal = () => {
                             </div>
                         </Col>
                         <Col md={12} lg={6} className="card-container-wrapper">
-                            <div className="card-container" style={{ display: "flex", justifyContent: "space-between", flexDirection: "column" }}>
+                            <div className="card-container" style={{ display: "flex", justifyContent: "space-between", flexDirection: "column", width:"98%" }}>
                                 <Card className="main-card">
                                     <Card.Body className="pt-0 pb-0">
                                         {" "}
@@ -112,7 +112,7 @@ const ToggleTabCarousal = () => {
                             </div>
                         </Col>
                         <Col md={12} lg={6} className="card-container-wrapper">
-                            <div className="card-container" style={{ display: "flex", justifyContent: "space-between", flexDirection: "column" }}>
+                            <div className="card-container" style={{ display: "flex", justifyContent: "space-between", flexDirection: "column",width:"98%" }}>
                                 <Card className="main-card">
                                     <Card.Body className="pt-0 pb-0">
                                         <Card.Title>
@@ -148,7 +148,7 @@ const ToggleTabCarousal = () => {
                             </div>
                         </Col>
                         <Col md={12} lg={6} className="card-container-wrapper">
-                            <div className="card-container" style={{ display: "flex", justifyContent: "space-between", flexDirection: "column" }}>
+                            <div className="card-container" style={{ display: "flex", justifyContent: "space-between", flexDirection: "column", width:"98%"}}>
                                 <Card className="main-card">
                                     <Card.Body className="pt-0 pb-0">
                                         <Card.Title>
@@ -185,7 +185,7 @@ const ToggleTabCarousal = () => {
                         {" "}
                         <Row className="p-3 card-container-row justify-content-center">
                             <Col md={12} lg={6} className="card-container-wrapper">
-                                <div className="card-container " style={{ display: "flex", justifyContent: "space-between", flexDirection: "column" }}>
+                                <div className="card-container " style={{ display: "flex", justifyContent: "space-between", flexDirection: "column",width:"98%" }}>
                                     <Card className="main-card">
                                         <Card.Body className="pt-0 pb-0">
                                             <Card.Title>
@@ -213,7 +213,7 @@ const ToggleTabCarousal = () => {
                                 </div>
                             </Col>
                             <Col md={12} lg={6} className="card-container-wrapper">
-                                <div className="card-container  " style={{ display: "flex", justifyContent: "space-between", flexDirection: "column" }}>
+                                <div className="card-container  " style={{ display: "flex", justifyContent: "space-between", flexDirection: "column", width:"98%" }}>
                                     <div>
                                         <Card className="main-card">
                                             <Card.Body className="pt-0 pb-0">
@@ -249,7 +249,7 @@ const ToggleTabCarousal = () => {
                                 </div>
                             </Col>
                             <Col md={12} lg={6} className="card-container-wrapper">
-                                <div className="card-container" style={{ display: "flex", justifyContent: "space-between", flexDirection: "column" }}>
+                                <div className="card-container" style={{ display: "flex", justifyContent: "space-between", flexDirection: "column", width:"98%" }}>
                                     <Card className="main-card">
                                         <Card.Body className="pt-0 pb-0">
                                             <Card.Title>
@@ -279,7 +279,7 @@ const ToggleTabCarousal = () => {
                                 </div>
                             </Col>
                             <Col md={12} lg={6} className="card-container-wrapper">
-                                <div className="card-container " style={{ display: "flex", justifyContent: "space-between", flexDirection: "column" }}>
+                                <div className="card-container " style={{ display: "flex", justifyContent: "space-between", flexDirection: "column", width:"98%" }}>
                                     <Card className="main-card">
                                         <Card.Body className="pt-0 pb-0">
                                             <Card.Title>

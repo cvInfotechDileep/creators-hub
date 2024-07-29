@@ -12,6 +12,22 @@
     gap: 15px 0;
     
   }
+  .auth-gallery {
+    .auth-second-slide {
+        transition: transform 1s ease-in-out;
+        &.slide-in {
+            transform: translateX(0);
+        }
+        &.slide-out {
+            transform: translateX(-100%);
+        }
+        &:hover {
+            // Prevent animation when hovered
+            transition: none;
+        }
+    }
+}
+
   .card-container-wrapper {
     padding: 0 !important;
     margin: 0 !important;
@@ -146,8 +162,8 @@
   }
   
   .bottom-image {
-    width: 90% !important;
-    margin: auto;
+    width: 100% !important;
+    // margin: auto;
     padding: 0;
     position: relative;
     height: 288px !important;
@@ -253,7 +269,7 @@
     height: 288px !important;
     /* background-color: #a58e49; */
     left: 0%;
-    bottom: -3%;
+    bottom: -6%;
     /* transform: translate(-0%,0%); */
   }
   .bottom-image3 .new-card3 {
