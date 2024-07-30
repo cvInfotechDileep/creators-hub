@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { faArrowLeft, faKey, faEyeSlash, faEye, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { signInStart, signInSuccess, signInFailure } from '../../../redux/authSlice';
-import { signinApi } from '../../../Apis/api';
+import { signinApi, signinWithAppleApi, signinWithGoogleApi, signinWithTwitchApi, signinWithTwitterApi } from '../../../Apis/api';
 import { Button, Col, Container, FormControl, InputGroup, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import GoogleLogo from './../../../assets/svg/GoogleLogo.svg';
@@ -25,6 +25,7 @@ import GoogleLoginBtn from '../GoogleLogin';
 const SignInForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loginUrl, setLognUrl] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -48,6 +49,78 @@ const SignInForm = () => {
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+
+  const handleGoogleLogin = ()=>{
+    console.log("kkkkkkkk");
+    
+    window.open('https://creatorshub.online/apibackend/auth/google/callback', "_self")
+    
+    // dispatch(signInStart());
+    // try {
+    //   // const data = await signinWithGoogleApi();
+    //   console.log(data)
+    //   // const { token } = response.data;
+    //   // localStorage.setItem('token', token);
+    //   // dispatch(signInSuccess(token));
+    //   navigate('/dashboard');
+    // } catch (error) {
+    //   console.log(error)
+      
+    //   // dispatch(signInFailure(error.response.data));
+    // }
+  }
+  const handleTwitchLogin =async()=>{
+    console.log("kkkkkkkk")
+    
+    dispatch(signInStart());
+    try {
+      const data = await signinWithTwitchApi();
+      console.log(data)
+      // const { token } = response.data;
+      // localStorage.setItem('token', token);
+      // dispatch(signInSuccess(token));
+      navigate('/dashboard');
+    } catch (error) {
+      console.log(error)
+      
+      // dispatch(signInFailure(error.response.data));
+    }
+  }
+  const handleAppleLogin =async()=>{
+    console.log("kkkkkkkk")
+    
+    dispatch(signInStart());
+    try {
+      const data = await signinWithAppleApi();
+      console.log(data)
+      // const { token } = response.data;
+      // localStorage.setItem('token', token);
+      // dispatch(signInSuccess(token));
+      navigate('/dashboard');
+    } catch (error) {
+      console.log(error)
+      
+      // dispatch(signInFailure(error.response.data));
+    }
+  }
+  const handleTwitterLogin =async()=>{
+    console.log("kkkkkkkk")
+    
+    dispatch(signInStart());
+    try {
+      const data = await signinWithTwitterApi();
+      console.log(data)
+      // const { token } = response.data;
+      // localStorage.setItem('token', token);
+      // dispatch(signInSuccess(token));
+      navigate('/dashboard');
+    } catch (error) {
+      console.log(error)
+      
+      // dispatch(signInFailure(error.response.data));
+    }
+  }
+ 
 
   
   // Check for Google token on mount
@@ -113,22 +186,23 @@ const SignInForm = () => {
                   </Row>
                   <Row className='justify-content-center social-signup-btn text-center mt-2 w-75'>
                     <Col sm={12} className='position-relative my-2'>
-                      {/* <Button
+                      <Button
                         variant='light'
                         className='bg-white signup-btn-auth common-button'
-                        onClick={() => { }}
+                        onClick={() => {handleGoogleLogin() }}
                       >
                         <img className='mx-2' src={GoogleLogo} />
                         Sign in with Google
                         <img className='mx-2' src={Right} />
-                      </Button> */}
-                      <GoogleLoginBtn />
+                      </Button>
+                      {/* <GoogleLoginBtn /> */}
                     </Col>
 
                     <Col sm={12} className='position-relative my-2'>
                       <Button
                         variant='light'
                         className='border border-1 bg-white signup-btn-auth common-button'
+                        onClick={() => {handleTwitchLogin() }}
                       >
                         <img className='mx-2' src={TwitchLogo} />
                         Sign in with Twitch
@@ -139,6 +213,7 @@ const SignInForm = () => {
                       <Button
                         variant='light'
                         className='border border-1 bg-white signup-btn-auth common-button'
+                        onClick={() => {handleAppleLogin() }}
                       >
                         <img className='mx-2' src={AppleLogo} />
                         Sign in with Apple
@@ -155,6 +230,7 @@ const SignInForm = () => {
                         <Button
                           variant='light'
                           className='border border-1 bg-white signup-btn-auth common-button'
+                          onClick={() => {handleGoogleLogin() }}
                         >
                           <img src={YoutubeLogo} />
                         </Button>
@@ -166,6 +242,7 @@ const SignInForm = () => {
                           variant='light'
                           className='border border-1 bg-white signup-btn-auth common-button'
                           size='50px'
+                          onClick={() => {handleTwitterLogin() }}
                         >
                           <img src={TwitterLogo} />
                         </Button>

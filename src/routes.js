@@ -15,7 +15,7 @@ const NotFound = React.lazy(() => import('./pages/NotFound'));
 const routesConfig = [
   {
     path: "/",
-    component: Home
+    component: Home,
   },
   {
     path: "/about",

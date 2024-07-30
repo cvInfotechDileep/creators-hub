@@ -162,11 +162,21 @@
   }
   
   .bottom-image {
+    // width: 100% !important;
+    // // margin: auto;
+    // padding: 0;
+    // position: relative;
+    // height: 288px !important;
+    // /* z-index: 3; */
+    // left: 0%;
+    // bottom: -5%;
+
     width: 100% !important;
     // margin: auto;
     padding: 0;
     position: relative;
-    height: 288px !important;
+    height: 70% !important;
+    align-items: center;
     /* z-index: 3; */
     left: 0%;
     bottom: -5%;
