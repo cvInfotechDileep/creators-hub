@@ -8,12 +8,17 @@ import Loading from './components/Loading';
 
 
 const App = () => {
-  const isAuthenticated = useSelector((state) => state.auth.token);
+  // const isAuthenticated = useSelector((state) => state.auth.token);
+  const token = useSelector((state) => state.auth.token);
 
   const renderRoutes = (routes) => {
     return routes.map((route) => {
       const { path, component: Component, auth, children } = route;
-      if (auth && !isAuthenticated) {
+      // if (auth && !isAuthenticated) {
+      //   return <Route key={path} path={path} element={<Navigate to="/signin" />} />;
+      // }
+      if (auth && !token) {
+        // If the route requires authentication and no token is found, redirect to login
         return <Route key={path} path={path} element={<Navigate to="/signin" />} />;
       }
       if (children) {
@@ -35,7 +40,7 @@ const App = () => {
           <Route
             path="*"
             element={
-              isAuthenticated ? <Navigate to="/dashboard" /> : <Navigate to="/" />
+              token ? <Navigate to="/dashboard" /> : <Navigate to="/" />
             }
           />
           <Route path="*" element={<NotFound />} />

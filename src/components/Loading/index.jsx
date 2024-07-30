@@ -8,7 +8,7 @@ const Loading = () => {
   return (
     <div className="loading-container">
       {/* <div className="loading-spinner"></div> */}
-      <img className="loading-spinner" src={loader} alt='' />
+      <img className="loading-spinner" src={loader} alt='' style={{width:"5%"}}/>
       {/* <p>Loading...</p> */}
     </div>
   );

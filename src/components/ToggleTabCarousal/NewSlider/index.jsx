@@ -1,6 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Carousel, Col, Container, Row } from "react-bootstrap";
-
+import creatorslideone from "./../../../assets/videos/creatorslideone.mp4"
+import creatorslidetwo from "./../../../assets/videos/creatorslidetwo.mp4"
+import creatorslidethree from "./../../../assets/videos/creatorslidethree.mp4"
+import creatorslidefour from "./../../../assets/videos/creatorslidefour.mp4"
 
 import "./style.scss";
 function NewSlider({ typeValue }) {
@@ -69,7 +72,8 @@ function NewSlider({ typeValue }) {
                     allowing your fans to discover your CreatorsHub.
                 </p>
             ),
-            video: 'https://dev.creatorshub.online/homePage_videos/creatorslideone.mp4',
+            // video: 'https://dev.creatorshub.online/homePage_videos/creatorslideone.mp4',
+            video: creatorslideone,
         },
         {
             title: (
@@ -90,7 +94,8 @@ function NewSlider({ typeValue }) {
                     creativity far and wide.
                 </p>
             ),
-            video: 'https://dev.creatorshub.online/homePage_videos/creatorslidetwo.mp4',
+            // video: 'https://dev.creatorshub.online/homePage_videos/creatorslidetwo.mp4',
+            video: creatorslidetwo,
         },
         {
             title: (
@@ -123,7 +128,8 @@ function NewSlider({ typeValue }) {
                     profile, up to a value of $100.`}
                 </p>
             ),
-            video: 'https://dev.creatorshub.online/homePage_videos/creatorslidethree.mp4',
+            // video: 'https://dev.creatorshub.online/homePage_videos/creatorslidethree.mp4',
+            video: creatorslidethree,
         },
         {
             title: (
@@ -148,7 +154,8 @@ function NewSlider({ typeValue }) {
                     connected and engaged with your community.
                 </p>
             ),
-            video: 'https://dev.creatorshub.online/homePage_videos/creatorslidefour.mp4',
+            // video: 'https://dev.creatorshub.online/homePage_videos/creatorslidefour.mp4',
+            video: creatorslidefour,
         },
     ]);
     const [userSliderData, setUserSliderData] = useState([

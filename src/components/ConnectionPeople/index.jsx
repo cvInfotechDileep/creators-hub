@@ -2,6 +2,7 @@ import React from 'react'
 import { Button, Col, Container, Row } from "react-bootstrap";
 import "./style.scss";
 import userPlus from "./../../assets/svg/user-plus.svg";
+import connectingPeople from './../../assets/videos/connectingPeople.mp4'
 
 const ConnectionPeople = () => {
   return (
@@ -12,9 +13,8 @@ const ConnectionPeople = () => {
             <div className="connecting-people-video">
               <video autoPlay loop muted playsInline>
                 <source
-                  src={
-                    "https://dev.creatorshub.online/homePage_videos/connectingPeople.mp4"
-                  }
+                  // src={"https://dev.creatorshub.online/homePage_videos/connectingPeople.mp4"}
+                  src={connectingPeople}
                   type="video/mp4"
                 />
                 Your browser does not support the video tag.

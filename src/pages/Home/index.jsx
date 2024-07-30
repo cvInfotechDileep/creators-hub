@@ -16,11 +16,12 @@ import userPlus from "./../../assets/svg/user-plus.svg";
 import facebookSvg from "./../../assets/svg/facebook.svg";
 import clampGirl from "./../../assets/Images/clampImage.png";
 import "./style.scss"
-import { Link } from 'react-router-dom';
 import ToggleTabCarousal from '../../components/ToggleTabCarousal';
 import ConnectionPeople from '../../components/ConnectionPeople';
 import JoinHub from '../../components/JoinHub';
 import Footer from '../../components/Footer';
+import herosection from './../../assets/videos/herosection.mp4'
+import stream from './../../assets/videos/stream.mp4'
 
 const Home = () => {
     const videoRef = useRef(null);
@@ -179,7 +180,8 @@ const Home = () => {
                                         </div>
                                         <div className="contents">
                                             <video ref={videoRef} id="myVideo" autoPlay loop muted playsInline >
-                                                <source src={'https://dev.creatorshub.online/homePage_videos/herosection.mp4'} type="video/mp4" />
+                                                {/* <source src={'https://dev.creatorshub.online/homePage_videos/herosection.mp4'} type="video/mp4" /> */}
+                                                <source src={herosection} type="video/mp4" />
                                                 Your browser does not support the video tag.
                                             </video>
                                         </div>
@@ -243,7 +245,8 @@ const Home = () => {
                                         <div className="card border-0">
                                             <div className="image">
                                                 <video autoPlay loop muted playsInline >
-                                                    <source src={'https://dev.creatorshub.online/homePage_videos/stream.mp4'} type="video/mp4" />
+                                                    {/* <source src={'https://dev.creatorshub.online/homePage_videos/stream.mp4'} type="video/mp4" /> */}
+                                                    <source src={stream} type="video/mp4" />
                                                     Your browser does not support the video tag.
                                                 </video>
                                             </div>

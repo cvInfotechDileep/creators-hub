@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { faArrowLeft, faKey, faEyeSlash, faEye, faEnvelope } from '@fortawesome/free-solid-svg-icons';
@@ -20,10 +20,10 @@ import arrownext from "./../../../assets/svg/arrownext.svg";
 import './style.scss';
 import './../style.scss';
 import CarouselCard from '../CarouselCard';
+import GoogleLoginBtn from '../GoogleLogin';
 
 const SignInForm = () => {
   const [email, setEmail] = useState('');
-  const [loginUrl, setLoginUrl] = useState(null);
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const dispatch = useDispatch();
@@ -34,8 +34,8 @@ const SignInForm = () => {
     e.preventDefault();
     dispatch(signInStart());
     try {
-      const { data } = await signinApi({ email, password });
-      console.log({ data })
+      const {data} = await signinApi({ email, password });
+      console.log({data})
       const { token } = response.data;
       localStorage.setItem('token', token);
       dispatch(signInSuccess(token));
@@ -49,28 +49,15 @@ const SignInForm = () => {
     setShowPassword(!showPassword);
   };
 
+  
+  // Check for Google token on mount
   useEffect(() => {
-    fetch('https://creatorshub.online/apibackend/auth/google', {
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      }
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw new Error('Something went wrong!');
-      })
-      .then((data) =>{
-        console.Log(data,"kkkkkkkkkkk")
-         setLoginUrl(data.url)
-      }
-    )
-      .catch((error) => console.error(error));
+    const googleToken = localStorage.getItem('googleToken');
+    if (googleToken) {
+      // Do something with the Google token if needed
+      console.log('Google token found:', googleToken);
+    }
   }, []);
-
-
 
   return (
     <>
@@ -96,7 +83,7 @@ const SignInForm = () => {
                     <div>
                       <p className='fs-6 m-0 textWithClick common-paragraph'>
                         Don’t have an account? <span className='linkBtn'>
-                          { }
+                          
                           <Link
                             className='text-black fw-bold underlineposition'
                             to='/signup'
@@ -126,31 +113,16 @@ const SignInForm = () => {
                   </Row>
                   <Row className='justify-content-center social-signup-btn text-center mt-2 w-75'>
                     <Col sm={12} className='position-relative my-2'>
-                      {/* <div>
-                        {loginUrl != null && (
-                          <a href={loginUrl}>Google Sign In</a>
-                        )}
-                      </div> */}
-                      {console.log(loginUrl,"öooo")}
-                      <Button
-                          variant='light'
-                          className='bg-white signup-btn-auth common-button'
-                          onClick={() => navigate(loginUrl)}
-                        >
-                          <img className='mx-2' src={GoogleLogo} alt="Google Logo" />
-                          Sign in with Google
-                          <img className='mx-2' src={Right} alt="Arrow Right" />
-                        </Button>
                       {/* <Button
-                      variant='light'
-                      className='bg-white signup-btn-auth common-button'
-                      onClick={() => { }}
-                    >
-                      <img className='mx-2' src={GoogleLogo} />
-                      
-                      Sign in with Google
-                      <img className='mx-2' src={Right} />
-                    </Button> */}
+                        variant='light'
+                        className='bg-white signup-btn-auth common-button'
+                        onClick={() => { }}
+                      >
+                        <img className='mx-2' src={GoogleLogo} />
+                        Sign in with Google
+                        <img className='mx-2' src={Right} />
+                      </Button> */}
+                      <GoogleLoginBtn />
                     </Col>
 
                     <Col sm={12} className='position-relative my-2'>
