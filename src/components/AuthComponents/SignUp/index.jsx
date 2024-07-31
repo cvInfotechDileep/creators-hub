@@ -1,6 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { message, Steps, Flex, Input, Spin, Progress } from 'antd';
-import { Col, Container, Row, Card, Button, FormControl, InputGroup, Form } from 'react-bootstrap';
+import {
+  Col,
+  Container,
+  Row,
+  Card,
+  Button,
+  FormControl,
+  InputGroup,
+  Form,
+} from 'react-bootstrap';
 import { LoadingOutlined } from '@ant-design/icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
@@ -15,7 +24,7 @@ import key from './../../../assets/svg/key.svg';
 import hidePasswordIcon from './../../../assets/svg/hidePasswordIcon.svg';
 import passwordIcon from './../../../assets/svg/passwordIcon.svg';
 import TwitterLogo from './../../../assets/svg/twitter.svg';
-import Right from "./../../../assets/svg/chevronRight1.svg";
+import Right from './../../../assets/svg/chevronRight1.svg';
 import CreatorSVG from './../../../assets/svg/Creator.svg';
 import arrowprev from './../../../assets/svg/arrowprev.svg';
 import arrownext from './../../../assets/svg/arrownext.svg';
@@ -24,10 +33,9 @@ import CarouselCard from './../CarouselCard';
 import ReCAPTCHA from 'react-google-recaptcha';
 import './../style.scss';
 import { checkUsernameApi, signUpApi } from '../../../Apis/api';
-import creatorjson from "./../../../assets/Creator.json"
-import fanjson from "./../../../assets/Fan.json"
+import creatorjson from './../../../assets/Creator.json';
+import fanjson from './../../../assets/Fan.json';
 import Lottie from 'lottie-web';
-
 
 // Debounce function to limit the rate at which a function can fire
 const debounce = (func, delay) => {
@@ -47,7 +55,7 @@ const SignUpForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [passwordStrength, setPasswordStrength] = useState(0);
   const [strengthText, setStrengthText] = useState('');
-  const [selectedCard, setSelectedCard] = useState("");
+  const [selectedCard, setSelectedCard] = useState('');
   const [username, setUsername] = useState('');
   const [loading, setLoading] = useState(false);
   const [showOtp, setShowOtp] = useState(false);
@@ -105,7 +113,7 @@ const SignUpForm = () => {
       setLoading(true);
       try {
         const { data } = await checkUsernameApi(username, selectedCard);
-        if (data.message === "exist") {
+        if (data.message === 'exist') {
           setUsernameValid(true);
         }
       } catch (error) {
@@ -150,25 +158,60 @@ const SignUpForm = () => {
   //   };
   // }, []);
 
-  const handleSignUp = async () => {
+  const handleSignInSubmit = async (e) => {
+    e.preventDefault();
+    const formData = {
+      email,
+      password,
+      username,
+      user_type: selectedCard,
+      name: username,
+    };
+    const res = await fetch(
+      'https://creatorshub.online/apibackend/api/register',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+        mode: 'no-cors',
+      }
+    );
+    const data = await res.json();
+    console.log(data);
+  };
 
-
-
+  const handleSignUp = async (e) => {
+    e.preventDefault();
     setLoading(true);
     try {
-      // Replace with your actual API call
-      const { data } = await signUpApi({ email, password, username, user_type: selectedCard, name: username });
-      console.log({ data }, "hhhhhhhh")
-      console.log(recaptchaToken);
-      if (data.status) {
+      const response = await signUpApi({
+        email,
+        password,
+        username,
+        user_type: selectedCard,
+      });
+
+      if (response.data.status) {
         setShowOtp(true);
         message.success('Sign up successful. OTP sent to your email.');
       } else {
-        message.error(response.message || 'Sign up failed');
+        message.error(response.data.message || 'Sign up failed');
       }
     } catch (error) {
       console.error('Sign up error:', error);
-      message.error('Sign up failed');
+      if (error.response) {
+        // The request was made and the server responded with a status code
+        // that falls out of the range of 2xx
+        message.error(error.response.data.message || 'Sign up failed');
+      } else if (error.request) {
+        // The request was made but no response was received
+        message.error('No response received from server. Sign up failed.');
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        message.error('Error in setting up request. Sign up failed.');
+      }
     }
     setLoading(false);
   };
@@ -176,7 +219,6 @@ const SignUpForm = () => {
   const handleInputChange = (e) => {
     setUsername(e.target.value);
   };
-
 
   const playAnimation = (sec) => {
     if (sec == 1) {
@@ -203,7 +245,7 @@ const SignUpForm = () => {
     animation.current = Lottie.loadAnimation({
       container: container.current,
       animationData: creatorjson,
-      renderer: "svg",
+      renderer: 'svg',
       loop: false,
       autoplay: false,
     });
@@ -218,7 +260,7 @@ const SignUpForm = () => {
     animation1.current = Lottie.loadAnimation({
       container: container1.current,
       animationData: fanjson,
-      renderer: "svg",
+      renderer: 'svg',
       loop: false,
       autoplay: false,
     });
@@ -246,8 +288,24 @@ const SignUpForm = () => {
     }
   };
   const cards = [
-    { id: 1, title: 'Creator', text: 'I’d like to create a wishlist', svg: CreatorSVG, container: container, playAnimation: playAnimation, reverseAnimation: reverseAnimation },
-    { id: 2, title: 'Fan', text: 'I’m here to follow & support creators', svg: FanSVG, container: container1, playAnimation: playAnimation, reverseAnimation: reverseAnimation },
+    {
+      id: 1,
+      title: 'Creator',
+      text: 'I’d like to create a wishlist',
+      svg: CreatorSVG,
+      container: container,
+      playAnimation: playAnimation,
+      reverseAnimation: reverseAnimation,
+    },
+    {
+      id: 2,
+      title: 'Fan',
+      text: 'I’m here to follow & support creators',
+      svg: FanSVG,
+      container: container1,
+      playAnimation: playAnimation,
+      reverseAnimation: reverseAnimation,
+    },
   ];
 
   const steps = [
@@ -266,16 +324,24 @@ const SignUpForm = () => {
             </Row>
             <Row className='justify-content-center text-center mt-2'>
               <Col md={8}>
-                <p className='textColor'>Please choose your account type. You can support other creators with either of the account types and can change your account type anytime.</p>
+                <p className='textColor'>
+                  Please choose your account type. You can support other
+                  creators with either of the account types and can change your
+                  account type anytime.
+                </p>
               </Col>
             </Row>
-            <Row className='w-75' style={{ textAlign: "-webkit-center" }}>
+            <Row className='w-75' style={{ textAlign: '-webkit-center' }}>
               {cards.map((card) => (
-                <Col md={6} className="mb-4" key={card.id}>
+                <Col md={6} className='mb-4' key={card.id}>
                   <Card
                     className='align-items-center p-2 bg-white'
                     onClick={() => handleSelect(card.title.toLowerCase())}
-                    border={selectedCard === card.title.toLowerCase() ? 'primary' : 'lightBorder'}
+                    border={
+                      selectedCard === card.title.toLowerCase()
+                        ? 'primary'
+                        : 'lightBorder'
+                    }
                     style={{ cursor: 'pointer' }}
                   >
                     <div
@@ -286,7 +352,9 @@ const SignUpForm = () => {
                     {/* <Card.Img variant="top" src={card.svg} style={{ height: "200px" }} /> */}
                     <Card.Body>
                       <Card.Title className='radioBtn'>{card.title}</Card.Title>
-                      <Card.Text className='radioParagraph'>{card.text}</Card.Text>
+                      <Card.Text className='radioParagraph'>
+                        {card.text}
+                      </Card.Text>
                     </Card.Body>
                   </Card>
                 </Col>
@@ -297,34 +365,41 @@ const SignUpForm = () => {
       ),
     },
     {
-      title: "",
+      title: '',
       content: (
         <>
           <Row className='sec-type-row justify-content-center text-center my-5'>
-            <Col sm={12} className='' style={{ placeContent: "end" }}>
+            <Col sm={12} className='' style={{ placeContent: 'end' }}>
               <h6 className='mt-3 mb-2'>
-                <strong className='rest-highlight'> Create your account </strong>
+                <strong className='rest-highlight'>
+                  {' '}
+                  Create your account{' '}
+                </strong>
               </h6>
               <p className='textColor'>Choose a name for your page.</p>
             </Col>
 
             <Col lg={8} md={10} sm={12}>
-              <InputGroup className="mb-3 align-items-center">
-                <InputGroup.Text id="userName" className='textColorUser my-4'>
+              <InputGroup className='mb-3 align-items-center'>
+                <InputGroup.Text id='userName' className='textColorUser my-4'>
                   creatorshub.online/
                 </InputGroup.Text>
                 <FormControl
-                  id="basic-url"
-                  aria-describedby="userName"
+                  id='basic-url'
+                  aria-describedby='userName'
                   className='textColor border-end-0'
-                  placeholder="JhonDoe"
+                  placeholder='JhonDoe'
                   value={username}
                   onChange={handleInputChange}
                 />
                 <InputGroup.Text className='bg-white'>
                   {username ? (
                     loading ? (
-                      <Spin indicator={<LoadingOutlined spin style={{ fontSize: '24px' }} />} />
+                      <Spin
+                        indicator={
+                          <LoadingOutlined spin style={{ fontSize: '24px' }} />
+                        }
+                      />
                     ) : usernameValid === false ? (
                       <span style={{ color: 'green' }}>✔</span>
                     ) : usernameValid === true ? (
@@ -338,10 +413,10 @@ const SignUpForm = () => {
             </Col>
           </Row>
         </>
-      )
+      ),
     },
     {
-      title: "",
+      title: '',
       content: (
         <>
           <Row className='justify-content-center text-center my-5'>
@@ -349,9 +424,7 @@ const SignUpForm = () => {
               <Col className='text-center'>
                 <h6 className='mt-3 mb-2'>
                   <span className='highlight-italic'> Welcome to </span>
-                  <strong className='rest-highlight'>
-                    CreatorsHub,&nbsp;
-                  </strong>
+                  <strong className='rest-highlight'>CreatorsHub,&nbsp;</strong>
                   <strong className='rest-highlight userNameColor'>
                     {username}!
                   </strong>
@@ -360,7 +433,9 @@ const SignUpForm = () => {
             </Row>
             <Row className='justify-content-center text-center mt-2'>
               <Col md={8}>
-                <p className='textColor'>Let’s sign in back into your account.</p>
+                <p className='textColor'>
+                  Let’s sign in back into your account.
+                </p>
               </Col>
             </Row>
             <Row className='justify-content-center social-signup-btn text-center mt-2 w-75'>
@@ -368,7 +443,7 @@ const SignUpForm = () => {
                 <Button
                   variant='light'
                   className='bg-white signup-btn-auth '
-                  onClick={() => { }}
+                  onClick={() => {}}
                 >
                   <img className='mx-2' src={GoogleLogo} />
                   Sign in with Google
@@ -399,14 +474,14 @@ const SignUpForm = () => {
             </Row>
 
             <Row className='justify-content-center social-signup-btn text-center mt-3 w-75'>
-              <Col sm={6}
-                className='position-relative'
-              >
+              <Col sm={6} className='position-relative'>
                 <div className='position-relative d-flex justify-content-center align-items-center'>
                   <Button
                     variant='light'
                     className='border border-1 bg-white signup-btn-auth  '
-                  > <img src={YoutubeLogo} />
+                  >
+                    {' '}
+                    <img src={YoutubeLogo} />
                   </Button>
                 </div>
               </Col>
@@ -423,7 +498,7 @@ const SignUpForm = () => {
               </Col>
             </Row>
             <Row className='justify-content-center text-center mt-3 w-75'>
-            <div className="separator my-2">OR</div>
+              <div className='separator my-2'>OR</div>
               <Col>
                 <Form>
                   <InputGroup className='mb-3'>
@@ -446,23 +521,30 @@ const SignUpForm = () => {
                     <FormControl
                       className='customInput'
                       type={showPassword ? 'text' : 'password'}
-                      placeholder="Password"
+                      placeholder='Password'
                       value={password}
                       onChange={handlePasswordChange}
                     />
-                    <InputGroup.Text className='customInput' onClick={togglePasswordVisibility} style={{ cursor: 'pointer' }}>
-                      <img src={showPassword ? hidePasswordIcon : passwordIcon} alt="toggle password visibility" />
+                    <InputGroup.Text
+                      className='customInput'
+                      onClick={togglePasswordVisibility}
+                      style={{ cursor: 'pointer' }}
+                    >
+                      <img
+                        src={showPassword ? hidePasswordIcon : passwordIcon}
+                        alt='toggle password visibility'
+                      />
                     </InputGroup.Text>
                   </InputGroup>
                   {password && (
-                    <div className='d-flex' style={{ fontSize: "12px" }}>
+                    <div className='d-flex' style={{ fontSize: '12px' }}>
                       <Progress
                         percent={passwordStrength * 25}
                         strokeColor={getProgressBarColor(passwordStrength)}
                         showInfo={false}
                         style={{ marginBottom: '5px' }}
                       />
-                      <p className="password-strength-text">{strengthText}</p>
+                      <p className='password-strength-text'>{strengthText}</p>
                     </div>
                   )}
                   {/* <InputGroup className='mb-3 justify-content-center d-grid'>
@@ -476,18 +558,27 @@ const SignUpForm = () => {
                   </InputGroup> */}
                 </Form>
                 {/* {error && <div className="text-danger mt-2">{error.message}</div>} */}
-                {
-                  showOtp && (
-                    <Flex gap="middle" align="flex-start" className='align-items-center' vertical>
-                      <p className='textColor m-0'>OTP sent on your given email</p>
-                      <Input.OTP formatter={(str) => str.toUpperCase()} {...sharedProps} />
-                    </Flex>
-                  )
-                }
+                {showOtp && (
+                  <Flex
+                    gap='middle'
+                    align='flex-start'
+                    className='align-items-center'
+                    vertical
+                  >
+                    <p className='textColor m-0'>
+                      OTP sent on your given email
+                    </p>
+                    <Input.OTP
+                      formatter={(str) => str.toUpperCase()}
+                      {...sharedProps}
+                    />
+                  </Flex>
+                )}
               </Col>
             </Row>
           </Row>
-        </>)
+        </>
+      ),
     },
   ];
 
@@ -497,8 +588,8 @@ const SignUpForm = () => {
     if (password.length >= 8) strength += 1;
     if (/[A-Z]/.test(password)) strength += 1;
     if (/[0-9]/.test(password)) strength += 1;
-    if (/[^A-Za-z0-9]/.test(password)) strength += 1;
-
+    if (/[^A-Za-z0-9]/.test(password)) strength += 1; // General special character check
+    // if (/[!@#$%^&*]/.test(password)) strength += 1; // Specific special character check
     return strength;
   };
 
@@ -523,8 +614,23 @@ const SignUpForm = () => {
       <Container fluid>
         <Row className='align-items-center'>
           <Col md={6}>
-            <Row style={{ height: "100vh", display: "flex", flexDirection: "column" }}>
-              <Col className='auth-left-main my-5' style={{ flex: 1, display: "flex", flexDirection: "column", width: "90%", alignSelf: "center" }}>
+            <Row
+              style={{
+                height: '100vh',
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
+              <Col
+                className='auth-left-main my-5'
+                style={{
+                  flex: 1,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  width: '90%',
+                  alignSelf: 'center',
+                }}
+              >
                 <Row className='my-4 px-3 top-row'>
                   <div className='d-flex justify-content-between align-items-center'>
                     <Button
@@ -541,7 +647,8 @@ const SignUpForm = () => {
                     </Button>
                     <div>
                       <p className='fs-6 m-0 textWithClick'>
-                        Already have an account? <span className='linkBtn'>
+                        Already have an account?{' '}
+                        <span className='linkBtn'>
                           <Link
                             className='text-black fw-bold underlineposition'
                             to='/signin'
@@ -563,7 +670,8 @@ const SignUpForm = () => {
                   <div className='d-flex'>
                     <div className='flex-grow-1'>
                       <p className='fs-6 m-0 textWithClick'>
-                        By continuing, you agree to the terms of service and <span>
+                        By continuing, you agree to the terms of service and{' '}
+                        <span>
                           <Link
                             className='text-black fw-bold underlineposition'
                             to='/forgot'
@@ -592,10 +700,19 @@ const SignUpForm = () => {
                         variant='dark'
                         disabled={
                           (current === 0 && !selectedCard) ||
-                          (current === 1 && (!username || usernameValid !== false))
+                          (current === 1 &&
+                            (!username || usernameValid !== false))
                         }
-                        className={`globalGrediantBtn ${current === 1 && (!username || usernameValid !== true) ? 'cursor-not-allowed' : ''}`}
-                        style={{ fontSize: "18px", alignItems: "center", display: "flex" }}
+                        className={`globalGrediantBtn ${
+                          current === 1 && (!username || usernameValid !== true)
+                            ? 'cursor-not-allowed'
+                            : ''
+                        }`}
+                        style={{
+                          fontSize: '18px',
+                          alignItems: 'center',
+                          display: 'flex',
+                        }}
                       >
                         Next
                         <span>
@@ -607,9 +724,13 @@ const SignUpForm = () => {
                       <Button
                         variant='dark'
                         className='d-flex text-white fw-semibold gap-2 mx-2 globalGrediantBtn'
-                        onClick={() => handleSignUp()}
+                        onClick={(e) => handleSignUp(e)}
                         disabled={loading || !email || !password}
-                        style={{ fontSize: "18px", alignItems: "center", display: "flex" }}
+                        style={{
+                          fontSize: '18px',
+                          alignItems: 'center',
+                          display: 'flex',
+                        }}
                       >
                         {loading ? 'Signing Up...' : 'Sign Up'}
                       </Button>
