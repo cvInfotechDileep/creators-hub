@@ -265,7 +265,7 @@ function Footer() {
                     </Col>
                 </Row>
             </Container>
-            <div className="footer-gradient"></div>
+            {/* <div className="footer-gradient"></div> */}
         </div>
     );
 }

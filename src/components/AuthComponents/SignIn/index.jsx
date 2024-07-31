@@ -21,6 +21,7 @@ import './style.scss';
 import './../style.scss';
 import CarouselCard from '../CarouselCard';
 import GoogleLoginBtn from '../GoogleLogin';
+import axios from 'axios';
 
 const SignInForm = () => {
   const [email, setEmail] = useState('');
@@ -29,14 +30,15 @@ const SignInForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [loginData, setLoginData] = useState({})
   const { loading, error, token } = useSelector((state) => state.auth);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     dispatch(signInStart());
     try {
-      const {data} = await signinApi({ email, password });
-      console.log({data})
+      const { data } = await signinApi({ email, password });
+      console.log({ data })
       const { token } = response.data;
       localStorage.setItem('token', token);
       dispatch(signInSuccess(token));
@@ -50,28 +52,37 @@ const SignInForm = () => {
     setShowPassword(!showPassword);
   };
 
-  const handleGoogleLogin = ()=>{
-    console.log("kkkkkkkk");
-    
-    window.open('https://creatorshub.online/apibackend/auth/google/callback', "_self")
-    
-    // dispatch(signInStart());
-    // try {
-    //   // const data = await signinWithGoogleApi();
-    //   console.log(data)
-    //   // const { token } = response.data;
-    //   // localStorage.setItem('token', token);
-    //   // dispatch(signInSuccess(token));
-    //   navigate('/dashboard');
-    // } catch (error) {
-    //   console.log(error)
-      
-    //   // dispatch(signInFailure(error.response.data));
-    // }
+  const handleGoogleLogin = () => {
+    window.open('https://creatorshub.online/apibackend/auth/google', "_self")
   }
-  const handleTwitchLogin =async()=>{
+
+  const getUserfromGoogle = async () => {
+    console.log('running');
+    try {
+      const response = await axios.get(
+        'https://creatorshub.online/apibackend/auth/google',
+        {
+          withCredentials: true,
+        }
+      );
+      setLoginData({
+        email: response.data.user.email,
+        name: response.data.user.displayName,
+        image: response.data.user.image,
+      });
+      console.log(response.data.user);
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
+  useEffect(() => {
+    getUserfromGoogle();
+  }, []);
+
+
+  const handleTwitchLogin = async () => {
     console.log("kkkkkkkk")
-    
+
     dispatch(signInStart());
     try {
       const data = await signinWithTwitchApi();
@@ -82,13 +93,13 @@ const SignInForm = () => {
       navigate('/dashboard');
     } catch (error) {
       console.log(error)
-      
+
       // dispatch(signInFailure(error.response.data));
     }
   }
-  const handleAppleLogin =async()=>{
+  const handleAppleLogin = async () => {
     console.log("kkkkkkkk")
-    
+
     dispatch(signInStart());
     try {
       const data = await signinWithAppleApi();
@@ -99,13 +110,13 @@ const SignInForm = () => {
       navigate('/dashboard');
     } catch (error) {
       console.log(error)
-      
+
       // dispatch(signInFailure(error.response.data));
     }
   }
-  const handleTwitterLogin =async()=>{
+  const handleTwitterLogin = async () => {
     console.log("kkkkkkkk")
-    
+
     dispatch(signInStart());
     try {
       const data = await signinWithTwitterApi();
@@ -116,13 +127,13 @@ const SignInForm = () => {
       navigate('/dashboard');
     } catch (error) {
       console.log(error)
-      
+
       // dispatch(signInFailure(error.response.data));
     }
   }
- 
 
-  
+
+
   // Check for Google token on mount
   useEffect(() => {
     const googleToken = localStorage.getItem('googleToken');
@@ -156,7 +167,7 @@ const SignInForm = () => {
                     <div>
                       <p className='fs-6 m-0 textWithClick common-paragraph'>
                         Don’t have an account? <span className='linkBtn'>
-                          
+
                           <Link
                             className='text-black fw-bold underlineposition'
                             to='/signup'
@@ -189,7 +200,7 @@ const SignInForm = () => {
                       <Button
                         variant='light'
                         className='bg-white signup-btn-auth common-button'
-                        onClick={() => {handleGoogleLogin() }}
+                        onClick={() => { handleGoogleLogin() }}
                       >
                         <img className='mx-2' src={GoogleLogo} />
                         Sign in with Google
@@ -202,7 +213,7 @@ const SignInForm = () => {
                       <Button
                         variant='light'
                         className='border border-1 bg-white signup-btn-auth common-button'
-                        onClick={() => {handleTwitchLogin() }}
+                        onClick={() => { handleTwitchLogin() }}
                       >
                         <img className='mx-2' src={TwitchLogo} />
                         Sign in with Twitch
@@ -213,7 +224,7 @@ const SignInForm = () => {
                       <Button
                         variant='light'
                         className='border border-1 bg-white signup-btn-auth common-button'
-                        onClick={() => {handleAppleLogin() }}
+                        onClick={() => { handleAppleLogin() }}
                       >
                         <img className='mx-2' src={AppleLogo} />
                         Sign in with Apple
@@ -230,7 +241,7 @@ const SignInForm = () => {
                         <Button
                           variant='light'
                           className='border border-1 bg-white signup-btn-auth common-button'
-                          onClick={() => {handleGoogleLogin() }}
+                          onClick={() => { handleGoogleLogin() }}
                         >
                           <img src={YoutubeLogo} />
                         </Button>
@@ -242,7 +253,7 @@ const SignInForm = () => {
                           variant='light'
                           className='border border-1 bg-white signup-btn-auth common-button'
                           size='50px'
-                          onClick={() => {handleTwitterLogin() }}
+                          onClick={() => { handleTwitterLogin() }}
                         >
                           <img src={TwitterLogo} />
                         </Button>

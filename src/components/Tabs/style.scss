@@ -1,0 +1,153 @@
+/* src/App.css */
+.tabSection {
+    font-family: Arial, sans-serif;
+    // text-align: center;
+    padding: 20px;
+    text-align: -webkit-center;
+}
+
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 322px;
+    height: 58px;
+    padding: 12px;
+    border-radius: 99px;
+    border: 1px solid #EDF0F2;
+    box-shadow: 
+    0px -3px 0px 0px #eaeaea inset, 
+    0px 0px 0px 2px #eaeaea inset, 
+    0px 4px 2px 0px #0000000F inset, 
+    0px 0px 24px 4px #0000000A inset, 
+    0px 1px 3px 0px #0000001F;
+    // background-color: rgba(245, 245, 245, 0.5019607843) !important;
+
+    // box-shadow: rgba(204, 219, 232, 0.5) 0 3px 0px 0 inset, rgba(204, 219, 232, 0.5) 0 3px 0px 0;
+}
+
+.tab-button {
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+    position: relative;
+    color: #606E80;
+    cursor: pointer;
+    text-align: center;
+    font-family: "Ubuntu Sans";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 18px;
+    z-index: 5;
+    width: 146px;
+    align-self: center;
+    padding: 10px 24px 10px 24px;
+    height: 36px;
+    border-radius: 36px;
+}
+
+.tab-radio {
+    display: none;
+}
+
+.tab-button.active {
+    background-color: white;
+    color: black !important;
+    box-shadow: rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    // background-color: #007bff;
+    // box-shadow: rgb(204, 219, 232) 1px 3px 6px 0px, inset rgb(204, 219, 232) 1px -3px 6px 1px;
+    // box-shadow:
+    //     0px 5px 3px 0px rgba(255, 255, 255, 0.8) inset, 0px 1px 1px 0px rgba(255, 255, 255, 0.8) inset, 0px -6px 8px 0px rgba(0, 0, 0, 0.1490196078) inset, 0px 3px 6px -2px rgba(0, 0, 0, 0.3019607843);
+    // color: #181D25;
+    // align-self: center;
+    // border: 1px solid #0000001A
+}
+
+.tab-content {
+    position: relative;
+    margin: 24px auto 0px auto;
+    // max-width: 1000px;
+    font-family: "'Ubuntu Sans'";
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 32px;
+    text-align: center;
+    color: #606e80;
+}
+
+.content {
+    display: none;
+}
+
+.content.active {
+    display: block;
+}
+
+.custom-carousel {
+    position: relative;
+    background-image: url('../../assets/Images/sliderBg.png');
+    /* Replace with your image URL */
+    background-size: cover;
+    background-position: right;
+}
+
+// .carousel-control-prev-icon,
+// .carousel-control-next-icon {
+//     background-image: url('../../assets/svg/prev.svg') no-repeat center center !important;
+//     /* Remove default arrow icons */
+// }
+
+// .carousel-control-prev-icon::before {
+//     content: '';
+//     display: inline-block;
+//     width: 24px;
+//     height: 24px;
+//     background: url('../../assets/svg/prev.svg') no-repeat center center !important;
+//     background-size: cover;
+// }
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-image: none !important;
+    /* Remove default arrow icons */
+}
+
+// .carousel-control-next-icon::before {
+//     content: '';
+//     display: inline-block;
+//     width: 24px;
+//     height: 24px;
+//     background: url('../../assets/svg/next.svg') no-repeat center center !important;
+//     background-size: cover;
+// }
+
+//   .carousel-control-prev:hover, .carousel-control-next:hover {
+//     background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+//   }
+
+.creator-content h1 {
+    font-family: "Ubuntu Sans";
+    font-size: 56px;
+    line-height: 80px;
+    letter-spacing: -0.02em;
+}
+
+.creator-content h1 .highlight-italic {
+    font-style: italic;
+    font-weight: 400;
+}
+
+.creator-content h1 .highlight {
+    background: linear-gradient(95deg,
+            #1f3daa 5%,
+            #e7029f 31.89%,
+            #e7029f 44.17%,
+            #e86a43 68.74%,
+            #f6a29f 76.67%,
+            #a58e49 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+.creator-content h1 .rest-highlight {
+    font-weight: 800;
+}

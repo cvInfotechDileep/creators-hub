@@ -5,7 +5,7 @@ import { store } from './redux/store';
 import App from './App';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { GoogleOAuthProvider } from '@react-oauth/google';
+// import { GoogleOAuthProvider } from '@react-oauth/google';
 import { setToken } from './redux/authSlice';
 
 const container = document.getElementById('root');
@@ -21,9 +21,7 @@ if (token) {
 }
 
 root.render(
-  <GoogleOAuthProvider clientId={clientId}>
     <Provider store={store}>
       <App />
     </Provider>
-  </GoogleOAuthProvider>
 );

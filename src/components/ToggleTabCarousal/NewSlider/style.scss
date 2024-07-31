@@ -11,12 +11,12 @@
   }
   .slider-carousel-item {
     position: relative;
-    /* max-width: 1480px; */
+    max-width: 1480px; 
     width: 100% !important;
     height: 664px;
     border-radius: 12px;
-    background: linear-gradient(0deg, #ffffff, #ffffff),
-      linear-gradient(0deg, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.01));
+    // background: linear-gradient(0deg, #ffffff, #ffffff),
+    //   linear-gradient(0deg, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.01));
     border: 1px solid #0000001a;
     box-shadow: inset 0px 0px 20px -10px rgb(124, 122, 124);
     z-index: 2;
@@ -42,7 +42,7 @@
     margin: auto 20px !important;
     border-radius: 50% !important;
     /* font-size: 17px !important; */
-    border: 1px solid #B0BECB !important
+    // border: 1px solid #B0BECB !important
 }
 .carousel-control-prev-icon, .carousel-control-next-icon {
 

@@ -22,6 +22,7 @@ import JoinHub from '../../components/JoinHub';
 import Footer from '../../components/Footer';
 import herosection from './../../assets/videos/herosection.mp4'
 import stream from './../../assets/videos/stream.mp4'
+import Tabs from '../../components/Tabs';
 
 const Home = () => {
     const videoRef = useRef(null);
@@ -274,7 +275,8 @@ const Home = () => {
                     </Col>
                 </Row>
             </Container>
-            <ToggleTabCarousal />
+            <Tabs />
+            {/* <ToggleTabCarousal /> */}
             <ConnectionPeople />
             <JoinHub />
             <Footer />
