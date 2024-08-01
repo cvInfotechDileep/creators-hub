@@ -12,17 +12,26 @@
     gap: 15px 0;
     
   }
+  
   .auth-gallery {
+  
     .auth-second-slide {
         transition: transform 1s ease-in-out;
+        // animation-play-state: running;
         &.slide-in {
             transform: translateX(0);
+    
+          
+        
         }
         &.slide-out {
             transform: translateX(-100%);
+           
+        
         }
         &:hover {
             // Prevent animation when hovered
+            animation-play-state: paused;
             transition: none;
         }
     }
@@ -264,6 +273,7 @@
   .card-container:hover .bottom-image .new-hover-card2 {
     opacity: 1;
     transform: translate(-25%, -50%);
+    
   }
   .card-container:hover .bottom-image .new-card2 {
     height: 164px;

@@ -73,178 +73,213 @@
 
 // export default CarouselCard;
 
-
-
-
-
-
-
-
-
-
 import React, { useEffect, useState } from 'react';
 import { Row, Card, Col } from 'react-bootstrap';
-import card2 from "../../../assets/Images/card2.png";
-import './style.scss'
+import card2 from '../../../assets/Images/card2.png';
+import './style.scss';
 
 const CarouselCard = () => {
-    const [isVisible, setIsVisible] = useState(true);
-    const [activeSlide, setActiveSlide] = useState(0); // State to track active slide index
+  const [isVisible, setIsVisible] = useState(true);
+  const [activeSlide, setActiveSlide] = useState(0); // State to track active slide index
+  const [isHovering, setIsHovering] = useState(false);
+  const cardHeight = `${window.innerWidth * 0.2}px`;
 
-    const cardHeight = `${window.innerWidth * 0.2}px`;
+  useEffect(() => {
+    const slideInOut = () => {
+      if (isVisible) {
+        setTimeout(() => {
+          setIsVisible(false); // Trigger slideOut animation after 12 seconds
+        }, 20000);
+      } else {
+        setTimeout(() => {
+          setIsVisible(true); // Trigger slideIn animation after 12 seconds
+        }, 20000);
+      }
+    };
 
-    useEffect(() => {
-        const slideInOut = () => {
-            if (isVisible) {
-                setTimeout(() => {
-                    setIsVisible(false); // Trigger slideOut animation after 12 seconds
-                }, 12000);
-            } else {
-                setTimeout(() => {
-                    setIsVisible(true); // Trigger slideIn animation after 12 seconds
-                }, 12000);
-            }
-        };
+    slideInOut(); // Initial trigger of animations
 
-        slideInOut(); // Initial trigger of animations
+    // Clean up function
+    return () => clearTimeout(slideInOut);
+  }, [isVisible]);
 
-        // Clean up function
-        return () => clearTimeout(slideInOut);
-    }, [isVisible]);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveSlide((prevIndex) => (prevIndex + 1) % 4); // Change slide every 5 seconds
+    }, 5000);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setActiveSlide((prevIndex) => (prevIndex + 1) % 4); // Change slide every 5 seconds
-        }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
-        return () => clearInterval(interval);
-    }, []);
+  return (
+    <>
+      <Col
+        sm={12}
+        md={5}
+        lg={5}
+        xl={5}
+        xxl={5}
+        className={`margin-padding auth-gallery  ${
+          isVisible ? 'slide-in' : 'slide-out'
+        }`}
+        style={{ minHeight: '100vh', overflow: 'hidden' }}
+      >
+        <Row
+          className={`auth-second-slide m-auto d-flex justify-content-center align-content-center ${
+            isVisible ? (activeSlide >= 1 ? 'rotate-5deg' : '') : ''
+          } `}
+        >
+          <div
+            className='card-container '
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              flexDirection: 'column',
+            }}
+          >
+            <Card className='main-card text-center'>
+              <Card.Body className='py-0 my-4'>
+                <Card.Title>
+                  <h3>
+                    <span className='highlight-italic'>Live </span>{' '}
+                    <strong className='rest-highlight'>Streaming</strong>
+                  </h3>
+                </Card.Title>
+                <Card.Text style={{ fontSize: '16px', lineHeight: '1.2' }}>
+                  Connect with creators via live chat, tips, crowdfunding, and
+                  wishlist sharing.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+            <div className='bottom-image '>
+              <div className='new-card1'></div>
+              <div className='new-hover-card1'></div>
+            </div>
 
-    return (
-        <>
-            <Col
-                sm={12}
-                md={5}
-                lg={5}
-                xl={5}
-                xxl={5}
-                className={`margin-padding auth-gallery  ${isVisible ? "slide-in" : "slide-out"}`}
-                style={{ minHeight: "100vh", overflow: "hidden" }}
-            >
-                <Row className={`auth-second-slide m-auto d-flex justify-content-center align-content-center ${isVisible ? (activeSlide >= 1 ? "rotate-5deg" : "") : ""} `} >
-                    <div className="card-container " style={{ display: "flex", justifyContent: "center", flexDirection: "column" }}>
-                        <Card className="main-card text-center">
-                            <Card.Body className="py-0 my-4">
-                                <Card.Title>
-                                    <h3>
-                                        <span className="highlight-italic">Live </span>{" "}
-                                        <strong className="rest-highlight">Streaming</strong>
-                                    </h3>
-                                </Card.Title>
-                                <Card.Text style={{fontSize:"16px", lineHeight:"1.2"}}>
-                                Connect with creators via live chat, tips, crowdfunding, and wishlist sharing.
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                        <div className="bottom-image ">
-                            <div className="new-card1"></div>
-                            <div className="new-hover-card1"></div>
-                        </div>
+            <div className='card-gradient-footer'></div>
+          </div>
+        </Row>
+        <Row
+          className={`auth-second-slide m-auto d-flex justify-content-center align-content-center ${
+            isVisible ? (activeSlide >= 2 ? 'rotate5deg' : '') : ''
+          }  `}
+        >
+          <div
+            className='card-container'
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              flexDirection: 'column',
+            }}
+          >
+            <Card className='main-card text-center'>
+              <Card.Body className='py-0 my-4'>
+                {' '}
+                <Card.Title>
+                  <h3>
+                    <span className='highlight-italic'> Effortless </span>{' '}
+                    <span className='highlight'>
+                      {' '}
+                      <strong>One-Tap</strong>
+                    </span>{' '}
+                    <strong className='rest-highlight'> Payment Magic</strong>
+                  </h3>
+                </Card.Title>
+                <Card.Text style={{ fontSize: '16px', lineHeight: '1.2' }}>
+                  Seamless one-tap payments: support creators with tips and
+                  crowdfunding.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+            <div className='bottom-image '>
+              <div className='new-card2'></div>
+              <div className='new-hover-card2'></div>
+            </div>
+            <div className='card-gradient-footer'></div>
+          </div>
+        </Row>
+        <Row
+          className={`auth-second-slide m-auto  d-flex justify-content-center align-content-center  ${
+            isVisible ? (activeSlide >= 3 ? 'rotate8deg' : '') : ''
+          } `}
+        >
+          <div
+            className='card-container'
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              flexDirection: 'column',
+            }}
+          >
+            <Card className='main-card text-center'>
+              <Card.Body className='py-0 my-4'>
+                <Card.Title>
+                  <h3>
+                    <span className='highlight-italic'> Explore your </span>{' '}
+                    <strong className='rest-highlight'>favorite </strong>
+                    <span className='highlight'>
+                      {' '}
+                      <strong>creators</strong>
+                    </span>{' '}
+                  </h3>
+                </Card.Title>
+                <Card.Text style={{ fontSize: '16px', lineHeight: '1.2' }}>
+                  Follow favorite creators for updates, streams, and direct
+                  engagement. Join easily.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+            <div className='bottom-image3 '>
+              <div className='new-card3'></div>
+              <div className='new-hover-card3'>
+                <div className='img1'></div>
+                <div className='img3'></div>
+                <div className='img2'></div>
+              </div>
+            </div>
 
-                        <div className="card-gradient-footer"></div>
-                    </div>
-                </Row>
-                <Row className={`auth-second-slide m-auto d-flex justify-content-center align-content-center ${isVisible ? (activeSlide >= 2 ? "rotate5deg" : "") : ""}  `}  >
-                    <div className="card-container" style={{ display: "flex", justifyContent: "center", flexDirection: "column" }}>
-                        <Card className="main-card text-center">
-                            <Card.Body className="py-0 my-4">
-                                {" "}
-                                <Card.Title>
-                                    <h3>
-                                        <span className="highlight-italic"> Effortless </span>{" "}
-                                        <span className="highlight">
-                                            {" "}
-                                            <strong>One-Tap</strong>
-                                        </span>{" "}
-                                        <strong className="rest-highlight"> Payment Magic</strong>
-                                    </h3>
-                                </Card.Title>
-                                <Card.Text style={{fontSize:"16px", lineHeight:"1.2"}}>
-                                Seamless one-tap payments: support creators with tips and crowdfunding.
-                                    
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                        <div className="bottom-image ">
-                            <div className="new-card2"></div>
-                            <div className="new-hover-card2"></div>
-                        </div>
-                        <div className="card-gradient-footer"></div>
-                    </div>
-                </Row>
-                <Row className={`auth-second-slide m-auto  d-flex justify-content-center align-content-center  ${isVisible ? (activeSlide >= 3 ? "rotate8deg" : "") : ""} `} >
-                    <div className="card-container" style={{ display: "flex", justifyContent: "center", flexDirection: "column" }}>
-                        <Card className="main-card text-center">
-                            <Card.Body className="py-0 my-4">
-                                <Card.Title>
-                                    <h3>
-                                        <span className="highlight-italic"> Explore your </span>{" "}
-                                        <strong className="rest-highlight">favorite </strong>
-                                        <span className="highlight">
-                                            {" "}
-                                            <strong>creators</strong>
-                                        </span>{" "}
-                                    </h3>
-                                </Card.Title>
-                                <Card.Text style={{fontSize:"16px", lineHeight:"1.2"}}>                             
-                                Follow favorite creators for updates, streams, and direct engagement. Join easily.                  
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                        <div className="bottom-image3 ">
-                            <div className="new-card3"></div>
-                            <div className="new-hover-card3">
-                                <div className="img1"></div>
-                                <div className="img3"></div>
-                                <div className="img2"></div>
-                            </div>
-                        </div>
-
-                        <div className="card-gradient-footer"></div>
-                    </div>
-                </Row>
-                <Row className="auth-second-slide m-auto  d-flex justify-content-center align-content-center" >
-                    <div className="card-container" style={{ display: "flex", justifyContent: "center", flexDirection: "column" }}>
-                        <Card className="main-card text-center">
-                            <Card.Body className="py-0 my-4">
-                                <Card.Title>
-                                    {" "}
-                                    <h3>
-                                        <strong className="rest-highlight"> Pay </strong>
-                                        <span className="highlight-italic"> Per View </span>{" "}
-                                    </h3>
-                                </Card.Title>
-                                <Card.Text style={{fontSize:"16px", lineHeight:"1.2"}}>
-                                Monetize top content with pay-per-video, premium options, and unique features.
-                                    
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                        {/* <Card.Img variant="bottom" src={card1} className="bottom-image" /> */}
-                        <div className="bottom-image3 ">
-                            <div className="new-card4">
-                                <div className="img1"></div>
-                                <div className="img3"></div>
-                                <div className="img2"></div>
-                            </div>
-                            <div className="new-cardhover4"></div>
-                        </div>
-                        <div className="card-gradient-footer"></div>
-                    </div>
-                </Row>
-            </Col>
-        </>
-    );
+            <div className='card-gradient-footer'></div>
+          </div>
+        </Row>
+        <Row className='auth-second-slide m-auto  d-flex justify-content-center align-content-center'>
+          <div
+            className='card-container'
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              flexDirection: 'column',
+            }}
+          >
+            <Card className='main-card text-center'>
+              <Card.Body className='py-0 my-4'>
+                <Card.Title>
+                  {' '}
+                  <h3>
+                    <strong className='rest-highlight'> Pay </strong>
+                    <span className='highlight-italic'> Per View </span>{' '}
+                  </h3>
+                </Card.Title>
+                <Card.Text style={{ fontSize: '16px', lineHeight: '1.2' }}>
+                  Monetize top content with pay-per-video, premium options, and
+                  unique features.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+            {/* <Card.Img variant="bottom" src={card1} className="bottom-image" /> */}
+            <div className='bottom-image3 '>
+              <div className='new-card4'>
+                <div className='img1'></div>
+                <div className='img3'></div>
+                <div className='img2'></div>
+              </div>
+              <div className='new-cardhover4'></div>
+            </div>
+            <div className='card-gradient-footer'></div>
+          </div>
+        </Row>
+      </Col>
+    </>
+  );
 };
 
 export default CarouselCard;
