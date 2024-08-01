@@ -17,7 +17,7 @@ const tabs = [
         <Row className='my-5' style={{ maxWidth: "1000px", margin: "auto" }}>Empower your creative journey on CreatorsHub with intuitive tools designed for creators. Why Join CreatorsHub? As a creator, showcase your talents through live streaming, upload features, and wishlists. Engage with your fans effortlessly, with streamlined payment processing and real-time alerts for gifts and contributions. Our platform ensures that your personal information is protected.</Row>
         <Carousel interval={3000} // Adjust the interval time as needed
           pause="hover"
-          className="custom-carousel">
+          className="custom-carousel" data-bs-theme="dark">
           <Carousel.Item className='slider-carousel-item'>
             <Container className="slider-carousel-container">
               <Row className="w-100">
@@ -324,6 +324,7 @@ const tabs = [
         <Row className='my-5' style={{ maxWidth: "1000px", margin: "auto" }}>Explore the user-centric functionalities of CreatorsHub, where members can easily browse, discover, and support their favorite creators. CreatorsHub offers a secure platform where you can send gifts and contributions without worrying about your personal information being compromised. From interactive profiles to secure one-click payments, our platform ensures a personalized experience tailored to user preferences.</Row>
         <Carousel interval={3000} // Adjust the interval time as needed
           pause="hover"
+          data-bs-theme="dark"
           className="custom-carousel">
           <Carousel.Item className='slider-carousel-item'>
             <Container className="slider-carousel-container">
@@ -436,7 +437,6 @@ const tabs = [
               </Row>
             </Container>
           </Carousel.Item>
-
         </Carousel>
         <Row className="p-3 card-container-row justify-content-center my-5">
           <Col md={12} lg={6} className="card-container-wrapper">

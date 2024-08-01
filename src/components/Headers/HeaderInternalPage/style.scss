@@ -1,0 +1,79 @@
+.searchStyle {
+    border-top: 1px solid #E5E7EB !important;
+    border-right: none !important;
+    border-bottom: 1px solid #E5E7EB !important;
+    border-left: 1px solid #E5E7EB !important;
+    box-shadow: 0px 1px 2px 0px #E5E7EB !important;
+    height: 38px;
+
+}
+
+.searchbtn {
+    border-top: 1px solid #E5E7EB !important;
+    border-right: 1px solid #E5E7EB !important;
+    border-bottom: 1px solid #E5E7EB !important;
+    border-left: none !important;
+    box-shadow: 0px 1px 2px 0px #0000000D;
+    height:38px;
+}
+.giftBtn{
+    font-size: 15px;
+    font-weight: 600;
+}
+.custom-dropdown-button .btn {
+    background-color: #fff; /* Custom background color */
+    border: 1px solid  #E5E7EB;
+    color: #000; /* Custom text color */
+    box-shadow: 0px 1px 2px 0px #0000000D;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .bg-body-tertiary{
+    background-color: #fff !important;
+  }
+  .custom-dropdown-button .dropdown-toggle::after {
+    display: none; /* Hide default dropdown icon */
+  }
+  .iconBtn{
+    border: 1px solid  #E5E7EB;
+    box-shadow: 0px 1px 2px 0px #0000000D;
+  }
+  
+//   .custom-dropdown-button .btn:hover,
+//   .custom-dropdown-button .btn:focus {
+//     background-color: #c70039; /* Custom hover background color */
+//     border-color: #c70039; /* Custom hover border color */
+//   }
+
+/* Customize the switch height and width */
+.custom-switch .form-check-input {
+    width: 60px; /* Adjust width as needed */
+    height: 30px; /* Adjust height as needed */
+}
+
+/* Customize the background color when the switch is on */
+.custom-switch .form-check-input:checked {
+    background-color: #404B5A; /* Green when on */
+    border-color: #404B5A;
+}
+
+/* Customize the background color when the switch is off */
+.custom-switch .form-check-input {
+    background-color: #EDF0F2; /* Gray when off */
+    border-color: #EDF0F2;
+}
+
+/* Customize the slider's circle */
+.custom-switch .form-check-input:before {
+    width: 22px; /* Adjust width of the slider knob */
+    height: 22px; /* Adjust height of the slider knob */
+    background-color: white; /* Color of the slider knob */
+}
+
+/* Optionally, add a custom icon */
+.custom-switch .form-check-input:checked:before {
+    // content: url('./../../../assets//svg/sun.svg'); /* Path to your icon image */
+    background-color: transparent; /* Remove background color to show icon clearly */
+}
+
