@@ -123,12 +123,49 @@
 // export default authSlice.reducer;
 
 
+// ====================
+
+
+// import { createSlice } from '@reduxjs/toolkit';
+
+// const authSlice = createSlice({
+//   name: 'auth',
+//   initialState: {
+//     token: null,
+//     loading: false,
+//     error: null,
+//   },
+//   reducers: {
+//     signInStart: (state) => {
+//       state.loading = true;
+//     },
+//     signInSuccess: (state, action) => {
+//       state.loading = false;
+//       state.token = action.payload;
+//     },
+//     signInFailure: (state, action) => {
+//       state.loading = false;
+//       state.error = action.payload;
+//     },
+//     setToken: (state, action) => {
+//       state.token = action.payload;
+//     }
+//   }
+// });
+
+// export const { signInStart, signInSuccess, signInFailure, setToken } = authSlice.actions;
+
+// export default authSlice.reducer;
+
+// ========================
+
 import { createSlice } from '@reduxjs/toolkit';
 
 const authSlice = createSlice({
   name: 'auth',
   initialState: {
     token: null,
+    role: null, // Add role to the initial state
     loading: false,
     error: null,
   },
@@ -138,14 +175,16 @@ const authSlice = createSlice({
     },
     signInSuccess: (state, action) => {
       state.loading = false;
-      state.token = action.payload;
+      state.token = action.payload.token;
+      state.role = action.payload.role; // Set role when sign in is successful
     },
     signInFailure: (state, action) => {
       state.loading = false;
       state.error = action.payload;
     },
     setToken: (state, action) => {
-      state.token = action.payload;
+      state.token = action.payload.token;
+      state.role = action.payload.role; // Set role when token is set
     }
   }
 });

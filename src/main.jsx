@@ -5,7 +5,8 @@ import { store } from './redux/store';
 import App from './App';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import { GoogleOAuthProvider } from '@react-oauth/google';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { setToken } from './redux/authSlice';
 
 const container = document.getElementById('root');

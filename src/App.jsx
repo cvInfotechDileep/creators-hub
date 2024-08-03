@@ -40,13 +40,31 @@ const App = () => {
           <Route
             path="*"
             element={
-              token ? <Navigate to="/dashboard" /> : <Navigate to="/" />
+              token
+                ? role === 'creator'
+                  ? <Navigate to="/creator-dashboard" />
+                  : <Navigate to="/user-dashboard" />
+                : <Navigate to="/" />
             }
           />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
     </Router>
+    // <Router>
+    //   <Suspense fallback={<Loading />}>
+    //     <Routes>
+    //       {renderRoutes(routesConfig)}
+    //       <Route
+    //         path="*"
+    //         element={
+    //           token ? <Navigate to="/dashboard" /> : <Navigate to="/" />
+    //         }
+    //       />
+    //       <Route path="*" element={<NotFound />} />
+    //     </Routes>
+    //   </Suspense>
+    // </Router>
   );
 };
 

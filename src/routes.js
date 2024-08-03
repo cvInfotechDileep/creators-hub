@@ -1,16 +1,27 @@
 // src/routes.js
 import React from 'react';
 const Home = React.lazy(() => import('./pages/Home'));
+const UserProfile = React.lazy(() => import('./pages/UserProfile'));
+const CreatorProfile = React.lazy(() => import('./pages/CreatorProfile'));
+const CreatotsList = React.lazy(() => import('./pages/CreatorsList'));
 const About = React.lazy(() => import('./pages/About'));
 const Contact = React.lazy(() => import('./pages/Contact'));
 const SignInForm = React.lazy(() => import('./components/AuthComponents/SignIn'));
 const Dashboard = React.lazy(() => import('./pages/Dashboard'));
-const Section1 = React.lazy(() => import('./pages/Dashboard/Section1'));
-const Section2 = React.lazy(() => import('./pages/Dashboard'));
+// const Section1 = React.lazy(() => import('./pages/Dashboard/Section1'));
+// const Section2 = React.lazy(() => import('./pages/Dashboard'));
 const SignUpForm = React.lazy(() => import('./components/AuthComponents/SignUp'));
 const ForgotPassword = React.lazy(() => import('./components/AuthComponents/ForgotPassword'));
 // const GoogleCallback = React.lazy(() => import('./components/AuthComponents/GoogleCallback'));
+const Creator = React.lazy(() => import('./pages/Dashboard/Creator'));
+const User = React.lazy(() => import('./pages/Dashboard/User'));
+
+// const Section1 = React.lazy(() => import('./pages/Dashboard/Creator/Section1'));
+// const Section2 = React.lazy(() => import('./pages/Dashboard/Creator/Section2'));
+// const UserSection1 = React.lazy(() => import('./pages/Dashboard/User/Section1'));
+// const UserSection2 = React.lazy(() => import('./pages/Dashboard/User/Section2'));
 const NotFound = React.lazy(() => import('./pages/NotFound'));
+
 
 const routesConfig = [
   {
@@ -19,43 +30,114 @@ const routesConfig = [
   },
   {
     path: "/about",
-    component: About
+    component: About,
   },
   {
     path: "/contact",
-    component: Contact
+    component: Contact,
   },
   {
     path: "/signin",
-    component: SignInForm
-  },
-  {
-    path: "/forgot-password",
-    component: ForgotPassword
+    component: SignInForm,
   },
   {
     path: "/signup",
-    component: SignUpForm
+    component: SignUpForm,
   },
-  // {
-  //   path: "/google-login",
-  //   component: GoogleCallback,
-  // },
   {
-    path: "/dashboard",
-    component: Dashboard,
+    path: "/forgot-password",
+    component: ForgotPassword,
+  },
+  {
+    path: "/user-profile",
+    component: UserProfile,
+  },
+  {
+    path: "/creator-profile",
+    component: CreatorProfile,
+  },
+  {
+    path: "/explore",
+    component: CreatotsList,
+  },
+  {
+    path: "/creator",
+    component: Creator,
     auth: true,
-    children: [
-      {
-        path: "section1",
-        component: Section1
-      },
-      {
-        path: "section2",
-        component: Section2
-      }
-    ]
-  }
+    // children: [
+    //   {
+    //     path: "section1",
+    //     component: Section1,
+    //   },
+    //   {
+    //     path: "section2",
+    //     component: Section2,
+    //   },
+    // ],
+  },
+  {
+    path: "/user",
+    component: User,
+    auth: true,
+    // children: [
+    //   {
+    //     path: "section1",
+    //     component: UserSection1,
+    //   },
+    //   {
+    //     path: "section2",
+    //     component: UserSection2,
+    //   },
+    // ],
+  },
 ];
 
 export default routesConfig;
+
+// const routesConfig = [
+//   {
+//     path: "/",
+//     component: Home,
+//   },
+//   {
+//     path: "/about",
+//     component: About
+//   },
+//   {
+//     path: "/contact",
+//     component: Contact
+//   },
+//   {
+//     path: "/signin",
+//     component: SignInForm
+//   },
+//   {
+//     path: "/forgot-password",
+//     component: ForgotPassword
+//   },
+//   {
+//     path: "/signup",
+//     component: SignUpForm
+//   },
+//   // {
+//   //   path: "/google-login",
+//   //   component: GoogleCallback,
+//   // },
+//   {
+//     path: "/dashboard",
+//     component: Dashboard,
+//     auth: true,
+//     children: [
+//       {
+//         path: "section1",
+//         component: Section1
+//       },
+//       {
+//         path: "section2",
+//         component: Section2
+//       }
+//     ]
+//   }
+// ];
+
+// export default routesConfig;
