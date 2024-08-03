@@ -5,6 +5,9 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   // base: 'https://creators-hub-plum.vercel.app/',
   plugins: [react()],
+  server: {
+    historyApiFallback: true
+  }
   // resolve: {
   //   alias: [{ find:"@", replacement: "/src"}],
   // }
