@@ -1,9 +1,13 @@
 /* src/App.css */
 .tabSection {
-    font-family: Arial, sans-serif;
+    // font-family: Arial, sans-serif;
     // text-align: center;
     padding: 20px;
     text-align: -webkit-center;
+}
+
+.fontStyle{
+    font-family: "Ubuntu Sans";
 }
 
 .tab-buttons {
@@ -66,7 +70,7 @@
     position: relative;
     margin: 24px auto 0px auto;
     // max-width: 1000px;
-    font-family: "'Ubuntu Sans'";
+    font-family: "Ubuntu Sans";
     font-size: 20px;
     font-weight: 500;
     line-height: 32px;

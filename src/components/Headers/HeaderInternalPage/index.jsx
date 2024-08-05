@@ -15,6 +15,13 @@ import Giftcartavatar from './../../../assets/svg/Giftcartavatar.svg'
 import Giftcart1 from './../../../assets/svg/giftcart1.svg'
 import Giftcart2 from './../../../assets/svg/giftcart2.svg'
 import Deleteicon from './../../../assets/svg/deleteicon.svg'
+import img from './../../../assets/svg/img.svg'
+import sound from './../../../assets/svg/sound.svg'
+import mice from './../../../assets/svg/mice.svg'
+import videorecord from './../../../assets/svg/videorecord.svg'
+import dummyprofile from './../../../assets/svg/dummyprofile.svg'
+import write from './../../../assets/svg/write.svg'
+import fantick from './../../../assets/svg/fantick.svg'
 import './style.scss';
 import './../../../pages/dashboard.scss'
 
@@ -71,9 +78,20 @@ const HeaderInternalPage = () => {
                                     <img src={DropdownIcon} alt='' />
                                 </div>
                             }>
-                                <Dropdown.Item href="/">Profile</Dropdown.Item>
-                                <Dropdown.Item href="/">Settings</Dropdown.Item>
-                                <Dropdown.Item href="/">Account</Dropdown.Item>
+                                <Dropdown.Item>
+                                    <div className='d-flex profileDetail gap-3' style={{background:"#F3F4F6"}}>
+                                        <img src={dummyprofile} alt="" />
+                                        <div>
+                                            <p className='m-0'>Signed in as</p>
+                                            <h3 style={{ fontSize: "14px" }}>Mason Cooper<span className='ms-3'><img src={fantick} alt="" /></span></h3>
+                                        </div>
+                                    </div>
+                                </Dropdown.Item>
+                                <Dropdown.Item><span className='me-3'><img src={img} alt="" /></span>Image/Video</Dropdown.Item>
+                                <Dropdown.Item href="/"><span className='me-3'><img src={sound} alt="" /></span>Audio</Dropdown.Item>
+                                <Dropdown.Item href="/"><span className='me-3'><img src={mice} alt="" /></span>Audio Record</Dropdown.Item>
+                                <Dropdown.Item href="/"><span className='me-3'><img src={videorecord} alt="" /></span>Video Record</Dropdown.Item>
+                                <Dropdown.Item href="/"><span className='me-3'><img src={write} alt="" /></span>Blogs</Dropdown.Item>
                             </DropdownButton>
                             <Button className='giftBtn bg-white iconBtn mx-2' onClick={handleShowNotification}>
                                 <img src={bell} alt="" />

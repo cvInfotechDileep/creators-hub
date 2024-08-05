@@ -210,7 +210,7 @@ function Footer() {
 
                             <Row className="bottom-footer">
                                 {/* Second column on top for xs devices, and on the right for md devices */}
-                                <Col
+                                {/* <Col
                                     xs={12}
                                     sm={12}
                                     md={12}
@@ -241,7 +241,7 @@ function Footer() {
                                             alt="Footer Image 4"
                                         />
                                     </Row>
-                                </Col>
+                                </Col> */}
                                 {/* First column on bottom for xs devices, and on the left for md devices */}
                                 <Col
                                     xs={12}

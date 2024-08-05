@@ -2,6 +2,9 @@
 import React from 'react';
 const Home = React.lazy(() => import('./pages/Home'));
 const UserProfile = React.lazy(() => import('./pages/UserProfile'));
+const StreamTwitch = React.lazy(() => import('./pages/StreamTwitch'));
+const StreamYoutube = React.lazy(() => import('./pages/StreamYoutube'));
+const Balance = React.lazy(() => import('./pages/Balance'));
 const CreatorProfile = React.lazy(() => import('./pages/CreatorProfile'));
 const CreatotsList = React.lazy(() => import('./pages/CreatorsList'));
 const About = React.lazy(() => import('./pages/About'));
@@ -15,7 +18,7 @@ const ForgotPassword = React.lazy(() => import('./components/AuthComponents/Forg
 // const GoogleCallback = React.lazy(() => import('./components/AuthComponents/GoogleCallback'));
 const Creator = React.lazy(() => import('./pages/Dashboard/Creator'));
 const User = React.lazy(() => import('./pages/Dashboard/User'));
-
+const Creatorsfeed = React.lazy(() => import('./pages/CreatorsFeed'));
 // const Section1 = React.lazy(() => import('./pages/Dashboard/Creator/Section1'));
 // const Section2 = React.lazy(() => import('./pages/Dashboard/Creator/Section2'));
 // const UserSection1 = React.lazy(() => import('./pages/Dashboard/User/Section1'));
@@ -57,8 +60,24 @@ const routesConfig = [
     component: CreatorProfile,
   },
   {
-    path: "/explore",
-    component: CreatotsList,
+    path: "/stream-twitch",
+    component: StreamTwitch,
+  },
+  {
+    path: "/stream-youtube",
+    component: StreamYoutube,
+  },
+  {
+    path: "/stream-youtube",
+    component: StreamYoutube,
+  },
+  {
+    path: "/balance",
+    component: Balance,
+  },
+  {
+    path: "/creators-timeline",
+    component: Creatorsfeed,
   },
   {
     path: "/creator",

@@ -42,8 +42,8 @@ const App = () => {
             element={
               token
                 ? role === 'creator'
-                  ? <Navigate to="/creator-dashboard" />
-                  : <Navigate to="/user-dashboard" />
+                  ? <Navigate to="/creator" />
+                  : <Navigate to="/user" />
                 : <Navigate to="/" />
             }
           />
