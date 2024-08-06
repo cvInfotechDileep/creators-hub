@@ -7,51 +7,13 @@ import creatorslidefour from "./../../../assets/videos/creatorslidefour.mp4"
 
 import "./style.scss";
 function NewSlider({ typeValue }) {
-    // const [index, setIndex] = useState(0);
-    // const [direction, setDirection] = useState("left");
-    // const [interval] = useState(10000);
-    // const [isPaused] = useState(false);
 
-    const [expanded, setExpanded] = useState(false);
-    // const [numberOfLines, setNumberOfLines] = useState(6);
     const paragraphRef = useRef(null);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-    useEffect(() => {
-        const handleResize = () => {
-            setWindowWidth(window.innerWidth);
-        };
-
-        window.addEventListener("resize", handleResize);
-
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
-    }, []);
-    useEffect(() => {
-        // Calculate the height of linesToShow lines
-        if (paragraphRef.current) {
-            const lineHeight = parseFloat(
-                getComputedStyle(paragraphRef.current).lineHeight
-            );
-            const height = lineHeight * 6;
-            paragraphRef.current.style.maxHeight = `${height}px`;
-        }
-    }, []);
-
-    // const handleToggleExpand = () => {
-    //   setExpanded(!expanded);
-    //   // Set the number of lines to show based on expanded state
-    //   if (!expanded) {
-    //     setNumberOfLines(null); // Show all lines
-    //   } else {
-    //     setNumberOfLines(6); // Show limited lines
-    //   }
-    // };
-    const handleSelect = (selectedIndex, e) => {
-        // setIndex(selectedIndex);
-        // setDirection(e.direction);
-    };
+ 
+         paragraphRef.current.style.maxHeight = `${height}px`;
+  
     const [creatorSliderData, setCreatorSliderData] = useState([
         {
             title: (
@@ -65,7 +27,7 @@ function NewSlider({ typeValue }) {
             ),
             expand: false,
             subtitle: (
-                <p ref={paragraphRef} className={`text ${expanded ? "expanded" : ""}`}>
+                <p >
                     Begin your journey on CreatorsHub by signing up and verifying you own
                     your linked social accounts. Simply add your CreatorsHub link to your
                     platform’s bio, ensuring a secure and authentic experience while also
@@ -87,7 +49,7 @@ function NewSlider({ typeValue }) {
             ),
             expand: false,
             subtitle: (
-                <p ref={paragraphRef} className={`text ${expanded ? "expanded" : ""}`}>
+                <p >
                     Engage you audience like never before! Personalize your profile with a
                     gift registry from any online store. Interact in real-time by
                     integrating live streams from Twitch, YouTube and more—broadcast your
@@ -147,7 +109,7 @@ function NewSlider({ typeValue }) {
             ),
             expand: false,
             subtitle: (
-                <p ref={paragraphRef} className={`text ${expanded ? "expanded" : ""}`}>
+                <p>
                     Experience the thrill of real-time interaction as you receive alerts
                     and notifications for gifts sent by your supporters. Whether it's a
                     small tip, a crowdfunding contribution, or a wishlist item, stay
@@ -220,15 +182,7 @@ function NewSlider({ typeValue }) {
             video: 'https://dev.creatorshub.online/homePage_videos/userslidethree.mp4',
         },
     ]);
-    // useEffect(() => {
-    //   const timer = setTimeout(() => {
-    //     if (!isPaused) {
-    //       setIndex((prevIndex) => (prevIndex === 3 ? 0 : prevIndex + 1)); // Adjust based on number of slides
-    //     }
-    //   }, interval);
 
-    //   return () => clearTimeout(timer);
-    // }, [index, interval, isPaused]);
 
     return (
         <div className="slider-carousel-wrapper">
@@ -344,3 +298,8 @@ function NewSlider({ typeValue }) {
 }
 
 export default NewSlider;
+
+
+
+
+
