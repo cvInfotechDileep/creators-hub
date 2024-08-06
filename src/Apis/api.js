@@ -29,11 +29,6 @@ export const signUpApi = (credentials) => {
   return axios.post(
     `${baseURL}/register`,
     { credentials },
-    {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    }
   );
 };
 

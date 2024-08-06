@@ -129,19 +129,18 @@ const Home = () => {
             <Container fluid className="d-flex align-items-center justify-content-center content-row p-0">
                 <Card className="hero-main-card">
                     <Row className="hero-card-row">
-                        <Col sm={12} md={12} lg={6} xl={6} xxl={6} className="content-column">
+                        <Col xs={12} sm={12} md={12} lg={6} xl={6} xxl={6} className="content-column">
                             <div className="dummmy left-content-column">
                                 <div className="left-side-content">
                                     <div className="text-start position-relative justify-content-start">
                                         <h6>
-                                            <span className="highlight-italic"> Creator </span>{" "}
+                                            <span className="highlight-italic"> Creator </span>
                                             <span className="highlight">
-                                                {" "}
                                                 <strong>Appreciation</strong>
                                                 <br />
-                                            </span>{" "}
+                                            </span>
                                             <strong className="rest-highlight">
-                                                {" "}
+                                                
                                                 Made Safe and Easy
                                             </strong>
                                         </h6>
@@ -197,11 +196,11 @@ const Home = () => {
                 <Row className=" text-center  about-heading ">
                     <Col md={7} className="d-flex align-items-center  first-about-heading-col" style={{ flexDirection: "column" }}>
                         <h6>
-                            <span className="highlight-italic"> Built for </span>{" "}
+                            <span className="highlight-italic"> Built for </span>
                             <span className="highlight">
-                                {" "}
+                                
                                 <strong>Creators</strong>
-                            </span>{" "}
+                            </span>
                             <strong className="rest-highlight"> of all platforms.</strong>
                         </h6>
                         <p>
@@ -212,7 +211,7 @@ const Home = () => {
                     </Col>
                 </Row>
                 <Row className="poloroid-grid-section">
-                    <Col sm={12} md={12} lg={6} xl={6} xxl={6} className="d-flex align-item-center justify-content-center left-poloroid-grid-section">
+                    <Col sm={12} md={12} lg={6} xl={6} xxl={6} className="d-flex align-item-center left-poloroid-grid-section">
                         <div className="socialPlate-wrapper">
                             {dummyData.map((item, index) => {
                                 return (
@@ -238,7 +237,7 @@ const Home = () => {
                             })}
                         </div>
                     </Col>
-                    <Col sm={12} md={12} lg={6} xl={6} xxl={6} className="d-flex align-item-center justify-content-center  right-poloroid-grid-section">
+                    <Col sm={12} md={12} lg={6} xl={6} xxl={6} className="d-flex align-item-center right-poloroid-grid-section">
                         <Row className="mt-3">
                             <Col>
                                 <div className="d-flex polaroid-second ">

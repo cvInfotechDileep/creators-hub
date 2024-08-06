@@ -71,7 +71,7 @@ function Footer() {
                             <Row className="social-or-link-row">
                                 <Col xs={12} sm={12} md={12} lg={12} xl={8} xxl={8} >
                                     {" "}
-                                    <Row>
+                                    <Row className="mt-5">
                                         <Col
                                             xs={6}
                                             sm={6}
