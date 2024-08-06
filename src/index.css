@@ -13,6 +13,10 @@
   font-style: normal;
   font-variation-settings:"slnt" 0;
 }
+body{
+  overflow-x : hidden;
+  font-family: "Ubuntu Sans"
+}
 
 .separator {
   display: flex;
@@ -106,4 +110,10 @@ body.dark {
 .S9gUrf-YoZ4jf, .S9gUrf-YoZ4jf * {
   text-align: -webkit-center;
 }
-
+.ant-tabs-nav{
+  align-self: center;
+}
+.form-check-input:focus{
+  border: none !important;
+  box-shadow:none !important
+}

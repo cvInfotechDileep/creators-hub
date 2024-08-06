@@ -1,11 +1,15 @@
-import HeaderNavbar from "../components/HeaderNavbar";
+import HeaderInternalPage from "../components/Headers/HeaderInternalPage";
+import UserProfile from "../components/InnerPagesComponents/UserComponents/UserProfile";
+import "./dashboard.scss"
 
 const About = () => {
+
+  // for User feed
     return (
-      <div>
-        <HeaderNavbar />
-        <h1>About Us</h1>
-      </div>
+      <div style={{background:"#e7eff5"}}>
+        <HeaderInternalPage />
+        <UserProfile />
+      </div> 
     );
   };
   

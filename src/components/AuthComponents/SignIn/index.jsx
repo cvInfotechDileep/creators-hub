@@ -53,6 +53,7 @@ const SignInForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [loginData, setLoginData] = useState({});
   const { loading, error, token } = useSelector((state) => state.auth);
   const [loginData, setLoginData] = useState({});
   const handleSubmit = async (e) => {
@@ -75,23 +76,7 @@ const SignInForm = () => {
   };
 
   const handleGoogleLogin = () => {
-    console.log('kkkkkkkk');
-
     window.open('https://creatorshub.online/apibackend/auth/google', '_self');
-
-    // dispatch(signInStart());
-    // try {
-    //   // const data = await signinWithGoogleApi();
-    //   console.log(data)
-    //   // const { token } = response.data;
-    //   // localStorage.setItem('token', token);
-    //   // dispatch(signInSuccess(token));
-    //   navigate('/dashboard');
-    // } catch (error) {
-    //   console.log(error)
-
-    //   // dispatch(signInFailure(error.response.data));
-    // }
   };
 
   const getUserfromGoogle = async () => {
@@ -116,7 +101,7 @@ const SignInForm = () => {
   useEffect(() => {
     getUserfromGoogle();
   }, []);
-  // getUserfromGoogle();
+
   const handleTwitchLogin = async () => {
     console.log('kkkkkkkk');
 

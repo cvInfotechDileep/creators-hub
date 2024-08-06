@@ -1,0 +1,50 @@
+.btn-radio {
+    margin-right: 10px;
+}
+
+.btn-radio .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+}
+
+.labelFont{
+    font-size: 16px;
+    font-weight: 500;
+}
+.btn-check:checked + .btn {
+    color: #2563EB; // Blue color when selected
+    border-color: #2563EB; // Optional: Border color when selected
+    background-color: #fff;
+}
+.dropdown-item{
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    color: #1F2937 !important;
+}
+
+.btn-check:not(:checked) + .btn {
+    color: #1F2937; // Dark gray color when not selected
+    border-color: #1F2937; // Optional: Border color when not selected
+}
+
+.labelFont {
+    font-size: 1rem; // Adjust font size as needed
+}
+
+.btn-radio .btn.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-radio .btn input[type="radio"] {
+    display: none;
+}
+
+.borderRadio{
+    border: 1px solid #E5E7EB !important;
+}
