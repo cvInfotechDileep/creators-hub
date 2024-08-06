@@ -89,27 +89,30 @@ const CarouselCard = () => {
       if (isVisible) {
         setTimeout(() => {
           setIsVisible(false); // Trigger slideOut animation after 12 seconds
-        }, 20000);
+        }, 12000);
       } else {
         setTimeout(() => {
           setIsVisible(true); // Trigger slideIn animation after 12 seconds
-        }, 20000);
+        }, 12000);
       }
     };
 
     slideInOut(); // Initial trigger of animations
-
+    // console.log(isHovering);
     // Clean up function
     return () => clearTimeout(slideInOut);
   }, [isVisible]);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveSlide((prevIndex) => (prevIndex + 1) % 4); // Change slide every 5 seconds
-    }, 5000);
+    if (!isHovering) {
+      const interval = setInterval(() => {
+        setActiveSlide((prevIndex) => (prevIndex + 1) % 4); // Change slide every 5 seconds
+      }, 5000);
 
-    return () => clearInterval(interval);
-  }, []);
+      return () => clearInterval(interval);
+    }
+    console.log(isHovering);
+  }, [isHovering]);
 
   return (
     <>
@@ -128,6 +131,8 @@ const CarouselCard = () => {
           className={`auth-second-slide m-auto d-flex justify-content-center align-content-center ${
             isVisible ? (activeSlide >= 1 ? 'rotate-5deg' : '') : ''
           } `}
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}
         >
           <div
             className='card-container '
@@ -163,6 +168,8 @@ const CarouselCard = () => {
           className={`auth-second-slide m-auto d-flex justify-content-center align-content-center ${
             isVisible ? (activeSlide >= 2 ? 'rotate5deg' : '') : ''
           }  `}
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}
         >
           <div
             className='card-container'
@@ -202,6 +209,8 @@ const CarouselCard = () => {
           className={`auth-second-slide m-auto  d-flex justify-content-center align-content-center  ${
             isVisible ? (activeSlide >= 3 ? 'rotate8deg' : '') : ''
           } `}
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}
         >
           <div
             className='card-container'
@@ -249,6 +258,8 @@ const CarouselCard = () => {
               justifyContent: 'center',
               flexDirection: 'column',
             }}
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
           >
             <Card className='main-card text-center'>
               <Card.Body className='py-0 my-4'>

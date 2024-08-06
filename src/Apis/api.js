@@ -40,6 +40,11 @@ export const signUpApi = (credentials) => {
 export const checkUsernameApi = (user, accountType) => {
   console.log({ ooooooo: user, ppppppppp: accountType });
   return axios.get(
-    `${baseURL}/getusername_with_type?username=${user}&user_type=${accountType}`
+    `${baseURL}/getusername_with_type?username=${user}&user_type=${accountType}`,
+    {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }
   );
 };

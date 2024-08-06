@@ -191,8 +191,9 @@ const SignUpForm = () => {
         password,
         username,
         user_type: selectedCard,
+        name: username,
       });
-
+      console.log(response.data);
       if (response.data.status) {
         setShowOtp(true);
         message.success('Sign up successful. OTP sent to your email.');
@@ -400,7 +401,7 @@ const SignUpForm = () => {
                           <LoadingOutlined spin style={{ fontSize: '24px' }} />
                         }
                       />
-                    ) : usernameValid === false ? (
+                    ) : usernameValid === true ? (
                       <span style={{ color: 'green' }}>✔</span>
                     ) : usernameValid === true ? (
                       <span style={{ color: 'red' }}>✘</span>
@@ -701,7 +702,7 @@ const SignUpForm = () => {
                         disabled={
                           (current === 0 && !selectedCard) ||
                           (current === 1 &&
-                            (!username || usernameValid !== false))
+                            (!username || usernameValid !== true))
                         }
                         className={`globalGrediantBtn ${
                           current === 1 && (!username || usernameValid !== true)
