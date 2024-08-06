@@ -218,8 +218,9 @@ function Footer() {
                                     xl={{ span: 6, order: "last" }}
                                     xxl={{ span: 7, order: "last" }}
                                     className="order-xs-1 order-xl-2"
+                                    style={{textAlign:"-webkit-right"}}
                                 >
-                                    <Row className="d-flex custom-image-container justify-content-evenly">
+                                    <Row className="d-flex custom-image-container justify-content-evenly" style={{inlineSize:"max-content"}}>
                                         <img
                                             src={footer2}
                                             className="first-image"
