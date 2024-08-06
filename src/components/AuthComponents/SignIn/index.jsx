@@ -53,7 +53,7 @@ const SignInForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [loginData, setLoginData] = useState({});
+  // const [loginData, setLoginData] = useState({});
   const { loading, error, token } = useSelector((state) => state.auth);
   const [loginData, setLoginData] = useState({});
   const handleSubmit = async (e) => {
