@@ -13,7 +13,7 @@ const App = () => {
   const { token, user_type, username } = useSelector((state) => state.auth);
   // const { token, user_type } = useSelector((state) => state.auth);
 
-  console.log({ "token": token, user_type })
+  console.log({ "token": token, user_type, username })
   localStorage.setItem('token', token);
 
   const renderRoutes = (routes) => {

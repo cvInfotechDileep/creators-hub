@@ -69,7 +69,7 @@ const tabs = [
                   <p>
                     Engage you audience like never before! Personalize your profile with a
                     gift registry from any online store. Interact in real-time by
-                    integrating live streams from Twitch, YouTube and more—broadcast your
+                    integrating live streams from Twitch, YouTube and more-broadcast your
                     creativity far and wide.
                   </p>
                 </Col>

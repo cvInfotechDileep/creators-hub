@@ -64,7 +64,7 @@ const SignInForm = () => {
       // Extract token, user_type, and username from response
       const { token, user_type, data: userData } = data;
       const username = userData[0]?.username;
-
+      console.log(username,"]]]]]]]]")
       // Store token and user data in localStorage or Redux state
       localStorage.setItem('token', token);
       localStorage.setItem('user_type', user_type);
