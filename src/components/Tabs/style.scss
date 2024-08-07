@@ -6,7 +6,7 @@
     text-align: -webkit-center;
 }
 
-.fontStyle{
+.fontStyle {
     font-family: "Ubuntu Sans";
 }
 
@@ -19,12 +19,12 @@
     padding: 12px;
     border-radius: 99px;
     border: 1px solid #EDF0F2;
-    box-shadow: 
-    0px -3px 0px 0px #eaeaea inset, 
-    0px 0px 0px 2px #eaeaea inset, 
-    0px 4px 2px 0px #0000000F inset, 
-    0px 0px 24px 4px #0000000A inset, 
-    0px 1px 3px 0px #0000001F;
+    box-shadow:
+        0px -3px 0px 0px #eaeaea inset,
+        0px 0px 0px 2px #eaeaea inset,
+        0px 4px 2px 0px #0000000F inset,
+        0px 0px 24px 4px #0000000A inset,
+        0px 1px 3px 0px #0000001F;
     // background-color: rgba(245, 245, 245, 0.5019607843) !important;
 
     // box-shadow: rgba(204, 219, 232, 0.5) 0 3px 0px 0 inset, rgba(204, 219, 232, 0.5) 0 3px 0px 0;
@@ -84,6 +84,16 @@
 
 .content.active {
     display: block;
+}
+
+ul {
+    .show {
+        display: block;
+    }
+
+    .hide {
+        display: none;
+    }
 }
 
 // .custom-carousel {
@@ -154,4 +164,70 @@
 
 .creator-content h1 .rest-highlight {
     font-weight: 800;
+}
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .custom-col {
+        h5 {
+            font-size: 30px;
+        }
+
+        p {
+            font-size: 16px !important;
+
+            ul {
+                li {
+                    .heading {
+                        font-size: 16px !important;
+                    }
+
+                    
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 450px) and (max-width: 767px) {
+    .custom-col {
+        h5 {
+            font-size: 26px;
+        }
+
+        p {
+            font-size: 14px !important;
+
+            ul {
+                li {
+                    .heading {
+                        font-size: 14px !important;
+                    }
+
+                    
+                }
+            }
+        }
+    }
+}
+@media (min-width: 380px) and (max-width: 449px) {
+    .custom-col {
+        h5 {
+            font-size: 24px !important;
+        }
+
+        p {
+            font-size: 14px !important;
+
+            ul {
+                li {
+                    .heading {
+                        font-size: 14px !important;
+                    }
+
+                    
+                }
+            }
+        }
+    }
 }

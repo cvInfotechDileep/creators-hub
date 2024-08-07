@@ -15,7 +15,7 @@ const tabs = [
     content: (
       <>
         <Row className='my-5 fontStyle' style={{ maxWidth: "1000px", margin: "auto" }}>Empower your creative journey on CreatorsHub with intuitive tools designed for creators. Why Join CreatorsHub? As a creator, showcase your talents through live streaming, upload features, and wishlists. Engage with your fans effortlessly, with streamlined payment processing and real-time alerts for gifts and contributions. Our platform ensures that your personal information is protected.</Row>
-        <Carousel interval={3000} // Adjust the interval time as needed
+        <Carousel interval={3000000} // Adjust the interval time as needed
           pause="hover"
           className="custom-carousel" data-bs-theme="dark">
           <Carousel.Item className='slider-carousel-item'>
@@ -99,26 +99,18 @@ const tabs = [
                 <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} className="custom-col">
                   <h5>
                     <span className="rest-highlight">
-                      {" "}
                       <strong>Set Up Your</strong>
-                    </span>{" "}
+                    </span>
                     <strong className="highlight"> Wish List</strong>
                   </h5>
-                  <p>Unlock endless possibilities with our diverse wishlist options: <br />
-                    <br />
-                    <strong className="heading">Small Cash Tips:</strong> Receive instant
-                    tips from fans during your live streams.
-                    <br />
-                    <strong className="heading">Crowdfunding:</strong> Dream big! Get
-                    funded for high-cost items, with a progress bar to track your
-                    progress.
-                    <br /> <strong className="heading">Product Links:</strong> Add links
-                    to products from various stores. Fans contribute, you receive the
-                    funds, order the product, and upload the invoice.
-                    <br />
-                    <strong className="heading"> Small Gift Items:</strong> Allow fans to
-                    express their appreciation with thoughtful gifts directly from your
-                    profile, up to a value of $100.
+                  <p>
+                    Unlock endless possibilities with our diverse wishlist options:
+                    <ul className='mt-2' style={{listStyle:"none", padding:"0"}}>
+                      <li><strong className="heading">Small Cash Tips:</strong> Receive instant tips from fans during your live streams.</li>
+                      <li><strong className="heading">Crowdfunding:</strong> Dream big! Get funded for high-cost items, with a progress bar to track your progress.</li>
+                      <li><strong className="heading">Product Links:</strong> Add links to products from various stores. Fans contribute, you receive the funds, order the product, and upload the invoice.</li>
+                      <li><strong className="heading">Small Gift Items:</strong> Allow fans to express their appreciation with thoughtful gifts directly from your profile, up to a value of $100.</li>
+                    </ul>
                   </p>
 
                 </Col>
