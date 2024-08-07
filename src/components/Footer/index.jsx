@@ -79,7 +79,7 @@ function Footer() {
                                             lg={4}
                                             xl={4}
                                             xxl={4}
-                                            className="col-links"
+                                            className="col-links my-3"
                                         >
                                             <h5 className="highlight">Quick Links</h5>
                                             <div className="links">
@@ -96,7 +96,7 @@ function Footer() {
                                             lg={4}
                                             xl={4}
                                             xxl={4}
-                                            className="col-links"
+                                            className="col-links my-3"
                                         >
                                             <h5 className="highlight">Help</h5>
                                             <div className="links">
@@ -112,7 +112,7 @@ function Footer() {
                                             lg={4}
                                             xl={4}
                                             xxl={4}
-                                            className="col-links"
+                                            className="col-links my-3"
                                         >
                                             <h5 className="highlight">Legal</h5>
                                             <div className="links">
@@ -210,7 +210,7 @@ function Footer() {
 
                             <Row className="bottom-footer">
                                 {/* Second column on top for xs devices, and on the right for md devices */}
-                                <Col
+                                {/* <Col
                                     xs={12}
                                     sm={12}
                                     md={12}
@@ -218,9 +218,62 @@ function Footer() {
                                     xl={{ span: 6, order: "last" }}
                                     xxl={{ span: 7, order: "last" }}
                                     className="order-xs-1 order-xl-2"
-                                    style={{textAlign:"-webkit-right"}}
+                                    style={{ textAlign: "-webkit-right" }}
                                 >
-                                    <Row className="d-flex custom-image-container justify-content-evenly" style={{inlineSize:"max-content"}}>
+                                    <Row className="d-flex custom-image-container justify-content-evenly" style={{ inlineSize: "max-content" }}>
+                                        <img
+                                            src={footer2}
+                                            className="first-image"
+                                            alt="Footer Image 1"
+                                        />
+                                        <img
+                                            src={footer1}
+                                            className="second-image"
+                                            alt="Footer Image 2"
+                                        />
+                                        <img
+                                            src={footer3}
+                                            className="third-image"
+                                            alt="Footer Image 3"
+                                        />
+                                        <img
+                                            src={footer4}
+                                            className="fourth-image"
+                                            alt="Footer Image 4"
+                                        />
+                                    </Row>
+                                </Col> */}
+                                {/* First column on bottom for xs devices, and on the left for md devices */}
+                                {/* <Col
+                                    xs={12}
+                                    sm={12}
+                                    md={12}
+                                    lg={12}
+                                    xl={{ span: 6, order: "first" }}
+                                    xxl={{ span: 5, order: "first" }}
+                                    className="order-xs-0 order-xl-1"
+                                >
+                                    <div className="footer-para">
+                                        <p>
+                                            Copyright © 2024, All Rights Reserved - MWP Entertainment
+                                            LLC
+                                        </p>
+                                        <p>Developed by CV Infotech</p>
+                                    </div>
+                                </Col> */}
+                                <Col md={4} sm={12} xs={12}>
+                                    <Row>
+                                        <div className="footer-para">
+                                            <p>
+                                                Copyright © 2024, All Rights Reserved - MWP Entertainment
+                                                LLC
+                                            </p>
+                                            <p>Developed by CV Infotech</p>
+                                        </div>
+                                    </Row>
+                                </Col>
+                                <Col md={8} sm={12} xs={12} className="logsStyle">
+                                    <Row className="d-flex custom-image-container gap-3 footerLogos">
                                         <img
                                             src={footer2}
                                             className="first-image"
@@ -243,24 +296,7 @@ function Footer() {
                                         />
                                     </Row>
                                 </Col>
-                                {/* First column on bottom for xs devices, and on the left for md devices */}
-                                <Col
-                                    xs={12}
-                                    sm={12}
-                                    md={12}
-                                    lg={12}
-                                    xl={{ span: 6, order: "first" }}
-                                    xxl={{ span: 5, order: "first" }}
-                                    className="order-xs-0 order-xl-1"
-                                >
-                                    <div className="footer-para">
-                                        <p>
-                                            Copyright © 2024, All Rights Reserved - MWP Entertainment
-                                            LLC
-                                        </p>
-                                        <p>Developed by CV Infotech</p>
-                                    </div>
-                                </Col>
+                                
                             </Row>
                         </div>
                     </Col>

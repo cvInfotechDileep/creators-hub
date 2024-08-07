@@ -257,6 +257,24 @@
     width: 120px !important;
     height: 60px;
   }
+
+  .footerLogos{
+    justify-content:end;
+  }
+  .logsStyle{
+    align-content: center;
+  }
+  @media (min-width: 380px) and (max-width: 767px){
+    .bottom-footer{
+      display: flex;
+      // flex-direction: row; // Default flex direction
+      flex-direction: column-reverse;
+    }
+    .footerLogos{
+      justify-content:start;
+    }
+    
+  }
   
   @media (max-width: 451px) {
     .left-footer {
