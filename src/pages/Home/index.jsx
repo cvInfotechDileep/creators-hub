@@ -140,7 +140,7 @@ const Home = () => {
                                                 <br />
                                             </span>
                                             <strong className="rest-highlight">
-                                                
+
                                                 Made Safe and Easy
                                             </strong>
                                         </h6>
@@ -198,7 +198,7 @@ const Home = () => {
                         <h6>
                             <span className="highlight-italic"> Built for </span>
                             <span className="highlight">
-                                
+
                                 <strong>Creators</strong>
                             </span>
                             <strong className="rest-highlight"> of all platforms.</strong>
@@ -211,7 +211,7 @@ const Home = () => {
                     </Col>
                 </Row>
                 <Row className="poloroid-grid-section">
-                    <Col sm={12} md={12} lg={6} xl={6} xxl={6} className="d-flex align-item-center left-poloroid-grid-section">
+                    <Col sm={12} md={12} lg={6} xl={6} xxl={6} className="d-flex align-item-center left-poloroid-grid-section justify-content-center">
                         <div className="socialPlate-wrapper">
                             {dummyData.map((item, index) => {
                                 return (
@@ -274,7 +274,10 @@ const Home = () => {
                     </Col>
                 </Row>
             </Container>
-            <Tabs />
+            <Container fluid className='mt-5'>
+                <Tabs />
+            </Container>
+
             {/* <ToggleTabCarousal /> */}
             <ConnectionPeople />
             <JoinHub />
