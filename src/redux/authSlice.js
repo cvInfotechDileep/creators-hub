@@ -165,7 +165,7 @@ const authSlice = createSlice({
   name: 'auth',
   initialState: {
     token: null,
-    role: null, // Add role to the initial state
+    user_type: null, // Add user_type to the initial state
     loading: false,
     error: null,
   },
@@ -176,7 +176,7 @@ const authSlice = createSlice({
     signInSuccess: (state, action) => {
       state.loading = false;
       state.token = action.payload.token;
-      state.role = action.payload.role; // Set role when sign in is successful
+      state.user_type = action.payload.user_type; // Set user_type when sign in is successful
     },
     signInFailure: (state, action) => {
       state.loading = false;
@@ -184,7 +184,7 @@ const authSlice = createSlice({
     },
     setToken: (state, action) => {
       state.token = action.payload.token;
-      state.role = action.payload.role; // Set role when token is set
+      state.user_type = action.payload.user_type; // Set user_type when token is set
     }
   }
 });

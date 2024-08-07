@@ -8,8 +8,13 @@ import Loading from './components/Loading';
 
 
 const App = () => {
-  const isAuthenticated = useSelector((state) => state.auth.token);
-  const token = useSelector((state) => state.auth.token);
+  // const isAuthenticated = useSelector((state) => state.auth.token);
+  // const {token, role} = useSelector((state) => state.auth.token);
+  const { token, user_type, username } = useSelector((state) => state.auth);
+  // const { token, user_type } = useSelector((state) => state.auth);
+
+  console.log({ "token": token, user_type })
+  localStorage.setItem('token', token);
 
   const renderRoutes = (routes) => {
     return routes.map((route) => {
@@ -41,11 +46,20 @@ const App = () => {
             path="*"
             element={
               token
-                ? role === 'creator'
-                  ? <Navigate to="/creator" />
-                  : <Navigate to="/user" />
+                ? user_type === 'creator'
+                  ? <Navigate to={`/creator/${username}`} />
+                  : user_type === 'fan'
+                    ? <Navigate to={`/fan/${username}`} />
+                    : <Navigate to="/dashboard" />
                 : <Navigate to="/" />
             }
+          // element={
+          //   token
+          //     ? user_type === 'creator'
+          //       ? <Navigate to="/creator" />
+          //       : <Navigate to="/user" />
+          //     : <Navigate to="/" />
+          // }
           />
           <Route path="*" element={<NotFound />} />
         </Routes>

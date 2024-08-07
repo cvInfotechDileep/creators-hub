@@ -49,7 +49,6 @@ import axios from 'axios';
 const SignInForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [loginUrl, setLognUrl] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -61,11 +60,25 @@ const SignInForm = () => {
     dispatch(signInStart());
     try {
       const { data } = await signinApi({ email, password });
-      console.log({ data });
-      const { token } = response.data;
+      console.log({ "data": data });
+      // Extract token, user_type, and username from response
+      const { token, user_type, data: userData } = data;
+      const username = userData[0]?.username;
+
+      // Store token and user data in localStorage or Redux state
       localStorage.setItem('token', token);
-      dispatch(signInSuccess(token));
-      navigate('/dashboard');
+      localStorage.setItem('user_type', user_type);
+      localStorage.setItem('username', username);
+      // dispatch(signInSuccess(data));
+      dispatch(signInSuccess({ token, user_type, username }));
+      // Navigate to the appropriate route based on user_type
+      if (user_type === 'creator') {
+        navigate(`/creator/${username}`);
+      } else if (user_type === 'fan') {
+        navigate(`/fan/${username}`);
+      } else {
+        navigate('/dashboard'); // fallback route
+      }
     } catch (error) {
       dispatch(signInFailure(error.response.data));
     }

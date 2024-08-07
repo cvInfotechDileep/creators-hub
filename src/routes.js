@@ -80,7 +80,7 @@ const routesConfig = [
     component: Creatorsfeed,
   },
   {
-    path: "/creator",
+    path: "/creator/:username",
     component: Creator,
     auth: true,
     // children: [
@@ -95,7 +95,7 @@ const routesConfig = [
     // ],
   },
   {
-    path: "/user",
+    path: "/user/:username",
     component: User,
     auth: true,
     // children: [
