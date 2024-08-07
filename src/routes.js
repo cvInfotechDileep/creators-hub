@@ -1,5 +1,6 @@
 // src/routes.js
 import React from 'react';
+const SentGifts = React.lazy(() => import('./pages/SentGifts'));
 const Home = React.lazy(() => import('./pages/Home'));
 const UserProfile = React.lazy(() => import('./pages/UserProfile'));
 const StreamTwitch = React.lazy(() => import('./pages/StreamTwitch'));
@@ -54,6 +55,10 @@ const routesConfig = [
   {
     path: "/user-profile",
     component: UserProfile,
+  },
+  {
+    path: "/sent-gifts",
+    component: SentGifts,
   },
   {
     path: "/creator-profile",

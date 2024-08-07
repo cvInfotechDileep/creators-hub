@@ -193,7 +193,7 @@ const Home = () => {
                 </Card>
             </Container>
             <Container fluid className="second-section">
-                <Row className=" text-center  about-heading ">
+                <Row className=" text-center about-heading">
                     <Col md={7} className="d-flex align-items-center  first-about-heading-col" style={{ flexDirection: "column" }}>
                         <h6>
                             <span className="highlight-italic"> Built for </span>
@@ -210,7 +210,7 @@ const Home = () => {
                         </p>
                     </Col>
                 </Row>
-                <Row className="poloroid-grid-section">
+                <Row className="poloroid-grid-section my-5">
                     <Col sm={12} md={12} lg={6} xl={6} xxl={6} className="d-flex align-item-center left-poloroid-grid-section justify-content-center">
                         <div className="socialPlate-wrapper">
                             {dummyData.map((item, index) => {

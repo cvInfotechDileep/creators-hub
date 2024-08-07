@@ -7,7 +7,7 @@ import HeaderInternalPage from '../../components/Headers/HeaderInternalPage';
 
 const Balance = () => {
     return (
-        <div style={{ background: "#e7eff5" }}>
+        <div style={{ background: "#EDF0F2" }}>
             <HeaderInternalPage />
             <Container className='mt-5'>
                 <Row>

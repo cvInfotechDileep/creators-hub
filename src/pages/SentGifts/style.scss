@@ -1,0 +1,80 @@
+.filterBtn .btn {
+    background-color: #fff;
+    border: 1px solid #E5E7EB;
+    color: #000;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.0509803922);
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.tableLine{
+    margin-bottom: -15px;
+    border-radius: 15px;
+}
+.custom-table {
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
+
+    thead {
+        background-color: #E3F3FF;
+
+        tr {
+            border: 1px solid #E3F3FF;
+        }
+    }
+
+    th,
+    td {
+        padding: 0.75rem;
+        text-align: left;
+        border-top: 1px solid #E0E0E0;
+        color: #1F2937;
+        font-size: 14px;
+        font-weight: 500;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.05); // Optional: Custom hover background color
+        }
+    }
+
+    th {
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    tbody {
+        tr:first-child {
+            td {
+                border-top: 1px solid #E3F3FF;
+            }
+        }
+    }
+
+    .status-delivered {
+        background-color: #DBEAFE; // Light blue
+        color: #004085; // Dark blue text
+        padding: 0.2rem 0.5rem;
+        border-radius: 0.25rem;
+        width: fit-content;
+        margin: auto;
+    }
+
+    .status-transferred {
+        background-color: #CCFBF1; // Light green
+        color: #155724; // Dark green text
+        padding: 0.2rem 0.5rem;
+        border-radius: 0.25rem;
+        width: fit-content;
+        margin: auto;
+    }
+
+    .status-ordered {
+        background-color: #FEF9C3; // Light yellow
+        color: #856404; // Dark yellow text
+        padding: 0.2rem 0.5rem;
+        border-radius: 0.25rem;
+        width: fit-content;
+        margin: auto;
+    }
+}

@@ -5,7 +5,7 @@ import "./dashboard.scss"
 const Contact = () => {
 
     return (
-      <div style={{background:"#e7eff5"}}>
+      <div style={{background:"#EDF0F2"}}>
         {/* <HeaderNavbar /> */}
         <HeaderInternalPage />
         <Admindashboard />

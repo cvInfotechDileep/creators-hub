@@ -5,7 +5,7 @@ import CreatorAccount from '../../components/InnerPagesComponents/CreatorAccount
 
 const CreatorProfile = () => {
   return (
-    <div style={{background:"#e7eff5"}}>
+    <div style={{background:"#EDF0F2"}}>
         <HeaderInternalPage />
         <CreatorAccount />
       </div> 
